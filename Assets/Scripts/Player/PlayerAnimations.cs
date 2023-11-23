@@ -36,8 +36,8 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetTrigger(Dead);
     }
 
-    /*public void SetRivialAnimation(bool value)
+    public void SetRivialAnimation(bool value)
     {
         animator.SetBool(Revival, value);
-    }*/
+    }
 }
