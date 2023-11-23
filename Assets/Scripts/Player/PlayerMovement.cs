@@ -5,19 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Player player;
     [SerializeField][Range(1f, 10f)] float speedPlayer;
     [SerializeField] private FixedJoystick joystick;
-
+    [SerializeField] private PlayerAnimations animations;
     private Vector2 moveDirection;
 
-    private readonly int moveX = Animator.StringToHash("moveX");
-    private readonly int moveY = Animator.StringToHash("moveY");
-    private readonly int isMoving = Animator.StringToHash("isMoving");
+    
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animations = gameObject.GetComponent<PlayerAnimations>();
+        
     }
     private void Update()
     {
@@ -32,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Moving()
     {
+        if (player.Stats.Health <= 0) return;
         rb2d.MovePosition(rb2d.position + moveDirection * speedPlayer * Time.fixedDeltaTime);
     }
     private void ReadMovement()
@@ -42,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(moveDirection == Vector2.zero)
         {
-            animator.SetBool(isMoving, false);
+            animations.SetBoolMoveAnimation(false);
             return;
         }
 
-        animator.SetBool(isMoving, true);
-        animator.SetFloat(moveX, moveDirection.x);
-        animator.SetFloat(moveY, moveDirection.y);
+        animations.SetBoolMoveAnimation(true);
+        animations.SetMovingAnimation(moveDirection);
+        
     }
 }
