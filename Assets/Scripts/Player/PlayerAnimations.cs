@@ -40,4 +40,11 @@ public class PlayerAnimations : MonoBehaviour
     {
         animator.SetBool(Revival, value);
     }
+
+    public void ResetPlayerAnimation()
+    {
+        SetMovingAnimation(Vector2.down);
+        SetRivialAnimation(true);
+    }
+    
 }

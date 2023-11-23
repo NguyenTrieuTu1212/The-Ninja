@@ -14,6 +14,9 @@ public class PlayerStats : ScriptableObject
     public float mana;
     public float maxMana;
 
+    [Header("EXP of Player")]
+    public float currentExp;
+
 
     public void ResetStats()
     {

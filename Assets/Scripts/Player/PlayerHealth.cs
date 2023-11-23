@@ -20,17 +20,17 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H)) TakeDamage(1f);
-        if (player.Stats.Health <= 0f && !isRevival) StartCoroutine(WaitingPlayerRivial());
-
+        if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
+            player.ResetPlayer();
     }
 
     public void TakeDamage(float amount)
     {
-        player.Stats.Health -= amount;
+        player.Stats.Health  = Mathf.Max(player.Stats.Health -= amount, 0f);
         if(player.Stats.Health <= 0)
         {
             PlayerDead();
-            isRevival = false;
+            //isRevival = false;
         }
     }
 
@@ -43,10 +43,8 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     IEnumerator WaitingPlayerRivial()
     {
         isRevival = false;
-        Debug.Log(isRevival);
         yield return new WaitForSeconds(timeToRevival);
+        player.ResetPlayer();
         isRevival = true;
-        player.Stats.ResetStats();
-        animations.SetRivialAnimation(true);
     }
 }
