@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 150267865}
   animations: {fileID: 150267864}
+  timeToRevival: 1
 --- !u!114 &150267864
 MonoBehaviour:
   m_ObjectHideFlags: 0

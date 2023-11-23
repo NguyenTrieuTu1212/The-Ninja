@@ -11,12 +11,12 @@ public class PlayerAnimations : MonoBehaviour
     private readonly int moveY = Animator.StringToHash("moveY");
     private readonly int isMoving = Animator.StringToHash("isMoving");
     private readonly int Dead = Animator.StringToHash("isDead");
+    private readonly int Revival = Animator.StringToHash("isRevival");
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
-
 
 
     public void SetBoolMoveAnimation(bool value)
@@ -35,4 +35,9 @@ public class PlayerAnimations : MonoBehaviour
     {
         animator.SetTrigger(Dead);
     }
+
+    /*public void SetRivialAnimation(bool value)
+    {
+        animator.SetBool(Revival, value);
+    }*/
 }
