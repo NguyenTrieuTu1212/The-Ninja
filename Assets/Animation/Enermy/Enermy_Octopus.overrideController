@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enermy_Octopus
+  m_Controller: {fileID: 9100000, guid: baece023d089a3740bd64089d103c5ee, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 065c9ef19b9249441952b3e50ced534f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 46f6717c61699a047a778b0c328d46af, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aae6a38c4ff0801449efcef224af3a87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3d0f9eb347ee7af41bc17a8e6543275b, type: 2}

@@ -53,6 +53,12 @@ TagManager:
   - name: Prop
     uniqueID: 606076973
     locked: 0
+  - name: Enermy
+    uniqueID: 694814441
+    locked: 0
   - name: Player
     uniqueID: 1768587581
+    locked: 0
+  - name: UI
+    uniqueID: 566650451
     locked: 0

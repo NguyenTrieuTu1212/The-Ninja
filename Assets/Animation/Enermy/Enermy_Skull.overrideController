@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enermy_Skull
+  m_Controller: {fileID: 9100000, guid: baece023d089a3740bd64089d103c5ee, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 065c9ef19b9249441952b3e50ced534f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6499ffbb05642944ebcd48d4e496bd82, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aae6a38c4ff0801449efcef224af3a87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4a682a287b4f98c4eb77a5f41c417286, type: 2}
