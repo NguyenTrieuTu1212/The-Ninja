@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     [SerializeField][Range(0f, 10f)] float timeToRevival;
 
 
-    private bool isRevival;
+    
 
     private void Awake()
     {
@@ -40,11 +40,11 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         animations.SetDeadAnimation();
     }
 
-    IEnumerator WaitingPlayerRivial()
+    /*IEnumerator WaitingPlayerRivial()
     {
         isRevival = false;
         yield return new WaitForSeconds(timeToRevival);
         player.ResetPlayer();
         isRevival = true;
-    }
+    }*/
 }
