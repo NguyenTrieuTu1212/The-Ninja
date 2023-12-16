@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 150267867}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1622,7 +1622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &150267859
 MonoBehaviour:
@@ -1795,7 +1795,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272040262
 PrefabInstance:
@@ -2157,6 +2157,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2223,13 +2224,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.18, z: -10}
+  m_LocalPosition: {x: -1, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ee33a11e37ae4419fbf0d0c928773b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smooth: 1.2
 --- !u!4 &538713008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994823555225037382, guid: 1ac5b329fa721a74baa43f92562c2817, type: 3}
@@ -2297,7 +2312,7 @@ Transform:
   - {fileID: 99382275}
   - {fileID: 881288115}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626391515
 GameObject:
@@ -30102,6 +30117,8 @@ GameObject:
   - component: {fileID: 802882584}
   - component: {fileID: 802882583}
   - component: {fileID: 802882582}
+  - component: {fileID: 802882587}
+  - component: {fileID: 802882588}
   m_Layer: 0
   m_Name: Enermy_Musroom
   m_TagString: Untagged
@@ -30165,7 +30182,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &802882585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30233,6 +30250,39 @@ Transform:
   m_Father: {fileID: 1907587071}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802882587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802882581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 802882588}
+    allTransistions: []
+--- !u!114 &802882588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802882581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!1 &836555837
 GameObject:
   m_ObjectHideFlags: 0
@@ -30246,6 +30296,8 @@ GameObject:
   - component: {fileID: 836555840}
   - component: {fileID: 836555839}
   - component: {fileID: 836555838}
+  - component: {fileID: 836555843}
+  - component: {fileID: 836555844}
   m_Layer: 0
   m_Name: Enermy_Cyclope
   m_TagString: Untagged
@@ -30309,7 +30361,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &836555841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30377,6 +30429,39 @@ Transform:
   m_Father: {fileID: 1907587071}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836555843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836555837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 836555844}
+    allTransistions: []
+--- !u!114 &836555844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836555837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!1001 &855667580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32308,6 +32393,8 @@ GameObject:
   - component: {fileID: 942061307}
   - component: {fileID: 942061306}
   - component: {fileID: 942061305}
+  - component: {fileID: 942061310}
+  - component: {fileID: 942061311}
   m_Layer: 0
   m_Name: Enermy_Bamboo
   m_TagString: Untagged
@@ -32371,7 +32458,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &942061308
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32439,6 +32526,39 @@ Transform:
   m_Father: {fileID: 1907587071}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942061310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942061304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 942061311}
+    allTransistions: []
+--- !u!114 &942061311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942061304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!1 &986029608
 GameObject:
   m_ObjectHideFlags: 0
@@ -32473,7 +32593,7 @@ Transform:
   - {fileID: 1021233589}
   - {fileID: 1538582727}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1000527562
 PrefabInstance:
@@ -32632,7 +32752,7 @@ RectTransform:
   - {fileID: 606154439}
   - {fileID: 776094973}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -32705,7 +32825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1056578411
 GameObject:
@@ -32827,7 +32947,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1135750931 stripped
 Transform:
@@ -33286,6 +33406,8 @@ GameObject:
   - component: {fileID: 1497470797}
   - component: {fileID: 1497470796}
   - component: {fileID: 1497470795}
+  - component: {fileID: 1497470800}
+  - component: {fileID: 1497470801}
   m_Layer: 0
   m_Name: Enermy_Beast
   m_TagString: Untagged
@@ -33349,7 +33471,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1497470798
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33417,6 +33539,39 @@ Transform:
   m_Father: {fileID: 1907587071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497470800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497470794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 1497470801}
+    allTransistions: []
+--- !u!114 &1497470801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497470794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!1001 &1531381370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33502,6 +33657,8 @@ GameObject:
   - component: {fileID: 1620219992}
   - component: {fileID: 1620219991}
   - component: {fileID: 1620219990}
+  - component: {fileID: 1620219994}
+  - component: {fileID: 1620219995}
   m_Layer: 0
   m_Name: Enermy_Octopus
   m_TagString: Untagged
@@ -33580,7 +33737,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1620219993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33633,6 +33790,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1620219994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620219988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 1620219995}
+    allTransistions: []
+--- !u!114 &1620219995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620219988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!1 &1627866261
 GameObject:
   m_ObjectHideFlags: 0
@@ -34128,7 +34318,7 @@ Transform:
   - {fileID: 2036534443}
   - {fileID: 1620219989}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935000295
 GameObject:
@@ -34243,7 +34433,7 @@ Transform:
   - {fileID: 538713008}
   - {fileID: 343862538}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036534438
 GameObject:
@@ -34258,6 +34448,8 @@ GameObject:
   - component: {fileID: 2036534441}
   - component: {fileID: 2036534440}
   - component: {fileID: 2036534439}
+  - component: {fileID: 2036534444}
+  - component: {fileID: 2036534445}
   m_Layer: 0
   m_Name: Enermy_Skull
   m_TagString: Untagged
@@ -34321,7 +34513,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2036534442
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34389,6 +34581,39 @@ Transform:
   m_Father: {fileID: 1907587071}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036534444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036534438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7de0bbf6d7fb554c9e0704291569855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - ID: Wander
+    allActions:
+    - {fileID: 2036534445}
+    allTransistions: []
+--- !u!114 &2036534445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036534438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e8940db9c6ed944b221ff043b64876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 2, y: 2}
+  moveSpeed: 2
+  timeWander: 1.5
 --- !u!4 &2135065196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7394392972006568379, guid: dadd69d4385546d4aa3a69b1d2389b25, type: 3}
