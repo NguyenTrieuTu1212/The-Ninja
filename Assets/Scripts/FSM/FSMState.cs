@@ -1,45 +1,38 @@
-
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[SerializeField]
-public class FSMState 
+[Serializable]
+public class FSMState
 {
-
     public string ID;
     public FSMAction[] allActions;
     public FSMTransistion[] allTransistions;
-
 
 
     public void UpdateState(EnermyBrain enermyBrain)
     {
         ExcuteActions();
         ExcuteTransistion(enermyBrain);
-
-    }
-
-    public void ExcuteActions()
-    {
-        for (int i = 0; i < allActions.Length; i++) allActions[i].Action();
     }
 
 
-
-    public void ExcuteTransistion(EnermyBrain enermyBrain)
+    private void ExcuteActions()
     {
-        for(int i = 0; i < allTransistions.Length; i++)
+        foreach (FSMAction action in allActions) action.Action();
+    }
+
+
+    private void ExcuteTransistion(EnermyBrain enermyBrain)
+    {
+        foreach(FSMTransistion transistion in allTransistions)
         {
-            if (allTransistions == null || allTransistions.Length <= 0) return;
-            bool isTrueState = allTransistions[i].decide.Decide();
+            bool isTrueState = transistion.decide.Decide();
             if (isTrueState)
-            {
-                enermyBrain.ChangeState(allTransistions[i].trueState);
-            }
-            else
-            {
-                enermyBrain.ChangeState(allTransistions[i].falseState);
-            }
+                enermyBrain.ChangeState(transistion.trueState);
+            else 
+                enermyBrain.ChangeState(transistion.falseState); 
         }
     }
 }
