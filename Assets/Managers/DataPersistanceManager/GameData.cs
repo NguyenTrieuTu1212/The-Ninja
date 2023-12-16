@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+
+[System.Serializable]
+public class GameData
 {
-
-
-    private Vector3 posPlayer;
+    public Vector3 posPlayer;
     public GameData()
     {
         posPlayer = Vector3.zero;   

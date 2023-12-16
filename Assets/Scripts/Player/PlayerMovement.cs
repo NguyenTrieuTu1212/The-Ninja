@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour,IDataPersistance
 {
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Player player;
@@ -17,6 +17,16 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animations = gameObject.GetComponent<PlayerAnimations>();
         
+    }
+
+    public void LoadGame(GameData gameData)
+    {
+        rb2d.position = gameData.posPlayer;
+    }
+
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.posPlayer = rb2d.position;
     }
     private void Update()
     {
@@ -50,4 +60,6 @@ public class PlayerMovement : MonoBehaviour
         animations.SetMovingAnimation(moveDirection);
         
     }
+
+    
 }
