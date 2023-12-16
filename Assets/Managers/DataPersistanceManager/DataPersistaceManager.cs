@@ -8,6 +8,7 @@ public class DataPersistaceManager : MonoBehaviour
     public static DataPersistaceManager instance { get; private set; }
     private GameData gameData;
     private List<IDataPersistance> listDataPersistances = new List<IDataPersistance>();
+    private FileHandlerData fileHandlerData;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class DataPersistaceManager : MonoBehaviour
             return;
         }
         instance = this;
+        fileHandlerData = new FileHandlerData("Assets\\Data", "GameData.txt");
     }
 
 
@@ -34,6 +36,7 @@ public class DataPersistaceManager : MonoBehaviour
 
     private void LoadGame()
     {
+        gameData = fileHandlerData.ReadData();
         if (this.gameData == null)
         {
             Debug.Log("Can not find data in your game !!!");
@@ -43,7 +46,7 @@ public class DataPersistaceManager : MonoBehaviour
         {
             persistance.LoadGame(gameData);
         }
-        Debug.Log("Location of Player is loading " + gameData.posPlayer);
+        Debug.Log("Location of Player is loaded " + gameData.posPlayer);
     }
 
     private void SaveGame()
@@ -52,7 +55,8 @@ public class DataPersistaceManager : MonoBehaviour
         {
             persistance.SaveGame(ref gameData);
         }
-        Debug.Log("Location of Player is Save " + gameData.posPlayer);
+        fileHandlerData.WriteData(gameData);
+        Debug.Log("Location of Player is saved " + gameData.posPlayer);
     }
 
     private void OnApplicationQuit()

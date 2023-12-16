@@ -7,8 +7,11 @@ using UnityEngine;
 public class GameData
 {
     public Vector3 posPlayer;
+    public float healthPlayer;
+
     public GameData()
     {
-        posPlayer = Vector3.zero;   
+        posPlayer = Vector3.zero;
+        healthPlayer = 10f;
     }
 }

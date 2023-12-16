@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour,IDamageable
+public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
 {
     [SerializeField] private Player player;
     [SerializeField] private PlayerAnimations animations;
@@ -15,6 +15,17 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     {
         player = gameObject.GetComponent<Player>();
         animations = gameObject.GetComponent<PlayerAnimations>();
+    }
+
+
+    public void LoadGame(GameData gameData)
+    {
+        player.Stats.Health = gameData.healthPlayer;
+    }
+
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.healthPlayer = player.Stats.Health;
     }
 
     private void Update()
@@ -39,6 +50,8 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     {
         animations.SetDeadAnimation();
     }
+
+    
 
     /*IEnumerator WaitingPlayerRivial()
     {
