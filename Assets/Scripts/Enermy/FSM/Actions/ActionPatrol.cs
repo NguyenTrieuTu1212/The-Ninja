@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionPatrol : FSMAction
 {
 
-    [SerializeField] private string IDWaypont;
+    [SerializeField] private string IDWaypont= "Waypoint_1";
     [SerializeField] [Range(1f,10f)] private float speedPatrol;
     [SerializeField] private List<Transform> listPoints;
     
