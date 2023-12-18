@@ -31354,6 +31354,7 @@ GameObject:
   - component: {fileID: 802882587}
   - component: {fileID: 802882588}
   - component: {fileID: 802882589}
+  - component: {fileID: 802882590}
   m_Layer: 0
   m_Name: Enermy_Musroom
   m_TagString: Untagged
@@ -31507,7 +31508,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 802882590}
     allTransistions:
     - decide: {fileID: 802882589}
       trueState: 
@@ -31539,11 +31541,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88962969130d0847b19c77802831f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermy: {fileID: 0}
+  enermy: {fileID: 802882587}
   radius: 3
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &802882590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802882581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!1 &819967433
 GameObject:
   m_ObjectHideFlags: 0
@@ -31590,6 +31605,7 @@ GameObject:
   - component: {fileID: 836555838}
   - component: {fileID: 836555843}
   - component: {fileID: 836555844}
+  - component: {fileID: 836555846}
   - component: {fileID: 836555845}
   m_Layer: 0
   m_Name: Enermy_Cyclope
@@ -31744,7 +31760,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 836555846}
     allTransistions:
     - decide: {fileID: 836555845}
       trueState: 
@@ -31776,11 +31793,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88962969130d0847b19c77802831f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermy: {fileID: 0}
+  enermy: {fileID: 836555843}
   radius: 3
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &836555846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836555837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!1001 &855667580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33786,6 +33816,7 @@ GameObject:
   - component: {fileID: 942061310}
   - component: {fileID: 942061311}
   - component: {fileID: 942061312}
+  - component: {fileID: 942061313}
   m_Layer: 0
   m_Name: Enermy_Bamboo
   m_TagString: Untagged
@@ -33939,7 +33970,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 942061313}
     allTransistions:
     - decide: {fileID: 942061312}
       trueState: 
@@ -33976,6 +34008,19 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &942061313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942061304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!1 &986029608
 GameObject:
   m_ObjectHideFlags: 0
@@ -34873,6 +34918,7 @@ GameObject:
   - component: {fileID: 1497470795}
   - component: {fileID: 1497470800}
   - component: {fileID: 1497470801}
+  - component: {fileID: 1497470803}
   - component: {fileID: 1497470802}
   m_Layer: 0
   m_Name: Enermy_Beast
@@ -35027,7 +35073,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 1497470803}
     allTransistions:
     - decide: {fileID: 1497470802}
       trueState: 
@@ -35064,6 +35111,19 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1497470803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497470794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!1001 &1531381370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35213,6 +35273,7 @@ GameObject:
   - component: {fileID: 1620219990}
   - component: {fileID: 1620219994}
   - component: {fileID: 1620219995}
+  - component: {fileID: 1620219997}
   - component: {fileID: 1620219996}
   m_Layer: 0
   m_Name: Enermy_Octopus
@@ -35367,7 +35428,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 1620219997}
     allTransistions:
     - decide: {fileID: 1620219996}
       trueState: 
@@ -35399,11 +35461,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88962969130d0847b19c77802831f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermy: {fileID: 0}
+  enermy: {fileID: 1620219994}
   radius: 3
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1620219997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620219988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!1 &1627866261
 GameObject:
   m_ObjectHideFlags: 0
@@ -36031,6 +36106,7 @@ GameObject:
   - component: {fileID: 2036534439}
   - component: {fileID: 2036534444}
   - component: {fileID: 2036534445}
+  - component: {fileID: 2036534447}
   - component: {fileID: 2036534446}
   m_Layer: 0
   m_Name: Enermy_Skull
@@ -36185,7 +36261,8 @@ MonoBehaviour:
       trueState: Chase
       falseState: 
   - ID: Chase
-    allActions: []
+    allActions:
+    - {fileID: 2036534447}
     allTransistions:
     - decide: {fileID: 2036534446}
       trueState: 
@@ -36217,11 +36294,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88962969130d0847b19c77802831f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermy: {fileID: 0}
+  enermy: {fileID: 2036534444}
   radius: 3
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &2036534447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036534438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChase: 2
 --- !u!4 &2135065196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7394392972006568379, guid: dadd69d4385546d4aa3a69b1d2389b25, type: 3}
