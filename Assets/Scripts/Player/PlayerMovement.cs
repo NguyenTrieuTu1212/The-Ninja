@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour,IDataPersistance
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Player player;
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour,IDataPersistance
         
     }
 
-    public void LoadGame(GameData gameData)
+    /*public void LoadGame(GameData gameData)
     {
         rb2d.position = gameData.posPlayer;
     }
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour,IDataPersistance
     public void SaveGame(ref GameData gameData)
     {
         gameData.posPlayer = rb2d.position;
-    }
+    }*/
     private void Update()
     {
         ReadMovement();

@@ -31,11 +31,11 @@ public class DecisionDetectPlayer : FSMDecision
         Collider2D target = Physics2D.OverlapCircle(enermy.transform.position, radius, whatIsTarget);
         if (target != null)
         {
-            enermy.targetChase = target.transform;
+            enermy.target = target.transform;
         }
         else
         {
-            enermy.targetChase = null;
+            enermy.target = null;
         }
         
     }

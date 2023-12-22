@@ -44,8 +44,8 @@ public class ActionWander : FSMAction
 
     private void GetNewPosDestination()
     {
-        float randomX = Random.Range(-moveRange.x, moveRange.x) * 1.5f;
-        float randomY = Random.Range(-moveRange.y, moveRange.y) * 1.5f;
+        float randomX = Random.Range(-moveRange.x, moveRange.x) * 2.5f;
+        float randomY = Random.Range(-moveRange.y, moveRange.y) * 2.5f;
         movePosition = transform.position + new Vector3(randomX, randomY);
     }
 

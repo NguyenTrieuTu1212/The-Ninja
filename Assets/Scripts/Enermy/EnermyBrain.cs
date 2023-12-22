@@ -6,8 +6,7 @@ public class EnermyBrain : MonoBehaviour
 {
 
     public FSMState curretState { get; private set; }
-    public Transform targetChase { get; set; }
-
+    public Transform target { get; set; }
     public string initState = "";
     public FSMState[] states;
    

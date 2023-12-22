@@ -22,10 +22,10 @@ public class ActionChase : FSMAction
 
     private void Chasing()
     {
-        if (enermy.targetChase == null) return;
-        Vector3 dirOfPlayer = enermy.targetChase.position - transform.position;
+        if (enermy.target == null) return;
+        Vector3 dirOfPlayer = enermy.target.position - transform.position;
         if (dirOfPlayer.magnitude > 1.3f) 
-            transform.Translate(dirOfPlayer.normalized * speedChase * Time.deltaTime); ;
+            transform.Translate(dirOfPlayer.normalized * speedChase * Time.deltaTime);
 
     }
 }
