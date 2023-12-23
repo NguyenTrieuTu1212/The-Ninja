@@ -21,7 +21,6 @@ public class ActionAttackPlayer : FSMAction
 
     public override void Action()
     {
-        Knockback();
         AttackPlayer();
     }
 

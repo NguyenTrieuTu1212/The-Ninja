@@ -53,7 +53,7 @@ public class ActionWander : FSMAction
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position, moveRange *2f);
         Gizmos.DrawLine(transform.position, movePosition);
     }

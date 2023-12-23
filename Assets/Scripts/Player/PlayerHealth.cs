@@ -33,16 +33,19 @@ public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
         if (Input.GetKeyDown(KeyCode.H)) TakeDamage(1f);
         if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
             player.ResetPlayer();
+        if (player.Stats.Health <= 0f) PlayerDead();
     }
 
     public void TakeDamage(float amount)
     {
+        if (player.Stats.Health <= 0) return;
+        DamageManager.Intance.SetTextDamage(amount, transform);
         player.Stats.Health  = Mathf.Max(player.Stats.Health -= amount, 0f);
-        if(player.Stats.Health <= 0)
+        /*if(player.Stats.Health <= 0)
         {
             PlayerDead();
             //isRevival = false;
-        }
+        }*/
     }
 
 
