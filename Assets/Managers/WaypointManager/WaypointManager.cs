@@ -6,10 +6,10 @@ public class WaypointManager : MonoBehaviour
 {
 
     [SerializeField] private List<Transform> listWayPoints;
-
-
     private static WaypointManager intance;
     public static WaypointManager Intance => intance;
+
+    private Dictionary<string, Transform> transformDictionary = new Dictionary<string, Transform>();
 
 
     private void Awake()
@@ -32,7 +32,6 @@ public class WaypointManager : MonoBehaviour
         foreach (Transform objPrefab in objPrefabs)
         {
             listWayPoints.Add(objPrefab);
-
         }
         HideWayPoint();
     }
@@ -40,21 +39,21 @@ public class WaypointManager : MonoBehaviour
 
     private void HideWayPoint()
     {
-        foreach(Transform objPrefab in listWayPoints) objPrefab.gameObject.SetActive(false);   
+        foreach(Transform objPrefab in listWayPoints)
+        {
+            transformDictionary[objPrefab.name] = objPrefab;
+            objPrefab.gameObject.SetActive(false);
+        }
     }
-
 
 
     public Transform getWayPoints(string name)
     {
-        foreach(Transform transform in listWayPoints)
+        if(transformDictionary.TryGetValue(name, out Transform obj))
         {
-            if(transform.name == name)
-            {
-                transform.gameObject.SetActive(true);
-                return transform;
-            };
-        } 
+            obj.gameObject.SetActive(true);
+            return obj;
+        }
         return null;
     }
 
