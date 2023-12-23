@@ -6,8 +6,11 @@ public class DamageManager : MonoBehaviour
 {
     private static DamageManager intance;
     public static DamageManager Intance { get => intance; }
-    [SerializeField] private DamageText damageTextPrefs;
-    [SerializeField] private List<Transform> damagePrefabs;
+    [SerializeField] private List<DamageText> damagePrefabs;
+    [SerializeField] private Queue<DamageText> activeDamageText;
+    [SerializeField] private Transform poolPanel;
+    [SerializeField] private int amount;
+    
 
 
     private void Awake()
@@ -17,36 +20,62 @@ public class DamageManager : MonoBehaviour
             Debug.Log("More than 1 intance in your game");
             return;
         }
-        damagePrefabs = new List<Transform>();   
+        damagePrefabs = new List<DamageText>();
+        activeDamageText = new Queue<DamageText>();
         intance = this;
         AddPrefabs();
+        Prepare();
     }
 
 
 
     private void AddPrefabs()
     {
-        Transform objPrefabs = transform.Find("Prefabs");
-        if (objPrefabs == null) return;
-        foreach (Transform objPrefab in objPrefabs)
-            damagePrefabs.Add(objPrefab);
+        Transform objPrefs = transform.Find("Prefabs");
+        if (objPrefs == null) return;
+        foreach(Transform obj in objPrefs)
+        {
+            damagePrefabs.Add(obj.GetComponent<DamageText>());
+        }
         HidePrefabs();
     }
 
 
     private void HidePrefabs()
     {
-        foreach(Transform objPrefab in damagePrefabs) objPrefab.gameObject.SetActive(false);
+        foreach (DamageText damageText in damagePrefabs)
+        {
+            damageText.gameObject.SetActive(false);
+        }
     }
 
-    public void SetTextDamage(float damageAmount,Transform parent)
+
+    private void Prepare()
     {
-        DamageText damageText = Instantiate(damageTextPrefs,parent);
-        damageText.transform.position += Vector3.right * 0.5f;
-        damageText.SetTextDamageTMP(damageAmount);
+        for(int i=0;i < amount; i++)
+        {
+            DamageText damageText = Instantiate(damagePrefabs[0], poolPanel);
+            damageText.gameObject.SetActive(false);
+            activeDamageText.Enqueue(damageText);
+        }
     }
 
 
-    
+    public DamageText TakeDamageText(float damageAmount)
+    {
+        if (activeDamageText.Count < 0) Prepare();
+        DamageText damageText = activeDamageText.Dequeue();
+        damageText.SetTextDamageTMP(damageAmount);
+        damageText.gameObject.SetActive(true);
+        return damageText;
+    }
+
+
+    public void ReturnDamageText(DamageText damageText)
+    {
+        activeDamageText.Enqueue(damageText);
+        damageText.transform.SetParent(poolPanel);
+        damageText.gameObject.SetActive(false);
+    }    
 
 }

@@ -39,13 +39,9 @@ public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
     public void TakeDamage(float amount)
     {
         if (player.Stats.Health <= 0) return;
-        DamageManager.Intance.SetTextDamage(amount, transform);
+        DamageText damageText = DamageManager.Intance.TakeDamageText(amount);
+        damageText.transform.position = transform.position + Vector3.right * 0.5f;
         player.Stats.Health  = Mathf.Max(player.Stats.Health -= amount, 0f);
-        /*if(player.Stats.Health <= 0)
-        {
-            PlayerDead();
-            //isRevival = false;
-        }*/
     }
 
 

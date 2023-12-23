@@ -3052,8 +3052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616d0b120b615934dbd6cbfde654290a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTextPrefs: {fileID: 9205204528326328444, guid: d8235d7c662e1444fb5909fc7c963b77, type: 3}
   damagePrefabs: []
+  poolPanel: {fileID: 150267858}
+  amount: 10
 --- !u!4 &273124123
 Transform:
   m_ObjectHideFlags: 0
