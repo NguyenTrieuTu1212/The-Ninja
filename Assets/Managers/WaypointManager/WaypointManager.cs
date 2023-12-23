@@ -5,8 +5,8 @@ using UnityEngine;
 public class WaypointManager : MonoBehaviour
 {
 
-    private List<Transform> listPoints = new List<Transform>();
-    private Transform wayPointsObject;
+    [SerializeField] private List<Transform> listWayPoints;
+
 
     private static WaypointManager intance;
     public static WaypointManager Intance => intance;
@@ -14,17 +14,50 @@ public class WaypointManager : MonoBehaviour
 
     private void Awake()
     {
-        if(intance != null) Debug.Log("More than intance in your game !!!!");
+        if(intance != null)
+        {
+            Debug.Log("More than intance in your game !!!!");
+            return;
+        }
+        listWayPoints = new List<Transform>();
         WaypointManager.intance = this;
+        AddWayPoints();
     }
 
 
-    public List<Transform> getListPoints(string name)
+    private void AddWayPoints()
     {
-        wayPointsObject = transform.GetComponentInChildren<Transform>().Find(name);
-        // Load Tranform in list Points
-        for (int i = 0; i < wayPointsObject.gameObject.transform.childCount; i++)
-            listPoints.Add(wayPointsObject.gameObject.transform.GetChild(i));
-        return listPoints;
+        Transform objPrefabs = transform.Find("Prefabs");
+        if (objPrefabs == null) return;
+        foreach (Transform objPrefab in objPrefabs)
+        {
+            listWayPoints.Add(objPrefab);
+
+        }
+        HideWayPoint();
     }
+
+
+    private void HideWayPoint()
+    {
+        foreach(Transform objPrefab in listWayPoints) objPrefab.gameObject.SetActive(false);   
+    }
+
+
+
+    public Transform getWayPoints(string name)
+    {
+        foreach(Transform transform in listWayPoints)
+        {
+            if(transform.name == name)
+            {
+                transform.gameObject.SetActive(true);
+                return transform;
+            };
+        } 
+        return null;
+    }
+
+    
+
 }
