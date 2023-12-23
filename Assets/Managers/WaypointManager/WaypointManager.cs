@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-
+    [SerializeField] private Transform holder;
     [SerializeField] private List<Transform> listWayPoints;
     private static WaypointManager intance;
     public static WaypointManager Intance => intance;
-
     private Dictionary<string, Transform> transformDictionary = new Dictionary<string, Transform>();
 
 
@@ -19,8 +18,8 @@ public class WaypointManager : MonoBehaviour
             Debug.Log("More than intance in your game !!!!");
             return;
         }
-        listWayPoints = new List<Transform>();
         WaypointManager.intance = this;
+        listWayPoints = new List<Transform>();
         AddWayPoints();
     }
 
@@ -51,8 +50,9 @@ public class WaypointManager : MonoBehaviour
     {
         if(transformDictionary.TryGetValue(name, out Transform obj))
         {
-            obj.gameObject.SetActive(true);
-            return obj;
+            Transform waypointTranform = Instantiate(obj, holder);
+            waypointTranform.gameObject.SetActive(true);
+            return waypointTranform;
         }
         return null;
     }

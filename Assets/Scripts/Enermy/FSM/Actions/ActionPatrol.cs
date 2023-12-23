@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionPatrol : FSMAction
 {
 
-    [SerializeField] private string IDWaypont = "";
+    [SerializeField] private string IDWaypoint = "";
     [SerializeField] [Range(1f,10f)] private float speedPatrol;
     [SerializeField] private List<Transform> listPoints;
 
@@ -18,7 +18,8 @@ public class ActionPatrol : FSMAction
 
     private void Start()
     {
-        wayPoints = WaypointManager.Intance.getWayPoints(IDWaypont);
+        wayPoints = WaypointManager.Intance.getWayPoints(IDWaypoint);
+        wayPoints.position = transform.position;
         for (int i = 0; i < wayPoints.gameObject.transform.childCount; i++)
             listPoints.Add(wayPoints.gameObject.transform.GetChild(i));
         indexPoint = 0;
