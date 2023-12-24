@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ActionAttackPlayer : FSMAction
 {
-    
+    [SerializeField] Rigidbody2D rb;
     [SerializeField] private float damage;
     [SerializeField] private float timeWatingNextAttack;
-    [SerializeField] private float knockbackForce;
+    [SerializeField] float force;
+
 
     private Vector3 knockback;
     private EnermyBrain enermyBrain;
@@ -39,21 +40,6 @@ public class ActionAttackPlayer : FSMAction
     }
 
 
-
-    private void Knockback()
-    {
-        if (enermyBrain.target == null) return;
-        Vector2 direction = enermyBrain.target.transform.position - transform.position;
-        Rigidbody2D rbPlayer = enermyBrain.target.GetComponent<Rigidbody2D>();
-        if (direction.magnitude > 1.2f)
-        {
-            rbPlayer.AddForce(direction.normalized * knockbackForce,ForceMode2D.Impulse);
-        }
-        else
-        {
-            rbPlayer.AddForce(direction.normalized * knockbackForce, ForceMode2D.Force);
-        }
-    }
 }
 
 

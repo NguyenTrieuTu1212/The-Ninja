@@ -9,6 +9,9 @@ public class DecisionAttackPlayer : FSMDecision
     [SerializeField] private LayerMask whatIsTarget;
     [SerializeField][Range(0, 2f)] private float attackRange;
 
+
+  
+
     private void Awake()
     {
         enermyBrain = GetComponent<EnermyBrain>();
