@@ -12,6 +12,7 @@ public class PlayerAnimations : MonoBehaviour
     private readonly int isMoving = Animator.StringToHash("isMoving");
     private readonly int Dead = Animator.StringToHash("isDead");
     private readonly int Revival = Animator.StringToHash("isRevival");
+    private readonly int isAttacking = Animator.StringToHash("isAttacking");
 
     private void Awake()
     {
@@ -41,10 +42,19 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetBool(Revival, value);
     }
 
+    public void SetAttacking(bool value)
+    {
+        animator.SetBool(isAttacking, value);
+    }
+
     public void ResetPlayerAnimation()
     {
         SetMovingAnimation(Vector2.down);
         SetRivialAnimation(true);
     }
+
+
+
+    
     
 }
