@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ActionAttackPlayer : FSMAction
 {
-    [SerializeField] Rigidbody2D rb;
+
     [SerializeField] private float damage;
     [SerializeField] private float timeWatingNextAttack;
-    [SerializeField] float force;
+
 
 
     private Vector3 knockback;
