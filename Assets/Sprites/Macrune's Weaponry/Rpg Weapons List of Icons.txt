@@ -1,0 +1,204 @@
+List of Weapons that are in this pack
+
+*Note:
+Im using a rows and columns as coordinates (columns, rows) with the 16x16 spritesheet as reference.
+The top most left as (1, 1) and the bottom most right as (28, 28).*
+
+In this weapon pack, I include some color variations for the normal weapons representing different ore/materials used in the weapon.
+Light Brown: Copper
+Grey: Iron
+White: Silver
+Yellow: Gold
+Blue: Cobalt
+Green: Mythril
+Purple: Amethyst
+Black: Steel
+
+Of course, you can change the name of the materials used depending on your preferences.
+I add these names as a guide to help you understand what I'm making.
+
+<<<<<<<<<<<<<<<<<Melee weapons>>>>>>>>>>>>>>>>>>>>
+
+Some of the melee weapons have gems in them as a way to show that they're "Empowered" by the gems to make them stronger.
+
+Normal:
+1. Sword with no hilt (1, 1-14)
+2. Sword (2, 1-14)
+3. Dagger (3, 1-14)
+4. Dagger with only one side sharp (4, 1-14)
+5. Greatsword Thick ones (5, 1-14)
+6. Greatsword Thin ones (6, 1-14)
+7. Spear (7, 1-14)
+8. Spear with hilt (8, 1-14)
+9. Axe (9-10, 1-14)
+10. Mace (11-12, 1-14)
+11. Rapier (1, 15-28)
+12. Machete (2, 15-28)
+13. Knife (3, 15-28)
+14. Knife with two tips? (4, 15-28)
+15. Greatsword with hook tip (5, 15-28)
+16. Greatsword with one side sharp (6, 15-28)
+17. Double sided spear (7, 15-28)
+18. Trident (8, 15-28)
+19. Scythe (9, 15-28)
+20. halberd (10, 15-28)
+21. Hammer (11-12, 15-28)
+
+Special:
+1. Fire sword (15, 27)
+2. Aqua sword with the gem of the sea (16, 27)
+3. Dark dagger (17, 27)
+4. Poisonous Hook dagger (18, 27)
+5. Fire gem powered Greatsword (19, 27)
+6. Typical Holy greatsword (20, 27)
+7. Legendary spear (because they have scarf on them) (21, 27)
+8. Trident from the power of the sea (22, 27) or a certain shark's trident
+9. The Reaper's Scythe (23, 27) (A Reaper that like to rap)
+10. The Forest's Axe (24, 27)
+11. Frost Chain mace (25, 27)
+12. Whip (26, 27)
+13. The Spidersword (15, 28)
+14. The Pine Sword (16, 28)
+15. Double blade Gauntlet (17, 28)
+16. Big blade Gaunlet (18, 28)
+17. Dragon's Hook (19, 28)
+18. The Forest Blessing (20, 28)
+19. The Vampire's Spear (21, 28)
+20. The Volcanic Trident (22, 28)
+21. Blue Axe?? (23, 28)
+22. Volcanic Axe (24, 28)
+23. Rope Dart (25, 28)
+24. Nunchucks (26, 28)
+
+<<<<<<<<<<<<<<<<<Range weapons>>>>>>>>>>>>>>>>>>>>
+
+Normal:
+1. Normal Bow (15, 1-7)
+2. Recurve Bow (16, 1-7)
+3. Scythian Bow (17, 1-7)
+4. Turkish Bow (18, 1-7)
+5. Double String Bow (19, 1-7)
+6. Longbow (20, 1-7)
+7. Recurve Longbow (21, 1-7)
+8. Crossbow (22, 1-7)
+9. Chacram (23, 1-7)
+10. Shuriken (24, 1-7)
+11. Kunai (25, 1-7)
+12. Sling (26, 1-7)
+13. Bomerang (27, 1-7)
+14. Blowdart (28, 1-7)
+
+Special:
+1. Fire Bow (15, 8)
+2. Energy Bow (16, 8)
+3. Wooden Bow (17, 8)
+4. Charm Bow (18, 8)
+5. Mech Bow (19, 8)
+6. Volcanic Bow (20, 8)
+7. The Voice of Nature (21, 8)
+8. Energy Crossbow (22, 8)
+9. The Nights Chacram (23, 8)
+10. Molten Throwing Axe (24, 8)
+11. Mech Kunai (25, 8)
+12. Bola (26, 8)
+13. Wind Spirit Bomerang (27, 8)
+14. Frost Bite Blowdart (28, 8)
+
+Ammo:
+1. Flat Arrow (15, 9)
+2. Bodkin Arrow (16, 9)
+3. Spur Arrow (17, 9)
+4. Flar Arrow V.2 (18, 9)
+5. Barbed Arrow (19, 9)
+6. Rhombic Arrow (20, 9)
+7. Hook Arrow (21, 9)
+8. Point Bolt (22, 9)
+9. Hook Bolt (23, 9)
+10. Flat Bolt (24, 9)
+11. Pebbles (25, 9) (somewhat uncertain about this one)
+12. Metal Beads (26, 9)
+13. Flat Dart (27, 9)
+14. Point Dart (28, 9)
+
+Special Ammo:
+1. Wind Arrow (15, 10)
+2. Meteor Strike (16, 10)
+3. Tsunami (17, 10)
+4. Snake Fang (18, 10)
+5. Grappling Arrow (19, 10)
+6. The Forest's Fang (20, 10)
+7. Knockback Arrow (21, 10)
+8. Energy Bolt (22, 10)
+9. Fire Bolt (23, 10)
+10. Dungeon Bolt (24, 10)
+11. Elemental Beads (25, 10)
+12. Magma Drop (26, 10)
+13. Frost Dart (27, 10)
+14. Poison Dart (28, 10)
+
+<<<<<<<<<<<<<<<<<Magic weapons>>>>>>>>>>>>>>>>>>>>
+
+Normal:
+1. Staff (13-14, 1-28)
+2. Spell Book (15-20, 11-17)
+3. Ancient Spell Book (21-24, 11-17)
+4. Spell Cards (24-28, 11-17)
+
+Special:
+1. Dragon's Spell Book (15, 18)
+2. Frost Queen Spell Book (16, 18)
+3. The Spirit's Ancient Book (17, 18)
+4. Time Warden's Book (18, 18)
+5. The Underworld's Records (19, 18)
+6. The Sage's Hidden Book (20, 18)
+7. Eldritch God's Holy Book (21, 18) (Can summon takodachis)
+8. The Forest's --- (22, 18) (Half destroyed book)
+9. Star Fusion Spell Book (23, 18)
+10. Mechanoid Spell Book (24, 18)
+11. Mana Fusion Spell Card (25, 18)
+12. Frost Wave Spell Card (26, 18)
+13. Heal Spell Card (27, 18)
+14. Meteor Spell Card (28, 18)
+15. Forest Heart (27, 27)
+16. Demon's Staff (28, 27)
+17. Volcanic Staff (27, 28)
+18. Frost Queen Staff (28, 28)
+
+<<<<<<<<<<<<<<<<<Shields>>>>>>>>>>>>>>>>>>>>
+
+Normal:
+1. Wankel Shield (15, 19-25)
+2. Round Shield (16, 19-25)
+3. Heater Shield (17, 19-25)
+4. Square Shield (18, 19-25)
+5. Small Kite Shield (19, 19-25)
+6. Celtie Shield (20, 19-25)
+7. Kite Shield (21, 19-25)
+8. Heater Shield Big (22, 19-25)
+9. Coffin Shield (23, 19-25)
+10. Coffin Shield Full Plate (24, 19-25)
+11. Painted Round Shield (25, 19-25)
+12. Empowered Celtie Shield (26, 19-25)
+13. Empowered Coffin Shield (27, 19-25)
+14. Empowered Kite Shield (28, 19-25)
+
+Special:
+1. Plank Shield (15, 26)
+2. Volcanic Shield (16, 26)
+3. Frost Shield (17, 26)
+4. Dragon Head Shield (18, 26)
+5. Blue Round Shield (19, 26)
+6. Vampiric Shield (20, 26)
+7. Soul Trapping Shield (21, 26)
+8. Black Dragon Scale Shield (22, 26)
+9. The Ocean Fountain (23, 26)
+10. Holy Shield (24, 26)
+11. The Shield Of Cause and Effect (25, 26)
+12. Black Hole Shield (26, 26)
+13. Energy Shield (27, 26)
+14. The Forest's Barier (28, 26)
+
+Thats all the items and the names. I hope this will help you decide what to use.
+If you got any opinion or problem just contact me from my Itch.io profile.
+
+Made by Macrune12
