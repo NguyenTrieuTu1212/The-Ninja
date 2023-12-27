@@ -15,5 +15,5 @@ MonoBehaviour:
   iconWeapon: {fileID: -814012683, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
   damage: 2
-  bullet: {fileID: 4134291282315941379, guid: f8e2b7792eb159c4890b28b583450ffe, type: 3}
+  nameBullet: Energy_Ball
   RequireMana: 1

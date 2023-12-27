@@ -15,5 +15,5 @@ MonoBehaviour:
   iconWeapon: {fileID: -422569165, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
   damage: 0.5
-  bullet: {fileID: 7388051063583743075, guid: 1e95d437ba8ebb844b3cf50bd939bfee, type: 3}
+  nameBullet: Arrow
   RequireMana: 0.5

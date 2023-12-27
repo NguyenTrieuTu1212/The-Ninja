@@ -15,5 +15,5 @@ MonoBehaviour:
   iconWeapon: {fileID: -1879720235, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
   damage: 2
-  bullet: {fileID: 4825144259988672005, guid: 5c65d8280e36f024ba890d8665674b52, type: 3}
+  nameBullet: IceSpike
   RequireMana: 1

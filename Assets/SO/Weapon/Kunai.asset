@@ -15,5 +15,5 @@ MonoBehaviour:
   iconWeapon: {fileID: 21300000, guid: 7a0a04e20bd968e4b949968e1fa21d9d, type: 3}
   weaponType: 1
   damage: 1
-  bullet: {fileID: 8379486621605217852, guid: a5b3f75d8be4d2e4baab7f06a86ac657, type: 3}
+  nameBullet: Kunai
   RequireMana: 1

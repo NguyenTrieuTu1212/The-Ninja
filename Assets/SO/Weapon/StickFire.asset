@@ -15,5 +15,5 @@ MonoBehaviour:
   iconWeapon: {fileID: -535571636, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
   damage: 3
-  bullet: {fileID: 1301397858808689543, guid: e2e57970340dc1a43991eeb1a4bfaa6d, type: 3}
+  nameBullet: FIreBall
   RequireMana: 4

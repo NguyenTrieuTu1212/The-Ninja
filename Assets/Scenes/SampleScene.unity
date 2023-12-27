@@ -36848,7 +36848,7 @@ GameObject:
   - component: {fileID: 9029282815716376638}
   - component: {fileID: 3593071428584921567}
   m_Layer: 0
-  m_Name: Energy_Ball
+  m_Name: EnergyBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
