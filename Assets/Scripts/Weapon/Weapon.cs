@@ -25,8 +25,8 @@ public class Weapon : ScriptableObject
     public float damage;
 
 
-    [Header("Bullet")]
-    public BulletShoot bullet;
+    [Header("Name Bullet")]
+    public string nameBullet;
 
     [Header("Require Mana")]
     public float RequireMana;

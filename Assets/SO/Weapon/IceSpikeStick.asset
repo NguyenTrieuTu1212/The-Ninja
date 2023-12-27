@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bba88dc18287dae478502dca0443c034, type: 3}
-  m_Name: IceSpike
+  m_Name: IceSpikeStick
   m_EditorClassIdentifier: 
   iconWeapon: {fileID: -1879720235, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
