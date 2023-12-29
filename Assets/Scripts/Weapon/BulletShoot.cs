@@ -5,11 +5,10 @@ using UnityEngine;
 public class BulletShoot : MonoBehaviour
 {
     [SerializeField][Range(0f, 10f)] private float speedBullet;
-    [SerializeField] public Vector3 direction;
-
+    [SerializeField] public Vector3 Direction { get; set; }
 
     private void Update()
     {
-        transform.Translate(direction * speedBullet * Time.deltaTime);
+        transform.Translate(Direction * speedBullet * Time.deltaTime);
     }
 }

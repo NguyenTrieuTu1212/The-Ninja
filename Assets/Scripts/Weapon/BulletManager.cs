@@ -5,74 +5,96 @@ using UnityEngine;
 public class BulletManager : MonoBehaviour
 {
     private static BulletManager intance;
-    public static BulletManager Instance { get => intance; }
-
-    [SerializeField] private int amount;
-    [SerializeField] private List<GameObject> listBulletPrefabs;
+    public static BulletManager Instance { get=>intance;}
 
 
-    private Dictionary<string, Transform> transformDictionary;
-    private Queue<GameObject> queue;    
+    private Dictionary<string, BulletShoot> transformDictionary;
+    private Queue<BulletShoot> queueActiveBullet;
     private List<string> listBulletNames;
     private Transform pool;
+
+
+    
+    [SerializeField] private int amount;
+    [SerializeField] private List<BulletShoot> listBulletPrefabs;
+    
 
 
 
 
     private void Awake()
     {
-        if (intance != null) Debug.LogError("More than intance in your game !!!!!");
+        if (intance != null) Debug.Log("More than intance in your game !!!!");
         intance = this;
-        transformDictionary = new Dictionary<string, Transform>();
-        listBulletPrefabs = new List<GameObject>();
+        transformDictionary = new Dictionary<string, BulletShoot>();
+        queueActiveBullet = new Queue<BulletShoot>();
+        listBulletPrefabs = new List<BulletShoot>();
         listBulletNames = new List<string>();
-        queue = new Queue<GameObject>();
         pool = transform.Find("Holder");
-        AddPrefabs();
+        AddBulletPrefabs();
+        Prepare("Arrow");
     }
 
 
-
-    private void AddPrefabs()
+   
+    private void AddBulletPrefabs()
     {
-        Transform objPrefabs = transform.Find("Prefabs");
-        foreach(Transform child in objPrefabs)
+        Transform objPrefabs= transform.Find("Prefabs");
+        if (objPrefabs == null) return;
+        foreach(Transform obj in objPrefabs)
         {
-            listBulletPrefabs.Add(child.gameObject);
-            listBulletNames.Add(child.gameObject.name);
+            listBulletPrefabs.Add(obj.GetComponent<BulletShoot>());
+            listBulletNames.Add(obj.name);
+            transformDictionary[obj.name] = obj.GetComponent<BulletShoot>();
         }
         HidePrefabs();
-        AllPrepare();
     }
+    
 
 
     private void HidePrefabs()
     {
-        foreach(GameObject child in listBulletPrefabs)
+        foreach(BulletShoot bullet in listBulletPrefabs)
         {
-            transformDictionary[child.transform.name] = child.transform;
-            child.gameObject.SetActive(false);
+            bullet.gameObject.SetActive(false);
         }
     }
 
-
-    private void Prepare(string name)
+    /*private void Prepare()
     {
         for(int i = 0; i < amount; i++)
         {
-            if(transformDictionary.TryGetValue(name, out Transform obj))
+            BulletShoot bullet = Instantiate(listBulletPrefabs[0], pool);
+            bullet.gameObject.SetActive(false);
+            queueActiveBullet.Enqueue(bullet);
+        }
+    }*/
+
+    private void Prepare(string name)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            if (transformDictionary.TryGetValue(name, out BulletShoot obj))
             {
-                GameObject bullet = Instantiate(obj.gameObject, pool);
+                BulletShoot bullet = Instantiate(obj, pool);
+                bullet.gameObject.SetActive(false);
+                queueActiveBullet.Enqueue(bullet);
             }
         }
     }
 
-
-    private void AllPrepare()
+    /*private void AllPrepare()
     {
         foreach(string name in listBulletNames) Prepare(name);
+    }*/
+
+    public BulletShoot TakeBullet()
+    {
+        if(queueActiveBullet.Count < 0) Prepare("Arrow");
+        BulletShoot bullet = queueActiveBullet.Dequeue();
+        bullet.gameObject.SetActive(true);
+        return bullet;
     }
-
-
+    
     
 }

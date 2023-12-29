@@ -10,8 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FixedJoystick joystick;
     [SerializeField] private PlayerAnimations animations;
     private Vector2 moveDirection;
+    public Vector2 MoveDirection { get => moveDirection; }
 
-    
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -19,15 +20,6 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    /*public void LoadGame(GameData gameData)
-    {
-        rb2d.position = gameData.posPlayer;
-    }
-
-    public void SaveGame(ref GameData gameData)
-    {
-        gameData.posPlayer = rb2d.position;
-    }*/
     private void Update()
     {
         ReadMovement();
