@@ -10,27 +10,25 @@ public class PlayerAttack : MonoBehaviour
     private float currentAttackRotation;
     private PlayerMovement playerMovement;
     [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
-    [SerializeField] private List<Transform> listPointAttack;
+    [SerializeField] private List<Transform> listPointAttack = new List<Transform>();
 
     private void Awake()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
         playerMovement = GetComponent<PlayerMovement>();
-        listPointAttack  = new List<Transform>();
+        
     }
 
-    private void Start()
-    {
-        FindPointsAttacking();
-    }
+    
 
 
 
     private void Update()
     {
-        GetPosistionFire();
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            GetPosistionFire();
             Attack();
         }
     }
@@ -52,11 +50,10 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator WatingAttacking()
     {
-        BulletShoot bullet = BulletManager.Instance.TakeBullet();
-        bullet.Direction = Vector3.up;
-        GameObject bulletObj = bullet.gameObject;
-        bulletObj.transform.position = currentAttackPositon.position;
-        bulletObj.transform.rotation = Quaternion.Euler(new Vector3(0f,0f,currentAttackRotation));
+        if(currentAttackPositon != null)
+        {
+            BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position,currentAttackRotation);
+        }
         playerAnimations.SetAttacking(true);
         yield return new WaitForSeconds(timeWaitingAttack);
         playerAnimations.SetAttacking(false);

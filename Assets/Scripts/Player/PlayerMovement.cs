@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FixedJoystick joystick;
     [SerializeField] private PlayerAnimations animations;
     private Vector2 moveDirection;
-    public Vector2 MoveDirection { get => moveDirection; }
+    public Vector2 MoveDirection => moveDirection; 
 
 
     private void Awake()
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ReadMovement();
+       
     }
 
 
