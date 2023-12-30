@@ -2915,7 +2915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeWaitingAttack: 0.5
+  weapon: {fileID: 11400000, guid: 2a07678b4eae9e342a363a0637988d42, type: 2}
+  timeWaitingAttack: 0.3
 --- !u!1 &152234206
 GameObject:
   m_ObjectHideFlags: 0
@@ -36180,7 +36181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e272e69539d388f4dbf4ecb33d044ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 3
+  amount: 20
   listBulletPrefabs: []
 --- !u!4 &1990966611
 Transform:
@@ -37511,7 +37512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ba9b16f857bb345a963b108e49aed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBullet: 0
+  speedBullet: 7
 --- !u!212 &4060831233558655321
 SpriteRenderer:
   m_ObjectHideFlags: 0

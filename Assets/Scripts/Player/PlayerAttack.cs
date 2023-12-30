@@ -5,18 +5,24 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private EnermyBrain enermyTarget;
+
     private PlayerAnimations playerAnimations;
+    private PlayerMovement playerMovement;
+    private PlayerMana playerMana;
+
     private Transform currentAttackPositon;
     private float currentAttackRotation;
-    private PlayerMovement playerMovement;
     private List<Transform> listPointAttack = new List<Transform>();
 
+    [SerializeField] private Weapon weapon;
     [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
+    
 
     private void Awake()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerMana = GetComponent<PlayerMana>();
         FindPointsAttacking();
     }
 
@@ -55,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
         {
             BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
+            playerMana.UsedMana(weapon.RequireMana);
         }
         playerAnimations.SetAttacking(true);
         yield return new WaitForSeconds(timeWaitingAttack);

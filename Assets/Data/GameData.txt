@@ -4,5 +4,5 @@
         "y": -0.3066975772380829,
         "z": 0.0
     },
-    "healthPlayer": 1.0
+    "healthPlayer": 1.5
 }

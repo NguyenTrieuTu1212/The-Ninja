@@ -18,7 +18,7 @@ public class PlayerMana : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)) UsedMana(2f);
     }
 
-    private void UsedMana(float amount)
+    public void UsedMana(float amount)
     {
         player.Stats.mana = Mathf.Max(player.Stats.mana-=amount, 0f);
     }
