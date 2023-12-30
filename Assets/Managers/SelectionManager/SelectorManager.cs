@@ -46,6 +46,12 @@ public class SelectorManager : MonoBehaviour
         {
             EnermyBrain enermy = hit.collider.GetComponent<EnermyBrain>();
             if (enermy == null) return;
+            EnermyHealth enermyHealth = enermy.GetComponent<EnermyHealth>();
+            if (enermyHealth.CurrentHealth <= 0)
+            {
+                NoOnSelectedEnermy?.Invoke();
+                return;
+            }
             OnSelectedEnermy?.Invoke(enermy);
         }
         
