@@ -2877,6 +2877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 0947752473da01b4a9a09c36049400f1, type: 2}
   animations: {fileID: 0}
+  playerMana: {fileID: 0}
 --- !u!114 &150267866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,7 +2916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 2a07678b4eae9e342a363a0637988d42, type: 2}
+  weapon: {fileID: 11400000, guid: 1d4fb4a68050ec341b0a3b499893933b, type: 2}
   timeWaitingAttack: 0.5
 --- !u!1 &152234206
 GameObject:
