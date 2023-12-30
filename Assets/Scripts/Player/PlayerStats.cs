@@ -20,6 +20,13 @@ public class PlayerStats : ScriptableObject
     [Range(0f,100f)] public float expMultiplier;
 
 
+    [Header("Critical Damage of Player")]
+    public float baseDamage;
+    public float damageRange;
+    public float percentDamage;
+
+
+
     public void ResetStats()
     {
         maxHealth = 10;
@@ -31,5 +38,11 @@ public class PlayerStats : ScriptableObject
         level = 1;
         currentExp = 0f;
         expNextLevel = 100f;
+
+        baseDamage = 2f;
+        damageRange = 100f;
+
+        // Percent
+        percentDamage = 50f;
     }
 }

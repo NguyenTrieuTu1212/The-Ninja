@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private EnermyBrain enermyTarget;
+    private Player player;
 
     private PlayerAnimations playerAnimations;
     private PlayerMovement playerMovement;
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         playerAnimations = GetComponent<PlayerAnimations>();
         playerMovement = GetComponent<PlayerMovement>();
         playerMana = GetComponent<PlayerMana>();
+        player = GetComponent<Player>();
         FindPointsAttacking();
     }
 
@@ -61,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
             if(playerMana.currentMana < weapon.RequireMana) yield break;
             BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
-            bullet.damage = weapon.damage;
+            bullet.damage = GetDamageCritical();
             playerMana.UsedMana(weapon.RequireMana);
         }
         playerAnimations.SetAttacking(true);
@@ -69,6 +71,18 @@ public class PlayerAttack : MonoBehaviour
         playerAnimations.SetAttacking(false);
     }
 
+
+    private float GetDamageCritical()
+    {
+        float damage = player.Stats.baseDamage;
+        damage += weapon.damage;
+        float randomDamage = Random.Range(0f, 100f);
+        if(randomDamage <= player.Stats.damageRange)
+        {
+            damage += damage * (player.Stats.percentDamage/100f);
+        }
+        return damage;
+    }
 
     private void GetPosistionFire()
     {

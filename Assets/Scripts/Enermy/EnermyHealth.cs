@@ -27,7 +27,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
     public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
-        if (CurrentHealth < 0)
+        if (CurrentHealth <= 0)
         {
             animator.SetTrigger("Dead");
             enermyBrain.enabled = false;
