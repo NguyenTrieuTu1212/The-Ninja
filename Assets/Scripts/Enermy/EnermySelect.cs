@@ -21,7 +21,7 @@ public class EnermySelect : MonoBehaviour
         else selectorSprites.SetActive(false);
     }
 
-    private void NoEnermySelectedCallBack()
+    public void NoEnermySelectedCallBack()
     {
         selectorSprites.SetActive(false);
     }

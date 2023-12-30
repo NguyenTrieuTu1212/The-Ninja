@@ -6,6 +6,7 @@ public class BulletShoot : MonoBehaviour
 {
     [SerializeField][Range(0f, 10f)] private float speedBullet;
     public Vector3 direction { get; set; }
+    public float damage { get; set; }
     private void Update()
     {
         transform.Translate(direction * speedBullet * Time.deltaTime);
@@ -13,6 +14,11 @@ public class BulletShoot : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col != null ) BulletManager.Instance.ReturnBullet(gameObject.GetComponent<BulletShoot>());
+        
+        if(col != null)
+        {
+            col.gameObject.GetComponent<IDamageable>()?.TakeDamage(damage);
+            BulletManager.Instance.ReturnBullet(gameObject.GetComponent<BulletShoot>());
+        }
     }
 }

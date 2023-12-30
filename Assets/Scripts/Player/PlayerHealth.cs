@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
     {
         if (player.Stats.Health <= 0) return;
         DamageText damageText = DamageManager.Intance.TakeDamageText(amount);
+        damageText.transform.SetParent(transform);
         damageText.transform.position = transform.position + Vector3.right * 0.5f;
         player.Stats.Health  = Mathf.Max(player.Stats.Health -= amount, 0f);
     }

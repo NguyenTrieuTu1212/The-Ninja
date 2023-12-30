@@ -3234,7 +3234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePrefabs: []
-  poolPanel: {fileID: 150267858}
+  poolPanel: {fileID: 879426535}
   amount: 10
 --- !u!4 &273124123
 Transform:
@@ -3249,6 +3249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 655493718}
+  - {fileID: 879426535}
   m_Father: {fileID: 1887434521}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31999,6 +32000,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3057584389593295410, guid: dea58fb51f2097c4e9d41c0154757c3e, type: 3}
   m_PrefabInstance: {fileID: 751365271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &879426534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 879426535}
+  m_Layer: 0
+  m_Name: Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &879426535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879426534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 273124123}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881288114
 GameObject:
   m_ObjectHideFlags: 0
@@ -33940,12 +33972,13 @@ GameObject:
   - component: {fileID: 942061306}
   - component: {fileID: 942061305}
   - component: {fileID: 942061310}
+  - component: {fileID: 942061317}
+  - component: {fileID: 942061316}
   - component: {fileID: 942061311}
   - component: {fileID: 942061313}
   - component: {fileID: 942061315}
   - component: {fileID: 942061312}
   - component: {fileID: 942061314}
-  - component: {fileID: 942061316}
   m_Layer: 7
   m_Name: Enermy_Bamboo
   m_TagString: Untagged
@@ -34205,6 +34238,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 391665673}
+--- !u!114 &942061317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942061304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &985878185
 GameObject:
   m_ObjectHideFlags: 0
@@ -34252,7 +34298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986029609}
   m_Layer: 0
-  m_Name: PlantManager
+  m_Name: Plants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36516,12 +36562,13 @@ GameObject:
   - component: {fileID: 143118737572226257}
   - component: {fileID: 143118737572226256}
   - component: {fileID: 143118737572226269}
+  - component: {fileID: 143118737572226275}
+  - component: {fileID: 143118737572226274}
   - component: {fileID: 143118737572226266}
   - component: {fileID: 143118737572226264}
   - component: {fileID: 143118737572226273}
   - component: {fileID: 143118737572226267}
   - component: {fileID: 143118737572226272}
-  - component: {fileID: 143118737572226274}
   m_Layer: 7
   m_Name: Enermy_Musroom
   m_TagString: Untagged
@@ -36745,6 +36792,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 1702653327}
+--- !u!114 &143118737572226275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143118737572226259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 9
 --- !u!4 &328449083971464647
 Transform:
   m_ObjectHideFlags: 0
@@ -37113,12 +37173,13 @@ GameObject:
   - component: {fileID: 2074150267690288112}
   - component: {fileID: 2074150267690288127}
   - component: {fileID: 2074150267690288116}
+  - component: {fileID: 2074150267690288131}
+  - component: {fileID: 2074150267690288130}
   - component: {fileID: 2074150267690288117}
   - component: {fileID: 2074150267690288119}
   - component: {fileID: 2074150267690288129}
   - component: {fileID: 2074150267690288118}
   - component: {fileID: 2074150267690288128}
-  - component: {fileID: 2074150267690288130}
   m_Layer: 7
   m_Name: Enermy_Skull
   m_TagString: Untagged
@@ -37190,6 +37251,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 231200842}
+--- !u!114 &2074150267690288131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074150267690288126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!61 &2481274991570587907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37796,12 +37870,13 @@ GameObject:
   - component: {fileID: 4895142517464111835}
   - component: {fileID: 4895142517464111834}
   - component: {fileID: 4895142517464111830}
+  - component: {fileID: 4895142517464111839}
+  - component: {fileID: 4895142517464111838}
   - component: {fileID: 4895142517464111831}
   - component: {fileID: 4895142517464111825}
   - component: {fileID: 4895142517464111837}
   - component: {fileID: 4895142517464111824}
   - component: {fileID: 4895142517464111836}
-  - component: {fileID: 4895142517464111838}
   m_Layer: 7
   m_Name: Enermy_Octopus
   m_TagString: Untagged
@@ -37905,6 +37980,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 1388997596}
+--- !u!114 &4895142517464111839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895142517464111832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!61 &5045864365244108522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38402,12 +38490,13 @@ GameObject:
   - component: {fileID: 6473177965526746467}
   - component: {fileID: 6473177965526746466}
   - component: {fileID: 6473177965526746399}
+  - component: {fileID: 6473177965526746471}
+  - component: {fileID: 6473177965526746470}
   - component: {fileID: 6473177965526746392}
   - component: {fileID: 6473177965526746394}
   - component: {fileID: 6473177965526746469}
   - component: {fileID: 6473177965526746393}
   - component: {fileID: 6473177965526746468}
-  - component: {fileID: 6473177965526746470}
   m_Layer: 7
   m_Name: Enermy_Cyclope
   m_TagString: Untagged
@@ -38495,6 +38584,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 774234295}
+--- !u!114 &6473177965526746471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6473177965526746465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!4 &6538801064555733459
 Transform:
   m_ObjectHideFlags: 0
@@ -38678,12 +38780,13 @@ GameObject:
   - component: {fileID: 6798842853726490293}
   - component: {fileID: 6798842853726490290}
   - component: {fileID: 6798842853726490281}
+  - component: {fileID: 6798842853726490299}
+  - component: {fileID: 6798842853726490298}
   - component: {fileID: 6798842853726490280}
   - component: {fileID: 6798842853726490282}
   - component: {fileID: 6798842853726490297}
   - component: {fileID: 6798842853726490283}
   - component: {fileID: 6798842853726490296}
-  - component: {fileID: 6798842853726490298}
   m_Layer: 7
   m_Name: Enermy_Beast
   m_TagString: Untagged
@@ -38840,6 +38943,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprites: {fileID: 2133791913}
+--- !u!114 &6798842853726490299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798842853726490291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 12
 --- !u!114 &6857532938203110943
 MonoBehaviour:
   m_ObjectHideFlags: 0
