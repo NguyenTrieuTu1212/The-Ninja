@@ -32,10 +32,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        
+        GetPosistionFire();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetPosistionFire();
             Attack();
         }
     }
@@ -72,17 +71,20 @@ public class PlayerAttack : MonoBehaviour
     private void GetPosistionFire()
     {
         Vector2 currentPositionPlayer = playerMovement.MoveDirection;
-        if (Mathf.Abs(currentPositionPlayer.x) > Mathf.Abs(currentPositionPlayer.y))
+        if (currentPositionPlayer != Vector2.zero)
         {
-            // Xác ð?nh hý?ng ngang
-            currentAttackPositon = (currentPositionPlayer.x < 0f) ? listPointAttack[0] : listPointAttack[1];
-            currentAttackRotation = (currentPositionPlayer.x < 0f) ? 90f : -90f;
-        }
-        else
-        {
-            // Xác ð?nh hý?ng d?c
-            currentAttackPositon = (currentPositionPlayer.y > 0f) ? listPointAttack[2] : listPointAttack[3];
-            currentAttackRotation = (currentPositionPlayer.y > 0f) ? 0f : -180f;
+            if (Mathf.Abs(currentPositionPlayer.x) > Mathf.Abs(currentPositionPlayer.y))
+            {
+                // Xác ð?nh hý?ng ngang
+                currentAttackPositon = (currentPositionPlayer.x < 0f) ? listPointAttack[0] : listPointAttack[1];
+                currentAttackRotation = (currentPositionPlayer.x < 0f) ? 90f : -90f;
+            }
+            else
+            {
+                // Xác ð?nh hý?ng d?c
+                currentAttackPositon = (currentPositionPlayer.y > 0f) ? listPointAttack[2] : listPointAttack[3];
+                currentAttackRotation = (currentPositionPlayer.y > 0f) ? 0f : -180f;
+            }
         }
     }
 

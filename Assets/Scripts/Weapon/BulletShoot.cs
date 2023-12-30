@@ -13,6 +13,6 @@ public class BulletShoot : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col != null) BulletManager.Instance.ReturnBullet(gameObject.GetComponent<BulletShoot>());
+        if(col != null ) BulletManager.Instance.ReturnBullet(gameObject.GetComponent<BulletShoot>());
     }
 }
