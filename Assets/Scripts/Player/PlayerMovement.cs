@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private Player player;
+    private Rigidbody2D rb2d;
+    private Player player;
+    private PlayerAnimations animations;
     [SerializeField][Range(1f, 10f)] float speedPlayer;
     [SerializeField] private FixedJoystick joystick;
-    [SerializeField] private PlayerAnimations animations;
     private Vector2 moveDirection;
     public Vector2 MoveDirection => moveDirection; 
 
@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animations = gameObject.GetComponent<PlayerAnimations>();
-        
+        player = GetComponent<Player>();
+        animations = GetComponent<PlayerAnimations>();
     }
 
     private void Update()

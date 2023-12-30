@@ -63,7 +63,7 @@ public class DamageManager : MonoBehaviour
 
     public DamageText TakeDamageText(float damageAmount)
     {
-        if (activeDamageText.Count < 0) Prepare();
+        if (activeDamageText.Count <= 0) Prepare();
         DamageText damageText = activeDamageText.Dequeue();
         damageText.SetTextDamageTMP(damageAmount);
         damageText.gameObject.SetActive(true);

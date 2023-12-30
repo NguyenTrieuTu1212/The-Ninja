@@ -9,14 +9,15 @@ public class PlayerAttack : MonoBehaviour
     private Transform currentAttackPositon;
     private float currentAttackRotation;
     private PlayerMovement playerMovement;
+    private List<Transform> listPointAttack = new List<Transform>();
+
     [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
-    [SerializeField] private List<Transform> listPointAttack = new List<Transform>();
 
     private void Awake()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
         playerMovement = GetComponent<PlayerMovement>();
-        
+        FindPointsAttacking();
     }
 
     
@@ -36,8 +37,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void FindPointsAttacking()
     {
-        Transform transformPointAttack = transform.Find("Attack_Points");
-        foreach (Transform t in transformPointAttack) listPointAttack.Add(t);
+        Transform attackPoints = transform.Find("Attack_Points");
+        foreach (Transform attackPoint in attackPoints) listPointAttack.Add(attackPoint);
     }
 
     private void Attack()
@@ -50,9 +51,10 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator WatingAttacking()
     {
-        if(currentAttackPositon != null)
+        if (currentAttackPositon != null)
         {
-            BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position,currentAttackRotation);
+            BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position, currentAttackRotation);
+            bullet.direction = Vector3.up;
         }
         playerAnimations.SetAttacking(true);
         yield return new WaitForSeconds(timeWaitingAttack);
@@ -63,29 +65,17 @@ public class PlayerAttack : MonoBehaviour
     private void GetPosistionFire()
     {
         Vector2 currentPositionPlayer = playerMovement.MoveDirection;
-        switch (currentPositionPlayer.x)
+        if (Mathf.Abs(currentPositionPlayer.x) > Mathf.Abs(currentPositionPlayer.y))
         {
-            case < 0f:
-                currentAttackPositon = listPointAttack[0];
-                currentAttackRotation = -90f;
-                break;
-
-            case > 0f:
-                currentAttackPositon = listPointAttack[1];
-                currentAttackRotation = -270f;
-                break;
+            // Xác ð?nh hý?ng ngang
+            currentAttackPositon = (currentPositionPlayer.x < 0f) ? listPointAttack[0] : listPointAttack[1];
+            currentAttackRotation = (currentPositionPlayer.x < 0f) ? 90f : -90f;
         }
-        switch (currentPositionPlayer.y)
+        else
         {
-            case > 0f:
-                currentAttackPositon = listPointAttack[2];
-                currentAttackRotation = 0f;
-                break;
-
-            case < 0f:
-                currentAttackPositon = listPointAttack[3];
-                currentAttackRotation = -180f;
-                break;
+            // Xác ð?nh hý?ng d?c
+            currentAttackPositon = (currentPositionPlayer.y > 0f) ? listPointAttack[2] : listPointAttack[3];
+            currentAttackRotation = (currentPositionPlayer.y > 0f) ? 0f : -180f;
         }
     }
 

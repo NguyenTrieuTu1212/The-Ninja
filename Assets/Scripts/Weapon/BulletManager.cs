@@ -60,16 +60,6 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    /*private void Prepare()
-    {
-        for(int i = 0; i < amount; i++)
-        {
-            BulletShoot bullet = Instantiate(listBulletPrefabs[0], pool);
-            bullet.gameObject.SetActive(false);
-            queueActiveBullet.Enqueue(bullet);
-        }
-    }*/
-
     private void Prepare(string name)
     {
         for (int i = 0; i < amount; i++)
@@ -83,14 +73,14 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    /*private void AllPrepare()
+    private void AllPrepare()
     {
-        foreach(string name in listBulletNames) Prepare(name);
-    }*/
+        foreach (string name in listBulletNames) Prepare(name);
+    }
 
     public BulletShoot TakeBullet(Vector3 spawnPosition, float rotation)
     {
-        if(queueActiveBullet.Count < 0) Prepare("Arrow");
+        if(queueActiveBullet.Count <= 0) Prepare("Arrow");
         BulletShoot bullet = queueActiveBullet.Dequeue();
         bullet.gameObject.SetActive(true);
         bullet.gameObject.transform.position = spawnPosition;
@@ -98,5 +88,11 @@ public class BulletManager : MonoBehaviour
         return bullet;
     }
     
+    public void ReturnBullet(BulletShoot bullet)
+    {
+        queueActiveBullet.Enqueue((bullet));
+        bullet.gameObject.SetActive(false);
+        bullet.transform.SetParent(pool);
+    }
     
 }
