@@ -32,7 +32,7 @@ public class BulletManager : MonoBehaviour
         listBulletNames = new List<string>();
         pool = transform.Find("Holder");
         AddBulletPrefabs();
-        Prepare("EnergyBall");
+        Prepare("Arrow");
     }
 
 
@@ -80,7 +80,7 @@ public class BulletManager : MonoBehaviour
 
     public BulletShoot TakeBullet(Vector3 spawnPosition, float rotation)
     {
-        if(queueActiveBullet.Count <= 0) Prepare("EnergyBall");
+        if(queueActiveBullet.Count <= 0) Prepare("Arrow");
         BulletShoot bullet = queueActiveBullet.Dequeue();
         bullet.gameObject.SetActive(true);
         bullet.gameObject.transform.position = spawnPosition;
