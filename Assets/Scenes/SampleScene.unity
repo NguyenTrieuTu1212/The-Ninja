@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 1d4fb4a68050ec341b0a3b499893933b, type: 2}
+  initWeapon: {fileID: 11400000, guid: 1d4fb4a68050ec341b0a3b499893933b, type: 2}
   timeWaitingAttack: 0.5
 --- !u!1 &152234206
 GameObject:
@@ -32539,7 +32539,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 776094973}
-  - component: {fileID: 776094974}
   m_Layer: 5
   m_Name: PlayerUI_Panel
   m_TagString: Untagged
@@ -32572,26 +32571,6 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: -20}
   m_SizeDelta: {x: 350, y: 150}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &776094974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776094972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2feb296aed6fbca48a9298d8ff7d8114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 150267865}
-  healthBar: {fileID: 660802137}
-  manaBar: {fileID: 1788155614}
-  expBar: {fileID: 774158256}
-  levelTMP: {fileID: 3865581}
-  healthTMP: {fileID: 1703068623}
-  manaTMP: {fileID: 1627866263}
-  expTMP: {fileID: 1341558647}
 --- !u!1 &795428269
 GameObject:
   m_ObjectHideFlags: 0
@@ -36593,7 +36572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -28.42, y: 0}
+  m_AnchoredPosition: {x: -28.419998, y: 0}
   m_SizeDelta: {x: 56.84, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465698179
@@ -36933,7 +36912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -32.188, y: 0}
+  m_AnchoredPosition: {x: -32.188004, y: 0}
   m_SizeDelta: {x: 64.395, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566867470
@@ -37245,7 +37224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -33.338, y: 0}
+  m_AnchoredPosition: {x: -33.337997, y: 0}
   m_SizeDelta: {x: 66.705, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639821519
@@ -37902,6 +37881,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734717735}
   m_CullTransparentMesh: 1
+--- !u!1 &1741232185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741232186}
+  - component: {fileID: 1741232187}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1741232186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741232185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1887434521}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741232187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741232185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feb296aed6fbca48a9298d8ff7d8114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 150267865}
+  healthBar: {fileID: 660802137}
+  manaBar: {fileID: 1788155614}
+  expBar: {fileID: 774158256}
+  levelTMP: {fileID: 3865581}
+  healthTMP: {fileID: 1703068623}
+  manaTMP: {fileID: 1627866263}
+  expTMP: {fileID: 1341558647}
+  statsPanel: {fileID: 204857106}
+  levelStatTMP: {fileID: 1446249649}
+  totalExpTMP: {fileID: 1465698179}
+  damageTMP: {fileID: 1640275404}
+  expStatTMP: {fileID: 1375330836}
+  criticalChanceTMP: {fileID: 1566867470}
+  requireExpTMP: {fileID: 1639821519}
+  criticalDamageTMP: {fileID: 1139829376}
 --- !u!1 &1784224953
 GameObject:
   m_ObjectHideFlags: 0
@@ -38106,6 +38145,7 @@ Transform:
   - {fileID: 317611409}
   - {fileID: 1995571180}
   - {fileID: 1784224954}
+  - {fileID: 1741232186}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41961,7 +42001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.95, y: -1.04}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8577109387759400108

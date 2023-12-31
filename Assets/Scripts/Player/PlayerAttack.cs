@@ -15,7 +15,9 @@ public class PlayerAttack : MonoBehaviour
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
 
-    [SerializeField] private Weapon weapon;
+    private Weapon currentWeapon;
+
+    [SerializeField] private Weapon initWeapon;
     [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
     
 
@@ -25,13 +27,11 @@ public class PlayerAttack : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerMana = GetComponent<PlayerMana>();
         player = GetComponent<Player>();
+        EquidWeapon(initWeapon);
         FindPointsAttacking();
     }
 
     
-
-
-
     private void Update()
     {
         GetPosistionFire();
@@ -60,26 +60,32 @@ public class PlayerAttack : MonoBehaviour
     {
         if (currentAttackPositon != null)
         {
-            if(playerMana.currentMana < weapon.RequireMana) yield break;
+            if(playerMana.currentMana < currentWeapon.RequireMana) yield break;
             BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
             bullet.damage = GetDamageCritical();
-            playerMana.UsedMana(weapon.RequireMana);
+            playerMana.UsedMana(currentWeapon.RequireMana);
         }
         playerAnimations.SetAttacking(true);
         yield return new WaitForSeconds(timeWaitingAttack);
         playerAnimations.SetAttacking(false);
     }
 
+    private void EquidWeapon(Weapon weapon)
+    {
+        currentWeapon = weapon;
+        player.Stats.totalDamage += player.Stats.baseDamage + currentWeapon.damage;
+    }
+
 
     private float GetDamageCritical()
     {
         float damage = player.Stats.baseDamage;
-        damage += weapon.damage;
+        damage += currentWeapon.damage;
         float randomDamage = Random.Range(0f, 100f);
-        if(randomDamage <= player.Stats.damageRange)
+        if(randomDamage <= player.Stats.criticalChance)
         {
-            damage += damage * (player.Stats.percentDamage/100f);
+            damage += damage * (player.Stats.criticalDamage/100f);
         }
         return damage;
     }

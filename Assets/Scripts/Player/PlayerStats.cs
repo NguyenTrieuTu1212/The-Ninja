@@ -22,10 +22,12 @@ public class PlayerStats : ScriptableObject
 
     [Header("Critical Damage of Player")]
     public float baseDamage;
-    public float damageRange;
-    public float percentDamage;
+    public float criticalChance;
+    public float criticalDamage;
 
 
+    [HideInInspector] public float totalExp;
+    [HideInInspector] public float totalDamage;
 
     public void ResetStats()
     {
@@ -40,9 +42,7 @@ public class PlayerStats : ScriptableObject
         expNextLevel = 100f;
 
         baseDamage = 2f;
-        damageRange = 100f;
-
-        // Percent
-        percentDamage = 50f;
+        criticalChance = 10f;
+        criticalDamage = 50f;
     }
 }

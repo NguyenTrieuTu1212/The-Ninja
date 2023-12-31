@@ -10,6 +10,7 @@ public class PlayerExp : MonoBehaviour
     private void Awake()
     {
         player = gameObject.GetComponent<Player>();
+        player.Stats.totalExp = 0;
     }
 
 
@@ -20,6 +21,7 @@ public class PlayerExp : MonoBehaviour
     }
     private void AddExp(float amount)
     {
+        player.Stats.totalExp += amount;
         player.Stats.currentExp += amount;
         while(player.Stats.currentExp >= player.Stats.expNextLevel)
         {
