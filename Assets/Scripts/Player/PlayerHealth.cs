@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
 {
-    [SerializeField] private Player player;
-    [SerializeField] private PlayerAnimations animations;
+    private Player player;
+    private PlayerAnimations animations;
     [SerializeField][Range(0f, 10f)] float timeToRevival;
 
 

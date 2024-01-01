@@ -5,11 +5,10 @@ using System;
 
 public class AttributeButton : MonoBehaviour
 {
-    public static event Action<AttributesType> OnClickButtonAttribute;
+    public static event Action<AttributesType> OnAttributesSelectEvent;
     [SerializeField] private AttributesType attributesType;
     public void SelectButtonAddPoint()
     {
-        OnClickButtonAttribute?.Invoke(attributesType);
-        Debug.Log("Selected is : " + attributesType);
+        OnAttributesSelectEvent?.Invoke(attributesType);
     }
 }

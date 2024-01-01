@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerExp : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    float currentExpPlayer;
-
+    private Player player;
+    
     private void Awake()
     {
         player = gameObject.GetComponent<Player>();
@@ -33,6 +32,7 @@ public class PlayerExp : MonoBehaviour
 
     private void NextLevel ()
     {
+        player.Stats.atrributePoint++;
         player.Stats.level++;
         float expNextLevel = player.Stats.expNextLevel;
         float expRequiredForNextLevel = Mathf.Round(player.Stats.expNextLevel + (expNextLevel * (player.Stats.expMultiplier / 100f)));

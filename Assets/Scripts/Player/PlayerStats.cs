@@ -34,6 +34,7 @@ public class PlayerStats : ScriptableObject
     public float criticalDamage;
 
     [Header("Attribute")]
+    public int atrributePoint;
     public int strength;
     public int dexterity;
     public int intelligence;
@@ -57,6 +58,8 @@ public class PlayerStats : ScriptableObject
         criticalChance = 10f;
         criticalDamage = 50f;
 
+
+        atrributePoint = 1;
         strength = 0;
         dexterity = 0;
         intelligence = 0;

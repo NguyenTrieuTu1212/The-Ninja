@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMana : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    private Player player;
     public float currentMana { get; private set; }
 
 
