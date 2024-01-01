@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Player player;
     private PlayerAnimations animations;
     [SerializeField][Range(1f, 10f)] float speedPlayer;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private VariableJoystick joystick;
     private Vector2 moveDirection;
     public Vector2 MoveDirection => moveDirection; 
 

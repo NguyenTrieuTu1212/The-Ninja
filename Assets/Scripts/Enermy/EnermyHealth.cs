@@ -9,6 +9,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
     public float CurrentHealth { get; private set; }
     private EnermyBrain enermyBrain;
     private EnermySelect enermySelect;
+    private EnermyLoot enermyLoot;
     private Animator animator;
 
 
@@ -16,6 +17,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
     {
         enermyBrain = GetComponent<EnermyBrain>();
         enermySelect = GetComponent<EnermySelect>();
+        enermyLoot = GetComponent<EnermyLoot>();
         animator = GetComponent<Animator>();
     }
 
@@ -29,9 +31,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         CurrentHealth -= amount;
         if (CurrentHealth <= 0)
         {
-            animator.SetTrigger("Dead");
-            enermyBrain.enabled = false;
-            enermySelect.NoEnermySelectedCallBack();
+            DisableEnermy();
         }
         else
         {
@@ -39,5 +39,14 @@ public class EnermyHealth : MonoBehaviour,IDamageable
             damageText.transform.SetParent(transform);
             damageText.transform.position = transform.position + Vector3.right * 0.5f;
         }
+    }
+
+
+    private void DisableEnermy()
+    {
+        animator.SetTrigger("Dead");
+        enermyBrain.enabled = false;
+        enermySelect.NoEnermySelectedCallBack();
+        PlayerManager.Instance.AddExpPlayer(enermyLoot.ExpAmountDrop);
     }
 }

@@ -19,7 +19,7 @@ public class PlayerExp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) AddExp(300f);
        
     }
-    private void AddExp(float amount)
+    public void AddExp(float amount)
     {
         player.Stats.totalExp += amount;
         player.Stats.currentExp += amount;
