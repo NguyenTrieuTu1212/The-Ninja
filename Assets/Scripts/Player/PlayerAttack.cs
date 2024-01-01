@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
 
     private Weapon currentWeapon;
 
-    [SerializeField] private Weapon initWeapon;
+    [SerializeField] public Weapon initWeapon;
     [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
     
 
@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
         if (currentAttackPositon != null)
         {
             if(playerMana.currentMana < currentWeapon.RequireMana) yield break;
-            BulletShoot bullet = BulletManager.Instance.TakeBullet(currentAttackPositon.position, currentAttackRotation);
+            BulletShoot bullet = BulletManager.Instance.TakeBullet(initWeapon.nameBullet,currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
             bullet.damage = GetDamageCritical();
             playerMana.UsedMana(currentWeapon.RequireMana);

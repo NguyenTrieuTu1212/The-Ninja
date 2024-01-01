@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BulletManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class BulletManager : MonoBehaviour
 
 
     private Dictionary<string, BulletShoot> transformDictionary;
+    private Dictionary<string, Queue<BulletShoot>> bulletQueues = new Dictionary<string, Queue<BulletShoot>>();
     private Queue<BulletShoot> queueActiveBullet;
     private List<string> listBulletNames;
     private Transform pool;
@@ -32,7 +34,7 @@ public class BulletManager : MonoBehaviour
         listBulletNames = new List<string>();
         pool = transform.Find("Holder");
         AddBulletPrefabs();
-        Prepare("Arrow");
+        AllPrepare();
     }
 
 
@@ -62,15 +64,22 @@ public class BulletManager : MonoBehaviour
 
     private void Prepare(string name)
     {
-        for (int i = 0; i < amount; i++)
+        if (transformDictionary.TryGetValue(name, out BulletShoot obj) && obj != null)
         {
-            if (transformDictionary.TryGetValue(name, out BulletShoot obj))
+            if (!bulletQueues.ContainsKey(name))
+            {
+                bulletQueues[name] = new Queue<BulletShoot>();
+            }
+
+            for (int i = 0; i < amount; i++)
             {
                 BulletShoot bullet = Instantiate(obj, pool);
                 bullet.gameObject.SetActive(false);
-                queueActiveBullet.Enqueue(bullet);
+                bulletQueues[name].Enqueue(bullet);
             }
         }
+        else return;
+
     }
 
     private void AllPrepare()
@@ -78,19 +87,21 @@ public class BulletManager : MonoBehaviour
         foreach (string name in listBulletNames) Prepare(name);
     }
 
-    public BulletShoot TakeBullet(Vector3 spawnPosition, float rotation)
+    public BulletShoot TakeBullet(string bulletName, Vector3 spawnPosition, float rotation)
     {
-        if(queueActiveBullet.Count <= 0) Prepare("Arrow");
-        BulletShoot bullet = queueActiveBullet.Dequeue();
+        
+        if (!bulletQueues.ContainsKey(bulletName) || bulletQueues[bulletName].Count <= 0)
+            Prepare(bulletName);
+        BulletShoot bullet = bulletQueues[bulletName].Dequeue();
         bullet.gameObject.SetActive(true);
         bullet.gameObject.transform.position = spawnPosition;
-        bullet.gameObject.transform.rotation = Quaternion.Euler(0f,0f,rotation);
+        bullet.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
         return bullet;
     }
     
-    public void ReturnBullet(BulletShoot bullet)
+    public void ReturnBullet(string bulletName,BulletShoot bullet)
     {
-        queueActiveBullet.Enqueue((bullet));
+        bulletQueues[bulletName].Enqueue(bullet);
         bullet.gameObject.SetActive(false);
         bullet.transform.SetParent(pool);
     }

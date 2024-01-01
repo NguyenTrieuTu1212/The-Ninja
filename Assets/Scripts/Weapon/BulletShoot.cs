@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BulletShoot : MonoBehaviour
 {
+    [SerializeField] private PlayerAttack playerAttack;
     [SerializeField][Range(0f, 10f)] private float speedBullet;
+    
     public Vector3 direction { get; set; }
     public float damage { get; set; }
     private void Update()
@@ -18,7 +20,7 @@ public class BulletShoot : MonoBehaviour
         if(col != null)
         {
             col.gameObject.GetComponent<IDamageable>()?.TakeDamage(damage);
-            BulletManager.Instance.ReturnBullet(gameObject.GetComponent<BulletShoot>());
+            BulletManager.Instance.ReturnBullet(playerAttack.initWeapon.nameBullet,gameObject.GetComponent<BulletShoot>());
         }
     }
 }
