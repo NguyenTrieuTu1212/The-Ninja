@@ -104,6 +104,7 @@ public class BulletManager : MonoBehaviour
         bulletQueues[bulletName].Enqueue(bullet);
         bullet.gameObject.SetActive(false);
         bullet.transform.SetParent(pool);
+        
     }
     
 }
