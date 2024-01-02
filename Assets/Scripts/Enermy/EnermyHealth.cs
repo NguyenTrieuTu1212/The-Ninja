@@ -12,7 +12,6 @@ public class EnermyHealth : MonoBehaviour,IDamageable
     private EnermyLoot enermyLoot;
     private Animator animator;
 
-
     private void Awake()
     {
         enermyBrain = GetComponent<EnermyBrain>();
@@ -38,6 +37,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
             DamageText damageText = DamageManager.Intance.TakeDamageText(amount);
             damageText.transform.SetParent(transform);
             damageText.transform.position = transform.position + Vector3.right * 0.5f;
+           
         }
     }
 
