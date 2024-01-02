@@ -101,9 +101,11 @@ public class BulletManager : MonoBehaviour
     
     public void ReturnBullet(string bulletName,BulletShoot bullet)
     {
+
         bulletQueues[bulletName].Enqueue(bullet);
         bullet.gameObject.SetActive(false);
         bullet.transform.SetParent(pool);
+
         
     }
     

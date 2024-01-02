@@ -10,8 +10,6 @@ public class BulletShoot : MonoBehaviour
     public Vector3 direction { get; set; }
     public float damage { get; set; }
 
-    
-
     private void Update()
     {
         transform.Translate(direction * speedBullet * Time.deltaTime);
@@ -26,6 +24,4 @@ public class BulletShoot : MonoBehaviour
         }
     }
 
-
-    
 }
