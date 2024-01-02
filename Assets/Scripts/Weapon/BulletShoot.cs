@@ -7,7 +7,6 @@ public class BulletShoot : MonoBehaviour
     [SerializeField] private PlayerAttack playerAttack;
     [SerializeField][Range(0f, 10f)] private float speedBullet;
 
-
     public Vector3 direction { get; set; }
     public float damage { get; set; }
 
@@ -28,5 +27,5 @@ public class BulletShoot : MonoBehaviour
     }
 
 
-
+    
 }
