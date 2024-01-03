@@ -9,6 +9,8 @@ public class BulletShoot : MonoBehaviour
     public Vector3 direction { get; set; }
     public float damage { get; set; }
 
+    [SerializeField] private Animator animator;
+
     
 
     private void Update()
@@ -16,15 +18,21 @@ public class BulletShoot : MonoBehaviour
         transform.Translate(direction * speedBullet * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    public virtual void ReturnBulletInQueue()
     {
-        if(col != null)
-        {
-            col.gameObject.GetComponent<IDamageable>()?.TakeDamage(damage);
-            BulletManager.Instance.ReturnBullet(playerAttack.initWeapon.nameBullet,gameObject.GetComponent<BulletShoot>());
-        }
+        BulletManager.Instance.ReturnBullet(playerAttack.initWeapon.nameBullet, gameObject.GetComponent<BulletShoot>());
     }
 
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        animator.SetBool("isDestroy", true);
+        collision.gameObject.GetComponent<IDamageable>()?.TakeDamage(damage);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        animator.SetBool("isDestroy", false);
+    }
 
 }

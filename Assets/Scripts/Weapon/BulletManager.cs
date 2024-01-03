@@ -96,17 +96,18 @@ public class BulletManager : MonoBehaviour
         bullet.gameObject.SetActive(true);
         bullet.gameObject.transform.position = spawnPosition;
         bullet.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+        Animator anim = bullet.GetComponent<Animator>();
+        if (anim != null) anim.enabled = true;
         return bullet;
     }
-    
-    public void ReturnBullet(string bulletName,BulletShoot bullet)
+
+    public void ReturnBullet(string bulletName, BulletShoot bullet)
     {
 
         bulletQueues[bulletName].Enqueue(bullet);
         bullet.gameObject.SetActive(false);
         bullet.transform.SetParent(pool);
-
-        
     }
     
+
 }

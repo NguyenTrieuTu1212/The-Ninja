@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DestroyEnergyBall
+  m_Name: DestroyIceBike
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -156,9 +156,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.11666667
-    functionName: ReturnBulletInQueue
+    functionName: 
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 78ba9b16f857bb345a963b108e49aed2, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
