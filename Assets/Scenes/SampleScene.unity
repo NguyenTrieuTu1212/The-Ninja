@@ -3252,7 +3252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initWeapon: {fileID: 11400000, guid: 3336a5311a9385b4795a5a314e691032, type: 2}
+  initWeapon: {fileID: 11400000, guid: 2a07678b4eae9e342a363a0637988d42, type: 2}
   timeWaitingAttack: 0.5
 --- !u!114 &150267869
 MonoBehaviour:
@@ -42268,7 +42268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   speedBullet: 7
-  animator: {fileID: 0}
+  animator: {fileID: 5239359204992453921}
 --- !u!58 &4029421304296280952
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42332,6 +42332,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5107734214980531714}
   - component: {fileID: 5239359204992453919}
+  - component: {fileID: 5239359204992453921}
+  - component: {fileID: 5239359204992453920}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -42753,6 +42755,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5239359204992453920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457845798637936002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafb51073be954440a0151ccc16d963d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &5239359204992453921
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457845798637936002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d194833f271a9b4f859f8583fce20c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!223 &5247487021335604010
 Canvas:
   m_ObjectHideFlags: 0
