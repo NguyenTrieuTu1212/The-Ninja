@@ -5,11 +5,12 @@ using UnityEngine;
 public class BulletShoot : MonoBehaviour
 {
     [SerializeField] private PlayerAttack playerAttack;
+    [SerializeField] private Animator animator;
     [SerializeField][Range(0f, 10f)] private float speedBullet;
     public Vector3 direction { get; set; }
     public float damage { get; set; }
 
-    [SerializeField] private Animator animator;
+    
 
     
 

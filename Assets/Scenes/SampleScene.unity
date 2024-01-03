@@ -3505,7 +3505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initWeapon: {fileID: 11400000, guid: 2a07678b4eae9e342a363a0637988d42, type: 2}
+  initWeapon: {fileID: 11400000, guid: aa7fcd3b8ef055348901bdab5eb578bd, type: 2}
   timeWaitingAttack: 0.5
 --- !u!114 &150267869
 MonoBehaviour:
@@ -44246,8 +44246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
-  speedBullet: 7
   animator: {fileID: 1535474677636313118}
+  speedBullet: 7
 --- !u!58 &2074150267690288112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -44762,8 +44762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
-  speedBullet: 7
   animator: {fileID: 6104896002280403874}
+  speedBullet: 7
 --- !u!114 &3977508907929196499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44777,8 +44777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
-  speedBullet: 7
   animator: {fileID: 5239359204992453921}
+  speedBullet: 7
 --- !u!58 &4029421304296280952
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45446,6 +45446,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7114067030292934981}
   - component: {fileID: 577133421280607357}
+  - component: {fileID: 7114067030292934983}
+  - component: {fileID: 7114067030292934982}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -45487,8 +45489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
+  animator: {fileID: 7114067030292934983}
   speedBullet: 7
-  animator: {fileID: 0}
 --- !u!95 &6104896002280403874
 Animator:
   serializedVersion: 5
@@ -46366,6 +46368,38 @@ Transform:
   m_Father: {fileID: 884199193800554600}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &7114067030292934982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018946309533189382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafb51073be954440a0151ccc16d963d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &7114067030292934983
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018946309533189382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0343025b4cf6c44a8fea8682c66b0b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7292509245793233272
 GameObject:
   m_ObjectHideFlags: 0
@@ -46438,8 +46472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
-  speedBullet: 7
   animator: {fileID: 8508376061925460658}
+  speedBullet: 7
 --- !u!61 &7773490293404979349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46544,8 +46578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
-  speedBullet: 7
   animator: {fileID: 5792837506120911474}
+  speedBullet: 7
 --- !u!224 &8471343368303609256
 RectTransform:
   m_ObjectHideFlags: 0
