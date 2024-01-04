@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba88dc18287dae478502dca0443c034, type: 3}
   m_Name: Kunai
   m_EditorClassIdentifier: 
-  iconWeapon: {fileID: 21300000, guid: 7a0a04e20bd968e4b949968e1fa21d9d, type: 3}
+  iconWeapon: {fileID: 21300000, guid: f76d2347841b4fd468fad6f2b1eb79aa, type: 3}
   weaponType: 1
   damage: 1
   nameBullet: Kunai

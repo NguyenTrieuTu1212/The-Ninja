@@ -1,0 +1,31 @@
+Máu (Health):
+
+Máu cơ bản (Base Health): 10
+Nâng cấp Sức Mạnh (Strength Upgrade): +10% máu cơ bản
+Nâng cấp Khôn Khéo Dexterity Upgrade): +5% máu cơ bản
+Nâng cấp Trí Tuệ (Intelligence Upgrade): +3% máu cơ bản
+Damage:
+
+Sát thương cơ bản (Base Damage): 2
+Nâng cấp Sức Mạnh (Strength Upgrade): +15% sát thương cơ bản
+Nâng cấp Khôn Khéo DexterityUpgrade): +8% sát thương cơ bản
+Nâng cấp Trí Tuệ (Intelligence Upgrade): +5% sát thương cơ bản
+Mana:
+
+Mana cơ bản (Base Mana): 20
+Nâng cấp Sức Mạnh (Strength Upgrade): +5% mana cơ bản
+Nâng cấp Khôn Khéo Dexterity Upgrade): +10% mana cơ bản
+Nâng cấp Trí Tuệ (Intelligence Upgrade): +20% mana cơ bản
+Critical Chance:
+
+Critical Chance cơ bản (Base Critical Chance): 10
+Nâng cấp Sức Mạnh (Strength Upgrade): +8% critical chance cơ bản
+Nâng cấp Khôn Khéo Dexterity Upgrade): +3% critical chance cơ bản
+Nâng cấp Trí Tuệ (Intelligence Upgrade): +5% critical chance cơ bản
+Critical Damage:
+
+Critical Damage cơ bản (Base Critical Damage): 50 %
+Nâng cấp Sức Mạnh (Strength Upgrade): +10% critical damage cơ bản
+Nâng cấp Khôn Khéo DexterityUpgrade): +5% critical damage cơ bản
+Nâng cấp Trí Tuệ (Intelligence Upgrade): +8% critical damage cơ bản
+
