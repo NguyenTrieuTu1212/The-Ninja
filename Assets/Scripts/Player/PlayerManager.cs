@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 
 
     private PlayerExp playerExp;
+    private PlayerMana playerMana;
     private void Awake()
     {
         if(instance != null)
@@ -19,11 +20,17 @@ public class PlayerManager : MonoBehaviour
         }
         instance = this;
         playerExp = GetComponent<PlayerExp>();
+        playerMana = GetComponent<PlayerMana>();
     }
 
     public void AddExpPlayer(float expAmount)
     {
         playerExp.AddExp(expAmount);
+    }
+
+    public void AddManaPlayer(float manaAmount)
+    {
+        playerMana.AddMana(manaAmount);
     }
 
 }

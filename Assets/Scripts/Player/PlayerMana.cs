@@ -32,4 +32,10 @@ public class PlayerMana : MonoBehaviour
         currentMana = player.Stats.mana;
     }
 
+
+    public void AddMana(float amount)
+    {
+        player.Stats.mana += amount;
+        currentMana = player.Stats.mana;
+    }
 }

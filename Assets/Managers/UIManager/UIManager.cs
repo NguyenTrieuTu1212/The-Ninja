@@ -76,7 +76,15 @@ public class UIManager : MonoBehaviour
 
     }
 
-
+    public void OpenAndCloseStats()
+    {
+        statsPanel.SetActive(!statsPanel.activeSelf);
+        if (statsPanel.activeSelf)
+        {
+            LoadStatsPanelUI();
+        }
+    }
+    
 
     private void LoadUpgradeUICallback()
     {
