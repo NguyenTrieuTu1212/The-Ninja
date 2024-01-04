@@ -19,22 +19,23 @@ public class PlayerUpgrade : MonoBehaviour
     private void UpgradePlayer(int indexSetting)
     {
         // Damage upgrade
-        player.Stats.baseDamage += upgradeSettings[indexSetting].damageUpgrade;
+        player.Stats.baseDamage += player.Stats.baseDamage * upgradeSettings[indexSetting].damageUpgrade/100f;
 
 
         // Health upgrade
-        player.Stats.maxHealth += upgradeSettings[indexSetting].healthUpgrade;
+        /*player.Stats.maxHealth += upgradeSettings[indexSetting].healthUpgrade;*/
+        player.Stats.maxHealth += player.Stats.maxHealth * upgradeSettings[indexSetting].healthUpgrade / 100f;
         player.Stats.Health = player.Stats.maxHealth;
 
         //Mana upgrade
-        player.Stats.maxMana += upgradeSettings[indexSetting].manaUpgrade;
+        player.Stats.maxMana += player.Stats.maxMana * upgradeSettings[indexSetting].manaUpgrade/100f;
         player.Stats.mana = player.Stats.maxMana;
 
         //Critical Chance Upgrade
-        player.Stats.criticalChance += upgradeSettings[indexSetting].criticalChanceUpgrade;
+        player.Stats.criticalChance += player.Stats.criticalChance * upgradeSettings[indexSetting].criticalChanceUpgrade/100f;
 
         // Critical Damage
-        player.Stats.criticalDamage += upgradeSettings[indexSetting].criticalDamageUpgrade; 
+        player.Stats.criticalDamage += player.Stats.criticalDamage * upgradeSettings[indexSetting].criticalDamageUpgrade/100f; 
 
     }
 

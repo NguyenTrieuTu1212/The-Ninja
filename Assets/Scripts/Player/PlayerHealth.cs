@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
+public class PlayerHealth : MonoBehaviour,IDamageable
 {
     private Player player;
     private PlayerAnimations animations;
@@ -17,16 +17,6 @@ public class PlayerHealth : MonoBehaviour,IDamageable,IDataPersistance
         animations = gameObject.GetComponent<PlayerAnimations>();
     }
 
-
-    public void LoadGame(GameData gameData)
-    {
-        player.Stats.Health = gameData.healthPlayer;
-    }
-
-    public void SaveGame(ref GameData gameData)
-    {
-        gameData.healthPlayer = player.Stats.Health;
-    }
 
     private void Update()
     {
