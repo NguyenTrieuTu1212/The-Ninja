@@ -38,7 +38,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         }
         else
         {
-            DamageText damageText = DamageManager.Intance.TakeDamageText(amount);
+            DamageText damageText = DamageManager.Instance.TakeDamageText(amount);
             damageText.transform.SetParent(transform);
             damageText.transform.position = transform.position + Vector3.right * 0.5f;
            

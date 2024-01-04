@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6388a4fefce69594f81b444e10aac3c5, type: 3}
-  m_Name: Potion
+  m_Script: {fileID: 11500000, guid: d5604937e9eaffc4484d69b7ab9dfd0f, type: 3}
+  m_Name: ManaPotion
   m_EditorClassIdentifier: 
   ID: 
   nameItem: 
   description: 
   icon: {fileID: 0}
-  type: 0
-  isComsumable: 0
-  isStackable: 0
-  maxStack: 0
+  type: 1
+  isComsumable: 1
+  isStackable: 1
+  maxStack: 64
   amountItem: 0
-  heatlhValue: 0
+  manaValue: 2

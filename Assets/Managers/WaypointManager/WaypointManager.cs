@@ -2,23 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointManager : MonoBehaviour
+public class WaypointManager : Singleton<WaypointManager>
 {
     [SerializeField] private Transform holder;
     [SerializeField] private List<Transform> listWayPoints;
-    private static WaypointManager intance;
-    public static WaypointManager Intance => intance;
     private Dictionary<string, Transform> transformDictionary = new Dictionary<string, Transform>();
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if(intance != null)
-        {
-            Debug.Log("More than intance in your game !!!!");
-            return;
-        }
-        WaypointManager.intance = this;
+        base.Awake();
         listWayPoints = new List<Transform>();
         AddWayPoints();
     }

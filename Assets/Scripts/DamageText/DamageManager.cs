@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageManager : MonoBehaviour
+public class DamageManager : Singleton<DamageManager>
 {
-    private static DamageManager intance;
-    public static DamageManager Intance { get => intance; }
+    
     [SerializeField] private List<DamageText> damagePrefabs;
     [SerializeField] private Queue<DamageText> activeDamageText;
     [SerializeField] private Transform poolPanel;
@@ -13,16 +12,12 @@ public class DamageManager : MonoBehaviour
     
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if(intance != null)
-        {
-            Debug.Log("More than 1 intance in your game");
-            return;
-        }
+        base.Awake();
+        
         damagePrefabs = new List<DamageText>();
         activeDamageText = new Queue<DamageText>();
-        intance = this;
         AddPrefabs();
         Prepare();
     }

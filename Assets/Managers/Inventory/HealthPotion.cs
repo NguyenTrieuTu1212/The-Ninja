@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Iventory Items/Potion", fileName = "ItemPotion")]
+[CreateAssetMenu(menuName = "Iventory Items/Health Potion", fileName = "ItemHealthPotion")]
 public class HealthPotion : InventoryItem
 {
     [Header("Health restore")]

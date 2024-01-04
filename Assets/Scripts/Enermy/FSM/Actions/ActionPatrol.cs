@@ -18,7 +18,7 @@ public class ActionPatrol : FSMAction
 
     private void Start()
     {
-        wayPoints = WaypointManager.Intance.getWayPoints(IDWaypoint);
+        wayPoints = WaypointManager.Instance.getWayPoints(IDWaypoint);
         wayPoints.position = transform.position;
         for (int i = 0; i < wayPoints.gameObject.transform.childCount; i++)
             listPoints.Add(wayPoints.gameObject.transform.GetChild(i));

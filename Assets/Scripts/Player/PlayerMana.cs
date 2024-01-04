@@ -7,7 +7,6 @@ public class PlayerMana : MonoBehaviour
     private Player player;
     public float currentMana { get; private set; }
 
-
     private void Awake()
     {
         player = gameObject.GetComponent<Player>();
@@ -37,5 +36,16 @@ public class PlayerMana : MonoBehaviour
     {
         player.Stats.mana += amount;
         currentMana = player.Stats.mana;
+    }
+
+    public void RestoreMana(float amountMana)
+    {
+        player.Stats.mana += amountMana;
+        player.Stats.mana = Mathf.Min(player.Stats.mana, player.Stats.maxMana);
+    }
+
+    public bool CanRestoreMana()
+    {
+        return player.Stats.mana >=0f && player.Stats.mana < player.Stats.maxMana;
     }
 }

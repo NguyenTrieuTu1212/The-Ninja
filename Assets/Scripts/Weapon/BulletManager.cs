@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BulletManager : MonoBehaviour
+public class BulletManager : Singleton<BulletManager>
 {
-    private static BulletManager intance;
-    public static BulletManager Instance { get=>intance;}
-
-
+    
     private Dictionary<string, BulletShoot> transformDictionary;
     private Dictionary<string, Queue<BulletShoot>> bulletQueues = new Dictionary<string, Queue<BulletShoot>>();
     private Queue<BulletShoot> queueActiveBullet;
@@ -24,10 +21,9 @@ public class BulletManager : MonoBehaviour
 
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (intance != null) Debug.Log("More than intance in your game !!!!");
-        intance = this;
+        base.Awake();
         transformDictionary = new Dictionary<string, BulletShoot>();
         queueActiveBullet = new Queue<BulletShoot>();
         listBulletPrefabs = new List<BulletShoot>();

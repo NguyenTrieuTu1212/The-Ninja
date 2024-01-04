@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     public void TakeDamage(float amount)
     {
         if (player.Stats.Health <= 0) return;
-        DamageText damageText = DamageManager.Intance.TakeDamageText(amount);
+        DamageText damageText = DamageManager.Instance.TakeDamageText(amount);
         damageText.transform.SetParent(transform);
         damageText.transform.position = transform.position + Vector3.right * 0.5f;
         player.Stats.Health  = Mathf.Max(player.Stats.Health -= amount, 0f);
@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     public void RestoreHealth(float amount)
     {
         player.Stats.Health += amount;
+        if(player.Stats.Health > player.Stats.maxHealth) player.Stats.Health = player.Stats.maxHealth;
     }
 
     public bool CanRestoreHealth()

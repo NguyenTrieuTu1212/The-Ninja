@@ -2,24 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
-
-    private static PlayerManager instance;
-    public static PlayerManager Instance { get => instance; }
-
 
     private PlayerExp playerExp;
     private PlayerMana playerMana;
     private PlayerHealth playerHealth;  
-    private void Awake()
+    protected override void Awake()
     {
-        if(instance != null)
-        {
-            Debug.Log("More than intance in your game !!!!");
-            return;
-        }
-        instance = this;
+        base.Awake();
         playerExp = GetComponent<PlayerExp>();
         playerMana = GetComponent<PlayerMana>();
         playerHealth = GetComponent<PlayerHealth>();
@@ -33,6 +24,18 @@ public class PlayerManager : MonoBehaviour
     public void AddManaPlayer(float manaAmount)
     {
         playerMana.AddMana(manaAmount);
+    }
+
+
+
+    public void RestoreManaForPlayer(float amount)
+    {
+        playerMana.RestoreMana(amount);
+    }
+
+    public bool CanRestoreManaForPlayer()
+    {
+        return playerMana.CanRestoreMana();
     }
 
     public void RestoreHealthForPlayer(float amount)

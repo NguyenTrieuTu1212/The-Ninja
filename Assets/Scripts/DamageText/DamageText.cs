@@ -16,6 +16,6 @@ public class DamageText : MonoBehaviour
 
     private void DestroyTMP()
     {
-        DamageManager.Intance.ReturnDamageText(gameObject.GetComponent<DamageText>());
+        DamageManager.Instance.ReturnDamageText(gameObject.GetComponent<DamageText>());
     }
 }
