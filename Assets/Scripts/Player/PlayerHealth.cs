@@ -9,8 +9,6 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     [SerializeField][Range(0f, 10f)] float timeToRevival;
 
 
-    
-
     private void Awake()
     {
         player = gameObject.GetComponent<Player>();
@@ -24,6 +22,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
             player.ResetPlayer();
         if (player.Stats.Health <= 0f) PlayerDead();
+
     }
 
     public void TakeDamage(float amount)
@@ -41,6 +40,17 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         animations.SetDeadAnimation();
     }
 
+
+
+    public void RestoreHealth(float amount)
+    {
+        player.Stats.Health += amount;
+    }
+
+    public bool CanRestoreHealth()
+    {
+        return player.Stats.Health >= 0f && player.Stats.Health < player.Stats.maxHealth;
+    }
     
 
     /*IEnumerator WaitingPlayerRivial()

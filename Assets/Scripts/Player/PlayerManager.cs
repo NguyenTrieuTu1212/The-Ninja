@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
 
     private PlayerExp playerExp;
     private PlayerMana playerMana;
+    private PlayerHealth playerHealth;  
     private void Awake()
     {
         if(instance != null)
@@ -21,6 +22,7 @@ public class PlayerManager : MonoBehaviour
         instance = this;
         playerExp = GetComponent<PlayerExp>();
         playerMana = GetComponent<PlayerMana>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     public void AddExpPlayer(float expAmount)
@@ -33,4 +35,13 @@ public class PlayerManager : MonoBehaviour
         playerMana.AddMana(manaAmount);
     }
 
+    public void RestoreHealthForPlayer(float amount)
+    {
+        playerHealth.RestoreHealth(amount);
+    }
+
+    public bool CanRestoreHealthForPlayer()
+    {
+        return playerHealth.CanRestoreHealth();
+    }
 }

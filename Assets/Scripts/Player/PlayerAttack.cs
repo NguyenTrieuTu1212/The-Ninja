@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (currentAttackPositon != null)
         {
-            if(playerMana.currentMana < currentWeapon.RequireMana) yield break;
+            if (player.Stats.mana < currentWeapon.RequireMana) yield break;
             BulletShoot bullet = BulletManager.Instance.TakeBullet(initWeapon.nameBullet,currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
             bullet.damage = GetDamageCritical();
