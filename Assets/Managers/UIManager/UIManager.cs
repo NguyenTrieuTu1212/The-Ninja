@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Player player;
+    [SerializeField] private PlayerAttack playerAttack;
     
     [SerializeField] private Image healthBar;
     [SerializeField] private Image manaBar;
@@ -33,8 +34,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI intelligenceTMP;
     [SerializeField] private TextMeshProUGUI attributesPointTMP;
 
+    [SerializeField] private Image imageWeapon;
+    private void Awake()
+    {
+        statsPanel.SetActive(false);
+        LoadImageWeapon();
+    }
     private void Update()
     {
+        LoadImageWeapon();
         LoadStatsPlayerUI();
         LoadStatsPanelUI();
     }
@@ -91,6 +99,11 @@ public class UIManager : MonoBehaviour
         LoadStatsPanelUI();
     }
 
+
+    private void LoadImageWeapon()
+    {
+        imageWeapon.sprite = playerAttack.initWeapon.iconWeapon;
+    }
 
     private void OnEnable()
     {

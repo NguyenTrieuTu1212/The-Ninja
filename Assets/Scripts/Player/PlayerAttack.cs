@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
         foreach (Transform attackPoint in attackPoints) listPointAttack.Add(attackPoint);
     }
 
-    private void Attack()
+    public void Attack()
     {
         if (enermyTarget == null) return;
         StartCoroutine(WatingAttacking());

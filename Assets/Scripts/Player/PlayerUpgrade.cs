@@ -16,8 +16,6 @@ public class PlayerUpgrade : MonoBehaviour
         player = GetComponent<Player>();
     }
 
-
-
     private void UpgradePlayer(int indexSetting)
     {
         // Damage upgrade
