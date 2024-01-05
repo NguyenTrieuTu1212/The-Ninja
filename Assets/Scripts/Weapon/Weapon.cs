@@ -31,4 +31,7 @@ public class Weapon : ScriptableObject
     [Header("Require Mana")]
     public float RequireMana;
 
+    [Header("Require Time")]
+    public float requireTime;
+
 }

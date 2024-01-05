@@ -15,11 +15,12 @@ public class PlayerAttack : MonoBehaviour
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
 
-    private Weapon currentWeapon;
+    private Weapon CurrentWeapon;
 
     [SerializeField] public Weapon initWeapon;
-    [SerializeField][Range(0f, 10f)] private float timeWaitingAttack;
-    
+
+    private bool isAttacking = false;
+
 
     private void Awake()
     {
@@ -50,38 +51,44 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null) return;
-        StartCoroutine(WatingAttacking());
+        if (enermyTarget == null || isAttacking) return;
+        StartCoroutine(WaitingAttacking());
     }
 
-
-
-    IEnumerator WatingAttacking()
+    IEnumerator WaitingAttacking()
     {
+        isAttacking = true; 
         if (currentAttackPositon != null)
         {
-            if (player.Stats.mana < currentWeapon.RequireMana) yield break;
-            BulletShoot bullet = BulletManager.Instance.TakeBullet(initWeapon.nameBullet,currentAttackPositon.position, currentAttackRotation);
+            if (player.Stats.mana < initWeapon.RequireMana)
+            {
+                isAttacking = false;
+                yield break;
+            }
+
+            BulletShoot bullet = BulletManager.Instance.TakeBullet(initWeapon.nameBullet, currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
             bullet.damage = GetDamageCritical();
-            playerMana.UsedMana(currentWeapon.RequireMana);
+            playerMana.UsedMana(initWeapon.RequireMana);
         }
         playerAnimations.SetAttacking(true);
-        yield return new WaitForSeconds(timeWaitingAttack);
+        yield return new WaitForSeconds(0.5f);
         playerAnimations.SetAttacking(false);
+        yield return new WaitForSeconds(initWeapon.requireTime - 0.5f);
+        isAttacking = false; 
     }
 
     private void EquidWeapon(Weapon weapon)
     {
-        currentWeapon = weapon;
-        player.Stats.totalDamage += player.Stats.baseDamage + currentWeapon.damage;
+        CurrentWeapon = weapon;
+        player.Stats.totalDamage += player.Stats.baseDamage + CurrentWeapon.damage;
     }
 
 
     private float GetDamageCritical()
     {
         float damage = player.Stats.baseDamage;
-        damage += currentWeapon.damage;
+        damage += initWeapon.damage;
         float randomDamage = Random.Range(0f, 100f);
         if(randomDamage <= player.Stats.criticalChance)
         {

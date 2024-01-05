@@ -3582,7 +3582,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initWeapon: {fileID: 11400000, guid: aa7fcd3b8ef055348901bdab5eb578bd, type: 2}
-  timeWaitingAttack: 0.5
 --- !u!114 &150267869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37442,7 +37441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30
   healthSlider: {fileID: 2112738713}
 --- !u!114 &942061318
 MonoBehaviour:
@@ -45000,7 +44999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9
+  health: 35
   healthSlider: {fileID: 148237898}
 --- !u!114 &143118737572226276
 MonoBehaviour:
@@ -45566,7 +45565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 15
   healthSlider: {fileID: 792713076}
 --- !u!114 &2074150267690288132
 MonoBehaviour:
@@ -46189,7 +46188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 10
   healthSlider: {fileID: 2085140341}
 --- !u!114 &4895142517464111840
 MonoBehaviour:
@@ -46973,7 +46972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 10
   healthSlider: {fileID: 1204558331}
 --- !u!114 &6473177965526746472
 MonoBehaviour:
@@ -47350,7 +47349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef1cd9de241839489a92412923b549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 25
   healthSlider: {fileID: 2060410637}
 --- !u!114 &6798842853726490300
 MonoBehaviour:
@@ -47364,7 +47363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e6a5192d9a9d14795d164d8fc99253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expAmountDrop: 50
+  expAmountDrop: 20
   manaAmoutDrop: 2
 --- !u!4 &6944181610780449808
 Transform:

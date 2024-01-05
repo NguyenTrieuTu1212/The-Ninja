@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconWeapon: {fileID: -1879720235, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
-  damage: 2
+  damage: 3.5
   nameBullet: IceSpike
-  RequireMana: 1
+  RequireMana: 2
+  requireTime: 1

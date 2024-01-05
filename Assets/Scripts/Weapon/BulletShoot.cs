@@ -12,8 +12,6 @@ public class BulletShoot : MonoBehaviour
 
     
 
-    
-
     private void Update()
     {
         transform.Translate(direction * speedBullet * Time.deltaTime);

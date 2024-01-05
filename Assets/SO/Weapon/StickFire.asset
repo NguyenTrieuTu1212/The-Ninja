@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconWeapon: {fileID: -535571636, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
-  damage: 3
+  damage: 6
   nameBullet: FIreBall
-  RequireMana: 4
+  RequireMana: 2.5
+  requireTime: 1.2

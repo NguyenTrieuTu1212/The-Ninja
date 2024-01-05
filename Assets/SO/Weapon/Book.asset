@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconWeapon: {fileID: -623952351, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
-  damage: 3.5
+  damage: 10
   nameBullet: PlantSpike
   RequireMana: 5
+  requireTime: 1.5

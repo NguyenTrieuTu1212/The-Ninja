@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconWeapon: {fileID: -814012683, guid: e057f8c9d5efec5439f6cb9ab3b16480, type: 3}
   weaponType: 1
-  damage: 2
+  damage: 7
   nameBullet: EnergyBall
-  RequireMana: 1
+  RequireMana: 7
+  requireTime: 1
