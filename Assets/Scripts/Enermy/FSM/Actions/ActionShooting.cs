@@ -10,10 +10,16 @@ public class ActionShooting : FSMAction
     private float angle = 0f;
     private float delayBtwAttack = 2f;
     private float delayBetweenShots = 0.2f;
+    private EnermyHealth enermyHealth;
 
+
+    private void Awake()
+    {
+        enermyHealth = GetComponent<EnermyHealth>();
+    }
     public override void Action()
     {
-        if (isShooting) return;
+        if (isShooting || enermyHealth.CurrentHealth <= 0f) return;
         StartCoroutine(ShootEverySecond());
     }
 

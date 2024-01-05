@@ -59,6 +59,8 @@ public class UIManager : MonoBehaviour
                                 10f * Time.deltaTime);
 
 
+        player.Stats.mana = RoundToDecimalPlaces(player.Stats.mana, 2);
+        
         levelTMP.text = $"Level {player.Stats.level}";
         healthTMP.text = $"{player.Stats.Health} / {player.Stats.maxHealth}";
         manaTMP.text = $"{player.Stats.mana} / {player.Stats.maxMana}";
@@ -117,4 +119,10 @@ public class UIManager : MonoBehaviour
         PlayerUpgrade.OnUpgradeLoad -= LoadUpgradeUICallback;
     }
 
+
+    float RoundToDecimalPlaces(float number, int decimalPlaces)
+    {
+        float multiplier = Mathf.Pow(10f, decimalPlaces);
+        return Mathf.Round(number * multiplier) / multiplier;
+    }
 }
