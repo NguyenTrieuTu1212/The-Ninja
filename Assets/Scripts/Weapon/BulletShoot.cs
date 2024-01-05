@@ -23,6 +23,7 @@ public class BulletShoot : MonoBehaviour
     }
 
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         animator.SetBool("isDestroy", true);
