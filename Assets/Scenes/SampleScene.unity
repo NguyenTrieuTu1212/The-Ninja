@@ -37384,7 +37384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChase: 3
+  speedChase: 2.5
 --- !u!114 &942061314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44782,7 +44782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChase: 3
+  speedChase: 2.5
 --- !u!114 &143118737572226266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45270,7 +45270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 1535474677636313118}
-  speedBullet: 7
+  speedBullet: 6
 --- !u!58 &2074150267690288112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45459,7 +45459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChase: 3
+  speedChase: 4
 --- !u!1 &2074150267690288126
 GameObject:
   m_ObjectHideFlags: 0
@@ -45539,7 +45539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  timeWatingNextAttack: 1
+  timeWatingNextAttack: 0.5
 --- !u!114 &2074150267690288130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45787,7 +45787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 6104896002280403874}
-  speedBullet: 7
+  speedBullet: 7.5
 --- !u!114 &3977508907929196499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45802,7 +45802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 5239359204992453921}
-  speedBullet: 7
+  speedBullet: 8
 --- !u!58 &4029421304296280952
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45923,7 +45923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChase: 3
+  speedChase: 4.5
 --- !u!50 &4895142517464111828
 Rigidbody2D:
   serializedVersion: 4
@@ -46515,7 +46515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 7114067030292934983}
-  speedBullet: 7
+  speedBullet: 8.5
 --- !u!95 &6104896002280403874
 Animator:
   serializedVersion: 5
@@ -46722,7 +46722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e402af52ff840b4d9a457ee5ca55968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChase: 3
+  speedChase: 2
 --- !u!50 &6473177965526746396
 Rigidbody2D:
   serializedVersion: 4
@@ -47322,7 +47322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7857ca92e199a4bacc2812b2c57f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2.5
   timeWatingNextAttack: 1
 --- !u!114 &6798842853726490298
 MonoBehaviour:
@@ -47500,7 +47500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 8508376061925460658}
-  speedBullet: 7
+  speedBullet: 6
 --- !u!61 &7773490293404979349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47606,7 +47606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 5792837506120911474}
-  speedBullet: 7
+  speedBullet: 5.5
 --- !u!224 &8471343368303609256
 RectTransform:
   m_ObjectHideFlags: 0
