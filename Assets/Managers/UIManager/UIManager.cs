@@ -58,9 +58,9 @@ public class UIManager : MonoBehaviour
                                 player.Stats.currentExp / player.Stats.expNextLevel,
                                 10f * Time.deltaTime);
 
-
+        player.Stats.Health = RoundToDecimalPlaces(player.Stats.Health, 2);
         player.Stats.mana = RoundToDecimalPlaces(player.Stats.mana, 2);
-        
+
         levelTMP.text = $"Level {player.Stats.level}";
         healthTMP.text = $"{player.Stats.Health} / {player.Stats.maxHealth}";
         manaTMP.text = $"{player.Stats.mana} / {player.Stats.maxMana}";

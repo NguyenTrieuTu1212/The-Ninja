@@ -1,0 +1,33 @@
+Bow:
+Damage: Trung bình (40)
+Require Mana: Thấp (15)
+Thời Gian Chờ Đánh: Trung bình (2 giây)
+
+
+
+Kunai:
+Damage: Thấp (25)
+Require Mana: Rất thấp (8)
+Thời Gian Chờ Đánh: Nhanh (1 giây)
+
+
+Stick Fire:
+Damage: Cao (60)
+Require Mana: Trung bình (25)
+Thời Gian Chờ Đánh: Lâu (4 giây)
+
+Stick Energy:
+Damage: Trung bình - Cao (tùy thuộc vào cấp độ năng lượng)
+Require Mana: Cao (40)
+Thời Gian Chờ Đánh: Lâu (3 giây)
+
+Book:
+Damage: Cực kỳ Cao (80)
+Require Mana: Rất Cao (60)
+Thời Gian Chờ Đánh: Rất Lâu (5 giây)
+
+
+Stick Ice:
+Damage: Trung bình (35)
+Require Mana: Trung bình (20)
+Thời Gian Chờ Đánh: Trung bình (2.5 giây)

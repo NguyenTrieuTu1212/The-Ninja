@@ -1,0 +1,4 @@
+- Thêm icon cho mana, máu kinh nghiệm
+- Spawn player về thành
+- Pick con quái gần nhất
+- Làm thêm trên máu,kinh nghiệm  trên đầu player

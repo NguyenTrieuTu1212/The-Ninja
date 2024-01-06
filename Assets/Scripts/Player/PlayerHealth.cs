@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
 
     private void PlayerDead()
     {
+        transform.position = Vector3.zero;
         animations.SetDeadAnimation();
     }
 
