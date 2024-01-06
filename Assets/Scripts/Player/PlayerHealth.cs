@@ -37,7 +37,8 @@ public class PlayerHealth : MonoBehaviour,IDamageable
 
     private void PlayerDead()
     {
-        transform.position = Vector3.zero;
+        //Fix player respawn in main village
+        /*transform.position = Vector3.zero;*/
         animations.SetDeadAnimation();
     }
 
