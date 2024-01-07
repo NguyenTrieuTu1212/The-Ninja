@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerHealth : MonoBehaviour,IDamageable
 {
@@ -38,7 +39,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     private void PlayerDead()
     {
         //Fix player respawn in main village
-        /*transform.position = Vector3.zero;*/
+        transform.position = Vector3.zero;
         animations.SetDeadAnimation();
     }
 
