@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class DecisionDetectPlayer : FSMDecision
 {
@@ -9,6 +11,10 @@ public class DecisionDetectPlayer : FSMDecision
     [SerializeField][Range(1f,10f)]private float radius;
     [SerializeField] private LayerMask whatIsTarget;
     private bool isDeteted;
+
+
+    /*public static event Action<EnermyBrain> OnDecisionDetected;
+    public static event Action NoOnDecisionDetected;*/
 
     private void Awake()
     {
@@ -32,10 +38,12 @@ public class DecisionDetectPlayer : FSMDecision
         if (target != null)
         {
             enermy.target = target.transform;
+            /*OnDecisionDetected?.Invoke(enermy);*/
         }
         else
         {
             enermy.target = null;
+            /*NoOnDecisionDetected?.Invoke();*/
         }
         
     }
@@ -47,4 +55,7 @@ public class DecisionDetectPlayer : FSMDecision
         Gizmos.DrawWireSphere(enermy.transform.position, radius);
 
     }
+
+
+    
 }

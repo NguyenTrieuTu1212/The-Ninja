@@ -8,6 +8,7 @@ public class SelectorManager : MonoBehaviour
     [SerializeField] private LayerMask enermyMask;
     private Camera cameraMain;
 
+
     public static event Action<EnermyBrain> OnSelectedEnermy;
     public static event Action NoOnSelectedEnermy;
 
