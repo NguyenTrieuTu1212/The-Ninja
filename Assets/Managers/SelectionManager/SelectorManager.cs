@@ -16,21 +16,25 @@ public class SelectorManager : MonoBehaviour
 
     private RaycastHit2D hit;
     private bool isDoubleTap;
+
+
+
     private void Awake()
     {
         cameraMain = Camera.main;
     }
 
+
     private void Update()
     {
-       if (CheckDoubleClick()) NoOnSelectedEnermy?.Invoke();
-       SelectEnermy();
+        if (CheckDoubleClick()) NoOnSelectedEnermy?.Invoke();
+        SelectEnermy();
     }
 
 
     private void SelectEnermy()
     {
-        
+
         if (Input.touchCount > 0)
         {
             hit = Physics2D.Raycast(cameraMain.ScreenToWorldPoint(Input.GetTouch(0).position),
@@ -54,7 +58,7 @@ public class SelectorManager : MonoBehaviour
             }
             OnSelectedEnermy?.Invoke(enermy);
         }
-        
+
     }
 
 
@@ -75,6 +79,6 @@ public class SelectorManager : MonoBehaviour
             }
         }
         return false;
-      
+
     }
 }
