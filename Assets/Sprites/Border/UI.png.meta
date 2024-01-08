@@ -335,7 +335,7 @@ TextureImporter:
         width: 99
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,6 +343,69 @@ TextureImporter:
       bones: []
       spriteID: 5d6d4de0a9ed1764ca69289c757efa45
       internalID: -1965291312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_11
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 579
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2487d80650e11444a280fd20265dd69
+      internalID: 1681275057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_12
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 269
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09699e2c4c1e05f4c956567c074813c1
+      internalID: 1435618632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_13
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 226
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8ada7969c258d44beccdb8b46158e6
+      internalID: 266682105
       vertices: []
       indices: 
       edges: []
@@ -358,11 +421,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      UI_11: 1681275057
       UI_1: 911288361
       UI_4: 2056041691
       UI_2: 2027002103
       UI_3: -706325111
       UI_9: -1595418786
+      UI_13: 1651524854
+      UI_12: 1435618632
       UI_0: 1505439537
       UI_7: 1058062107
       UI_10: -1965291312
