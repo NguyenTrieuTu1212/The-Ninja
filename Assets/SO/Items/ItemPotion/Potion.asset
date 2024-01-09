@@ -19,6 +19,6 @@ MonoBehaviour:
   type: 1
   isComsumable: 1
   isStackable: 1
-  maxStack: 10
+  maxStack: 20
   amountItem: 0
   heatlhValue: 1

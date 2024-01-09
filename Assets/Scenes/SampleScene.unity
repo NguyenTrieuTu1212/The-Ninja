@@ -52601,7 +52601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTest: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
   inventorySize: 24
-  items: []
+  inventoryItems: []
 --- !u!114 &1267664595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52614,7 +52614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1841f2dbcaedd4abcb6d4f6b295b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 8203264341731712947, guid: 927b82650e059ac4db8e7369c82c165a, type: 3}
+  slotPrefab: {fileID: 3702237609286875944, guid: 927b82650e059ac4db8e7369c82c165a, type: 3}
   containerSlot: {fileID: 602489787}
 --- !u!1 &1301120514
 GameObject:
