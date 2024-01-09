@@ -7,7 +7,6 @@ public class Inventory : Singleton<Inventory>
     [SerializeField] private InventoryItem itemTest;
     [SerializeField] private int inventorySize;
     [SerializeField] private InventoryItem[] items;
-    
 
     public int InventorySize => inventorySize;
 
@@ -27,4 +26,13 @@ public class Inventory : Singleton<Inventory>
             InventoryUI.Instance.DrawSlot(items[0], 0);
         }
     }
+
+    private void AddItem(InventoryItem item,int amount)
+    {
+        item.amountItem += amount;
+    }
+    
+
+
+    
 }

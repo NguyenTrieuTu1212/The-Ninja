@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image manaBar;
     [SerializeField] private Image expBar;
 
-    
     [SerializeField] private TextMeshProUGUI levelTMP;
     [SerializeField] private TextMeshProUGUI healthTMP;
     [SerializeField] private TextMeshProUGUI manaTMP;
@@ -35,9 +34,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI attributesPointTMP;
 
     [SerializeField] private Image imageWeapon;
+
+    [SerializeField] private GameObject inventoryPanel;
+
     private void Awake()
     {
         statsPanel.SetActive(false);
+        inventoryPanel.SetActive(false);
         LoadImageWeapon();
     }
     private void Update()
@@ -93,6 +96,11 @@ public class UIManager : MonoBehaviour
         {
             LoadStatsPanelUI();
         }
+    }
+
+    public void OpenAndCloseInventory()
+    {
+        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
     }
     
 
