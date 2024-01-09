@@ -13,7 +13,7 @@ public class InventorySlots : MonoBehaviour
 
     public int Index { get; set; }
 
-    public void UpdateSlot(InventoryItem item) {
+    public void UpdateSlot(Items item) {
         iconItem.sprite = item.icon;
         amountItem.text = item.amountItem.ToString();
     }

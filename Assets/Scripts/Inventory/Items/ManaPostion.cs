@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Iventory Items/Mana Potion", fileName = "ItemManaPotion")]
-public class ManaPostion : InventoryItem
+public class ManaPostion : Items
 {
     [Header("Mana restore value")]
     public float manaValue;

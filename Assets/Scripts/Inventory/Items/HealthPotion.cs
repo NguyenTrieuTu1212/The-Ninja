@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Iventory Items/Health Potion", fileName = "ItemHealthPotion")]
-public class HealthPotion : InventoryItem
+public class HealthPotion : Items
 {
     [Header("Health restore")]
     public float heatlhValue;

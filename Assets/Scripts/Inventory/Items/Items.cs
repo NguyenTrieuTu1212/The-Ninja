@@ -15,7 +15,7 @@ public enum ItemsType
 }
 
 [CreateAssetMenu(menuName ="Iventory Items / Item")]
-public class InventoryItem : ScriptableObject
+public class Items : ScriptableObject
 {
     [Header ("Config items")]
     public string ID;
@@ -34,9 +34,9 @@ public class InventoryItem : ScriptableObject
     [HideInInspector] public int amountItem;
 
 
-    public InventoryItem CopyItem()
+    public Items CopyItem()
     {
-        InventoryItem instance = Instantiate(this);
+        Items instance = Instantiate(this);
         return instance;
     }
 
