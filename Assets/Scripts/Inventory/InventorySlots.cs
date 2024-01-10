@@ -29,9 +29,6 @@ public class InventorySlots : MonoBehaviour
         amountContainer.gameObject.SetActive(value);
     }
 
-
-
-
     public void ClickToSelectSlot()
     {
         OnSeletedSlot?.Invoke(Index);  

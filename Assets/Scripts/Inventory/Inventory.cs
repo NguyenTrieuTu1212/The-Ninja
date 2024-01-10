@@ -11,6 +11,8 @@ public class Inventory : Singleton<Inventory>
     public int InventorySize => inventorySize;
 
 
+    public int indexCurrentItem { get;  set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -79,27 +81,49 @@ public class Inventory : Singleton<Inventory>
 
 
 
+    public void UseItem()
+    {
+        if (inventoryItems[indexCurrentItem] == null)
+        {
+            Debug.Log("Item is null !!! Not used !!!!");
+            return;
+        }
+        if (inventoryItems[indexCurrentItem].UseItem())
+        {
+            DegreeItem(indexCurrentItem);
+            Debug.Log("Item used in inventory !!!!!");
+        }
+    }
+
+
     private void DegreeItem(int index)
     {
         if (inventoryItems[index] == null) return;
+
         inventoryItems[index].amountItem--;
-        if(inventoryItems[index].amountItem <= 0)
+
+        if (inventoryItems[index].amountItem <= 0)
         {
-            InventoryUI.Instance.DrawSlot(null, index);
+            inventoryItems[index] = null;
         }
-        else
+
+        // Ki?m tra xem item có null không trý?c khi v? slot
+        if (inventoryItems[index] != null)
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
     }
 
+
     private void SeletedSlotCallBack(int index)
     {
-        if (inventoryItems[index] == null) return;
-        if(inventoryItems[index].UseItem())
+        if (inventoryItems[index] == null)
         {
-            DegreeItem(index);
+            Debug.Log("Inventory slot is null !!!!");
+            return;
         }
+        indexCurrentItem = index; 
+        Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }
 
     private void OnEnable()
