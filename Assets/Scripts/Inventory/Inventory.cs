@@ -99,16 +99,13 @@ public class Inventory : Singleton<Inventory>
     private void DegreeItem(int index)
     {
         if (inventoryItems[index] == null) return;
-
         inventoryItems[index].amountItem--;
-
         if (inventoryItems[index].amountItem <= 0)
         {
             inventoryItems[index] = null;
+            InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
-
-        // Ki?m tra xem item có null không trý?c khi v? slot
-        if (inventoryItems[index] != null)
+        else
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
@@ -117,11 +114,6 @@ public class Inventory : Singleton<Inventory>
 
     private void SeletedSlotCallBack(int index)
     {
-        if (inventoryItems[index] == null)
-        {
-            Debug.Log("Inventory slot is null !!!!");
-            return;
-        }
         indexCurrentItem = index; 
         Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }
