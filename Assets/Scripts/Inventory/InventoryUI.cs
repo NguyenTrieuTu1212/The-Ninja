@@ -28,7 +28,12 @@ public class InventoryUI : Singleton<InventoryUI>
 
     public void DrawSlot(Items item,int indexSlot) 
     {
-        InventorySlots slot = slotsList[indexSlot]; 
+        InventorySlots slot = slotsList[indexSlot];
+        if(item == null)
+        {
+            slot.ShowInforItemInSlot(false);
+            return;
+        }
         slot.UpdateSlot(item);
         slot.ShowInforItemInSlot(true);
 

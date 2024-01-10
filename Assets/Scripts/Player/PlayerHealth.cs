@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
             player.ResetPlayer();
         if (player.Stats.Health <= 0f) PlayerDead();
+        
 
     }
 

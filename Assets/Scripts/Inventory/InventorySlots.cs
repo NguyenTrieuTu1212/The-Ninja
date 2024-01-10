@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using System;
+
 public class InventorySlots : MonoBehaviour
 {
     [SerializeField] private Image iconItem;
     [SerializeField] private Image amountContainer;
     [SerializeField] private TextMeshProUGUI amountItem;
     
+    public static event Action<int> OnSeletedSlot;
+
 
     public int Index { get; set; }
 
@@ -25,4 +29,11 @@ public class InventorySlots : MonoBehaviour
         amountContainer.gameObject.SetActive(value);
     }
 
+
+
+
+    public void ClickToSelectSlot()
+    {
+        OnSeletedSlot?.Invoke(Index);  
+    }
 }

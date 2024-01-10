@@ -27,8 +27,6 @@ public class Inventory : Singleton<Inventory>
     }
 
 
-
-
     private void AddItem(Items item, int amount)
     {
         if (item == null || amount <= 0) return;
@@ -78,6 +76,41 @@ public class Inventory : Singleton<Inventory>
         return result;
     }
 
-    
+
+
+
+    private void DegreeItem(int index)
+    {
+        if (inventoryItems[index] == null) return;
+        inventoryItems[index].amountItem--;
+        if(inventoryItems[index].amountItem <= 0)
+        {
+            InventoryUI.Instance.DrawSlot(null, index);
+        }
+        else
+        {
+            InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
+        }
+    }
+
+    private void SeletedSlotCallBack(int index)
+    {
+        if (inventoryItems[index] == null) return;
+        if(inventoryItems[index].UseItem())
+        {
+            DegreeItem(index);
+        }
+    }
+
+    private void OnEnable()
+    {
+        InventorySlots.OnSeletedSlot += SeletedSlotCallBack;
+    }
+
+
+    private void OnDisable()
+    {
+        InventorySlots.OnSeletedSlot -= SeletedSlotCallBack;
+    }
 
 }
