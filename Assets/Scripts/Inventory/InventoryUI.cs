@@ -21,6 +21,7 @@ public class InventoryUI : Singleton<InventoryUI>
         {
             InventorySlots slot = Instantiate(slotPrefab, containerSlot);
             slot.Index = i;
+            slot.ShowInforItemInSlot(false);
             slotsList.Add(slot);
         }
     }
