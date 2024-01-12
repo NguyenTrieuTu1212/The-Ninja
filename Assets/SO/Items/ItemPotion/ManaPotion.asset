@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5604937e9eaffc4484d69b7ab9dfd0f, type: 3}
   m_Name: ManaPotion
   m_EditorClassIdentifier: 
-  ID: 
-  nameItem: 
+  ID: ManaPosion
+  nameItem: ManaPosion
   description: 
   icon: {fileID: 0}
   type: 1
