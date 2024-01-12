@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Inventory : Singleton<Inventory>
 {
+    [SerializeField] Animator healthBarAnim;
     [SerializeField] private Items itemTest;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
+
 
     public int InventorySize => inventorySize;
 
@@ -79,10 +81,9 @@ public class Inventory : Singleton<Inventory>
     }
 
 
-
-
     public void UseItem()
     {
+        
         if (inventoryItems[indexCurrentItem] == null)
         {
             Debug.Log("Item is null !!! Not used !!!!");
@@ -93,11 +94,13 @@ public class Inventory : Singleton<Inventory>
             DegreeItem(indexCurrentItem);
             Debug.Log("Item used in inventory !!!!!");
         }
+        
     }
 
 
     private void DegreeItem(int index)
     {
+        
         if (inventoryItems[index] == null) return;
         inventoryItems[index].amountItem--;
         if (inventoryItems[index].amountItem <= 0)
@@ -109,6 +112,7 @@ public class Inventory : Singleton<Inventory>
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
+        StartCoroutine(WaitingPlayEffect());
     }
 
 
@@ -117,6 +121,16 @@ public class Inventory : Singleton<Inventory>
         indexCurrentItem = index; 
         Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }
+
+
+    private IEnumerator WaitingPlayEffect()
+    {
+        healthBarAnim.SetBool("isWorking",true);
+        yield return new WaitForSeconds(0.4f);
+        healthBarAnim.SetBool("isWorking", false);
+    } 
+
+    
 
     private void OnEnable()
     {
@@ -129,4 +143,7 @@ public class Inventory : Singleton<Inventory>
         InventorySlots.OnSeletedSlot -= SeletedSlotCallBack;
     }
 
+
+
+    
 }
