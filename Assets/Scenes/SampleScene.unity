@@ -57726,6 +57726,7 @@ GameObject:
   - component: {fileID: 1935000296}
   - component: {fileID: 1935000298}
   - component: {fileID: 1935000297}
+  - component: {fileID: 1935000299}
   m_Layer: 5
   m_Name: Bar_Health
   m_TagString: Untagged
@@ -57793,6 +57794,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935000295}
   m_CullTransparentMesh: 1
+--- !u!95 &1935000299
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935000295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 054fa596cd1664143bee81707ef34753, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1958409153
 GameObject:
   m_ObjectHideFlags: 0
