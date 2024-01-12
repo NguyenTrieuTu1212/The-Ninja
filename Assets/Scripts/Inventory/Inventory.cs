@@ -115,8 +115,10 @@ public class Inventory : Singleton<Inventory>
         if(inventoryItems[index].ID == "HealthPotion")
             // Play animtion for health bar 
             StartCoroutine(WaitingPlayEffect(animationsEffect[0]));
-        else if(inventoryItems[index].ID == "ManaPostion")
+        else if(inventoryItems[index].ID == "ManaPosion")
             StartCoroutine(WaitingPlayEffect(animationsEffect[1]));
+        
+        
 
     }
 

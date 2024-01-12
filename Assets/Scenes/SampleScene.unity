@@ -51083,6 +51083,7 @@ GameObject:
   - component: {fileID: 1056578412}
   - component: {fileID: 1056578414}
   - component: {fileID: 1056578413}
+  - component: {fileID: 1056578415}
   m_Layer: 5
   m_Name: Mana_Bar
   m_TagString: Untagged
@@ -51150,6 +51151,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056578411}
   m_CullTransparentMesh: 1
+--- !u!95 &1056578415
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056578411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 4b0ac78f8a90e92449f8d740ea1b2418, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1060802780
 GameObject:
   m_ObjectHideFlags: 0
@@ -52599,12 +52620,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2cf28560a223146affb204ddd3c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTest: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
+  itemTest: {fileID: 11400000, guid: c82b21efed4f8a648b494a4306e05803, type: 2}
   inventorySize: 24
   inventoryItems: []
   animationsEffect:
   - {fileID: 1935000299}
-  - {fileID: 0}
+  - {fileID: 1056578415}
 --- !u!114 &1267664595
 MonoBehaviour:
   m_ObjectHideFlags: 0
