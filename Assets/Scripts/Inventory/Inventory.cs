@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Inventory : Singleton<Inventory>
 {
-    [SerializeField] Animator healthBarAnim;
+    
     [SerializeField] private Items itemTest;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
+    [SerializeField] private List<Animator> animationsEffect = new List<Animator>();
 
 
     public int InventorySize => inventorySize;
@@ -100,7 +101,6 @@ public class Inventory : Singleton<Inventory>
 
     private void DegreeItem(int index)
     {
-        
         if (inventoryItems[index] == null) return;
         inventoryItems[index].amountItem--;
         if (inventoryItems[index].amountItem <= 0)
@@ -112,7 +112,12 @@ public class Inventory : Singleton<Inventory>
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
-        StartCoroutine(WaitingPlayEffect());
+        if(inventoryItems[index].ID == "HealthPotion")
+            // Play animtion for health bar 
+            StartCoroutine(WaitingPlayEffect(animationsEffect[0]));
+        else if(inventoryItems[index].ID == "ManaPostion")
+            StartCoroutine(WaitingPlayEffect(animationsEffect[1]));
+
     }
 
 
@@ -123,11 +128,11 @@ public class Inventory : Singleton<Inventory>
     }
 
 
-    private IEnumerator WaitingPlayEffect()
+    private IEnumerator WaitingPlayEffect(Animator animator)
     {
-        healthBarAnim.SetBool("isWorking",true);
+        animator.SetBool("isWorking",true);
         yield return new WaitForSeconds(0.4f);
-        healthBarAnim.SetBool("isWorking", false);
+        animator.SetBool("isWorking", false);
     } 
 
     
