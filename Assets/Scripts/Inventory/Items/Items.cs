@@ -33,7 +33,6 @@ public class Items : ScriptableObject
 
     [HideInInspector] public int amountItem;
 
-
     public Items CopyItem()
     {
         Items instance = Instantiate(this);
@@ -55,5 +54,5 @@ public class Items : ScriptableObject
 
     }
 
-
+    
 }

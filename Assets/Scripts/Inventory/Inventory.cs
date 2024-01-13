@@ -95,6 +95,7 @@ public class Inventory : Singleton<Inventory>
             DegreeItem(indexCurrentItem);
             Debug.Log("Item used in inventory !!!!!");
         }
+        
     }
 
 
@@ -111,7 +112,6 @@ public class Inventory : Singleton<Inventory>
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
-
     }
 
 

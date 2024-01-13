@@ -9,7 +9,6 @@ public class HealthPotion : Items
     [Header("Health restore")]
     public float heatlhValue;
 
-
     public override bool UseItem()
     {
         if (PlayerManager.Instance.CanRestoreHealthForPlayer())
