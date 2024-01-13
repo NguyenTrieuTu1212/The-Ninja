@@ -51084,6 +51084,7 @@ GameObject:
   - component: {fileID: 1056578414}
   - component: {fileID: 1056578413}
   - component: {fileID: 1056578415}
+  - component: {fileID: 1056578416}
   m_Layer: 5
   m_Name: Mana_Bar
   m_TagString: Untagged
@@ -51171,6 +51172,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1056578416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056578411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d146d1ce00ab74bad45a9087e94e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: c82b21efed4f8a648b494a4306e05803, type: 2}
 --- !u!1 &1060802780
 GameObject:
   m_ObjectHideFlags: 0
@@ -52620,7 +52634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2cf28560a223146affb204ddd3c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTest: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
+  itemTest: {fileID: 11400000, guid: c82b21efed4f8a648b494a4306e05803, type: 2}
   inventorySize: 24
   inventoryItems: []
   animationsEffect:
@@ -57751,6 +57765,7 @@ GameObject:
   - component: {fileID: 1935000298}
   - component: {fileID: 1935000297}
   - component: {fileID: 1935000299}
+  - component: {fileID: 1935000300}
   m_Layer: 5
   m_Name: Bar_Health
   m_TagString: Untagged
@@ -57838,6 +57853,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1935000300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935000295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d146d1ce00ab74bad45a9087e94e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
 --- !u!1 &1958409153
 GameObject:
   m_ObjectHideFlags: 0

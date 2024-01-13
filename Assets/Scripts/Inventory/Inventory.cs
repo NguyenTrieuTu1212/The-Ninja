@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Inventory : Singleton<Inventory>
 {
@@ -10,6 +11,7 @@ public class Inventory : Singleton<Inventory>
     [SerializeField] private Items[] inventoryItems;
     [SerializeField] private List<Animator> animationsEffect = new List<Animator>();
 
+    public static event Action OnUseItem;
 
     public int InventorySize => inventorySize;
 
@@ -95,7 +97,7 @@ public class Inventory : Singleton<Inventory>
             DegreeItem(indexCurrentItem);
             Debug.Log("Item used in inventory !!!!!");
         }
-        
+        OnUseItem?.Invoke();
     }
 
 
