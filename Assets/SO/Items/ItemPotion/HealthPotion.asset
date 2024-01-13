@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6388a4fefce69594f81b444e10aac3c5, type: 3}
-  m_Name: Potion
+  m_Name: HealthPotion
   m_EditorClassIdentifier: 
   ID: HealthPotion
   nameItem: HealthPotion

@@ -95,7 +95,6 @@ public class Inventory : Singleton<Inventory>
             DegreeItem(indexCurrentItem);
             Debug.Log("Item used in inventory !!!!!");
         }
-        
     }
 
 
@@ -112,13 +111,6 @@ public class Inventory : Singleton<Inventory>
         {
             InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
         }
-        if(inventoryItems[index].ID == "HealthPotion")
-            // Play animtion for health bar 
-            StartCoroutine(WaitingPlayEffect(animationsEffect[0]));
-        else if(inventoryItems[index].ID == "ManaPosion")
-            StartCoroutine(WaitingPlayEffect(animationsEffect[1]));
-        
-        
 
     }
 
