@@ -10,8 +10,7 @@ public class Inventory : Singleton<Inventory>
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
     /* public static event Action<string> OnUseItem;*/
-
-    [SerializeField] private List<Animator> animators = new List<Animator>();   
+  
 
     public int InventorySize => inventorySize;
 
@@ -95,17 +94,8 @@ public class Inventory : Singleton<Inventory>
         if (inventoryItems[indexCurrentItem].UseItem())
         {
             DegreeItem(indexCurrentItem);
-            if(inventoryItems[indexCurrentItem] != null)
-            {
-                if(inventoryItems[indexCurrentItem].ID == "HealthPosion")
-                {
-                    StartCoroutine(WaitingPlayEffect(animators[0]));
-                }
-                if (inventoryItems[indexCurrentItem].ID == "ManaPosion")
-                {
-                    StartCoroutine(WaitingPlayEffect(animators[1]));
-                }
-            }
+            if (inventoryItems[indexCurrentItem] == null) return;
+            AnimationManager.Instance.PlayAnimation(inventoryItems[indexCurrentItem].ID);
             Debug.Log("Item used in inventory !!!!!");
         }
         
