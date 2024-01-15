@@ -10,7 +10,7 @@ public class BulletShoot : MonoBehaviour
     public Vector3 direction { get; set; }
     public float damage { get; set; }
 
-    
+   
 
     private void Update()
     {

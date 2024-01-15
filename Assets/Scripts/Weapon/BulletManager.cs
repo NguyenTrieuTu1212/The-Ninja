@@ -17,10 +17,6 @@ public class BulletManager : Singleton<BulletManager>
     [SerializeField] private int amount;
     [SerializeField] private List<BulletShoot> listBulletPrefabs;
     
-
-
-
-
     protected override void Awake()
     {
         base.Awake();
@@ -32,9 +28,6 @@ public class BulletManager : Singleton<BulletManager>
         AddBulletPrefabs();
         AllPrepare();
     }
-
-
-   
     private void AddBulletPrefabs()
     {
         Transform objPrefabs= transform.Find("Prefabs");
@@ -48,8 +41,6 @@ public class BulletManager : Singleton<BulletManager>
         HidePrefabs();
     }
     
-
-
     private void HidePrefabs()
     {
         foreach(BulletShoot bullet in listBulletPrefabs)
