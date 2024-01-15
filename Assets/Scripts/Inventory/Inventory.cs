@@ -9,9 +9,9 @@ public class Inventory : Singleton<Inventory>
     [SerializeField] private Items itemTest;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
-    [SerializeField] private List<Animator> animationsEffect = new List<Animator>();
+    /* public static event Action<string> OnUseItem;*/
 
-    public static event Action OnUseItem;
+    [SerializeField] private List<Animator> animators = new List<Animator>();   
 
     public int InventorySize => inventorySize;
 
@@ -86,7 +86,7 @@ public class Inventory : Singleton<Inventory>
 
     public void UseItem()
     {
-        
+
         if (inventoryItems[indexCurrentItem] == null)
         {
             Debug.Log("Item is null !!! Not used !!!!");
@@ -95,11 +95,29 @@ public class Inventory : Singleton<Inventory>
         if (inventoryItems[indexCurrentItem].UseItem())
         {
             DegreeItem(indexCurrentItem);
+            if(inventoryItems[indexCurrentItem] != null)
+            {
+                if(inventoryItems[indexCurrentItem].ID == "HealthPosion")
+                {
+                    StartCoroutine(WaitingPlayEffect(animators[0]));
+                }
+                if (inventoryItems[indexCurrentItem].ID == "ManaPosion")
+                {
+                    StartCoroutine(WaitingPlayEffect(animators[1]));
+                }
+            }
             Debug.Log("Item used in inventory !!!!!");
         }
-        OnUseItem?.Invoke();
+        
     }
 
+
+    public void RemoveItem()
+    {
+        if(inventoryItems[indexCurrentItem] == null) return;
+        inventoryItems[indexCurrentItem] = null;
+        InventoryUI.Instance.DrawSlot(null, indexCurrentItem);
+    }
 
     private void DegreeItem(int index)
     {
@@ -124,14 +142,6 @@ public class Inventory : Singleton<Inventory>
     }
 
 
-    private IEnumerator WaitingPlayEffect(Animator animator)
-    {
-        animator.SetBool("isWorking",true);
-        yield return new WaitForSeconds(0.4f);
-        animator.SetBool("isWorking", false);
-    } 
-
-    
 
     private void OnEnable()
     {
@@ -146,5 +156,13 @@ public class Inventory : Singleton<Inventory>
 
 
 
-    
+    private IEnumerator WaitingPlayEffect(Animator animator)
+    {
+        animator.SetBool("isWorking", true);
+        yield return new WaitForSeconds(0.4f);
+        animator.SetBool("isWorking", false);
+    }
+
+
+
 }

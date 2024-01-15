@@ -7,6 +7,7 @@ public class AnimtionBarStat : MonoBehaviour
     private Animator animator;
     [SerializeField] private Items item;
 
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -14,13 +15,16 @@ public class AnimtionBarStat : MonoBehaviour
 
 
 
-    private void EffectUseItemCallBack()
+   /* private void EffectUseItemCallBack(string id)
     {
         if (!item.UseItem()) return;
-        StartCoroutine(WaitingPlayEffect());
-    }
+        if(item.ID == id)
+        {
+            StartCoroutine(WaitingPlayEffect());
+        }
+    }*/
 
-    private IEnumerator WaitingPlayEffect()
+   /* private IEnumerator WaitingPlayEffect()
     {
         animator.SetBool("isWorking", true);
         yield return new WaitForSeconds(0.4f);
@@ -37,5 +41,5 @@ public class AnimtionBarStat : MonoBehaviour
     private void OnDisable()
     {
         Inventory.OnUseItem -= EffectUseItemCallBack;
-    }
+    }*/
 }
