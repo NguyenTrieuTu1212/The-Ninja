@@ -17,6 +17,8 @@ public class BulletShoot : MonoBehaviour
         transform.Translate(direction * speedBullet * Time.deltaTime);
     }
 
+
+    // Animation event
     public virtual void ReturnBulletInQueue()
     {
         BulletManager.Instance.ReturnBullet(playerAttack.initWeapon.nameBullet, gameObject.GetComponent<BulletShoot>());
