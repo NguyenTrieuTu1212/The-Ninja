@@ -10,12 +10,14 @@ public class ActionShootTarget : FSMAction
     [SerializeField] private GameObject target;
     [SerializeField] private float damage;
     [SerializeField] private float timeBtwShoot;
+    
     bool isShoot = false;
-
+    Vector3 targetDirection;
 
     private void Awake()
     {
         enermyHealth = GetComponent<EnermyHealth>();
+        
     }
 
     public override void Action()
@@ -34,10 +36,18 @@ public class ActionShootTarget : FSMAction
     }
 
     private void Shoot()
-    {
+    { 
+        targetDirection = target.transform.position - transform.position;
         BulletShoot bullet = BulletManager.Instance.TakeBullet("CanonBall", transform.position, 0f);
-        Vector2 targetDirection = target.transform.position - transform.position;
         bullet.direction = targetDirection.normalized;
         bullet.damage = damage;
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(transform.position, target.transform.position);
     }
 }
