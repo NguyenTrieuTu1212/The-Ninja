@@ -43,11 +43,4 @@ public class ActionShootTarget : FSMAction
         bullet.damage = damage;
     }
 
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(transform.position, target.transform.position);
-    }
 }

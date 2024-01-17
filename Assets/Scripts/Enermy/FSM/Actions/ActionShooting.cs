@@ -6,6 +6,10 @@ public class ActionShooting : FSMAction
 {
     
     [SerializeField] private float damage;
+
+
+    [SerializeField] private GameObject target;
+
     private bool isShooting = false;
     private float angle = 0f;
     private float delayBtwAttack = 2f;
@@ -20,10 +24,16 @@ public class ActionShooting : FSMAction
     public override void Action()
     {
         if (isShooting || enermyHealth.CurrentHealth <= 0f) return;
-        StartCoroutine(ShootEverySecond());
+        else StartCoroutine(WaitingShootTarget());
     }
 
-    private IEnumerator ShootEverySecond()
+
+
+
+
+
+
+    private IEnumerator WaitingShoot()
     {
         isShooting = true;
 
@@ -37,12 +47,31 @@ public class ActionShooting : FSMAction
         isShooting = false;
     }
 
+    private IEnumerator WaitingShootTarget()
+    {
+        isShooting = true;
+        ShootTarget();
+        yield return new WaitForSeconds(delayBtwAttack);
+        isShooting = false;
+    }
+
+
+
 
     private void Shooting()
     {
         angle -= 45f;
         BulletShoot bullet = BulletManager.Instance.TakeBullet("Rock", transform.position, angle);
         bullet.direction = Vector2.right;
+        bullet.damage = damage;
+    }
+
+
+    private void ShootTarget()
+    {
+        Vector3 targetDirection = target.transform.position - transform.position;
+        BulletShoot bullet = BulletManager.Instance.TakeBullet("CanonBall", transform.position, 0f);
+        bullet.direction = targetDirection;
         bullet.damage = damage;
     }
 }

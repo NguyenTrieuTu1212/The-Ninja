@@ -53522,7 +53522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 2053291168}
-  speedBullet: 4.5
+  speedBullet: 2.5
 --- !u!50 &1372508518
 Rigidbody2D:
   serializedVersion: 4
@@ -59240,8 +59240,8 @@ GameObject:
   - component: {fileID: 143118737572226274}
   - component: {fileID: 143118737572226276}
   - component: {fileID: 143118737572226266}
-  - component: {fileID: 143118737572226277}
   - component: {fileID: 143118737572226264}
+  - component: {fileID: 143118737572226277}
   - component: {fileID: 143118737572226267}
   - component: {fileID: 143118737572226272}
   m_Layer: 7
@@ -59304,7 +59304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143118737572226259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.41, y: -5.62, z: 0}
+  m_LocalPosition: {x: 26.5, y: -5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59491,12 +59491,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 143118737572226259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac7d738bd56fe143a1eaadf1b23117a, type: 3}
+  m_Script: {fileID: 11500000, guid: d49f08f3f5b82db4599d8aa4b00fcd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 150267856}
   damage: 2
-  timeBtwShoot: 1
+  target: {fileID: 150267856}
 --- !u!212 &577133421280607357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59850,7 +59849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074150267690288126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 3.8, z: 0.15911879}
+  m_LocalPosition: {x: 4.1, y: -3.3, z: 0.15911879}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60062,6 +60061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  target: {fileID: 0}
 --- !u!1 &2360254536333641902
 GameObject:
   m_ObjectHideFlags: 0
