@@ -102,12 +102,26 @@ public class Inventory : Singleton<Inventory>
     }
 
 
+    public void EquipItem()
+    {
+        if(inventoryItems[indexCurrentItem] == null) return;
+        if (inventoryItems[indexCurrentItem].type != ItemsType.Weapon) return;
+        inventoryItems[indexCurrentItem].EquiqItem();
+    }
+
+
     public void RemoveItem()
     {
         if(inventoryItems[indexCurrentItem] == null) return;
+        inventoryItems[indexCurrentItem].RemoveItem();
         inventoryItems[indexCurrentItem] = null;
         InventoryUI.Instance.DrawSlot(null, indexCurrentItem);
     }
+
+
+
+
+
 
     private void DegreeItem(int index)
     {

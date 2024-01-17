@@ -24,6 +24,7 @@ public class ActionShooting : FSMAction
     public override void Action()
     {
         if (isShooting || enermyHealth.CurrentHealth <= 0f) return;
+        if (target == null) StartCoroutine(WaitingShoot());
         else StartCoroutine(WaitingShootTarget());
     }
 
