@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class InventoryUI : Singleton<InventoryUI>
 {
+    [Header ("Config Slot in Inventory")]
     [SerializeField] private InventorySlots slotPrefab;
     [SerializeField] private Transform containerSlot;
     private List<InventorySlots> slotsList= new List<InventorySlots>();
+
+
+    [Header("Config decription item")]
+    [SerializeField] private GameObject decriptionPanel;
+    [SerializeField] private TextMeshProUGUI nameItem_TMP;
+    [SerializeField] private TextMeshProUGUI detailItem_TMP;
+    [SerializeField] private Image imageItemDetail;
 
 
     private void Start()
@@ -38,5 +47,22 @@ public class InventoryUI : Singleton<InventoryUI>
         slot.UpdateSlot(item);
         slot.ShowInforItemInSlot(true);
 
+    }
+
+
+    public void ShowDecriptionItem(Items item,bool isDisplay)
+    {
+        if (isDisplay)
+        {
+            imageItemDetail.sprite = item.icon;
+            nameItem_TMP.text = item.nameItem;
+            detailItem_TMP.text = item.description;
+        }
+        else
+        {
+            decriptionPanel.SetActive(isDisplay);
+            return;
+        }
+        
     }
 }

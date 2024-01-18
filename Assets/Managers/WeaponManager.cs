@@ -24,6 +24,6 @@ public class WeaponManager : Singleton<WeaponManager>
         PlayerManager.Instance.PlayerAttack.EquipWeapon(weapon);
     }
 
-
+    
 
 }

@@ -47702,7 +47702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7479be55ce76644489288a1c89291ec, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -52877,6 +52877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 3702237609286875944, guid: 927b82650e059ac4db8e7369c82c165a, type: 3}
   containerSlot: {fileID: 602489787}
+  decriptionPanel: {fileID: 885699930}
+  nameItem_TMP: {fileID: 1873391859}
+  detailItem_TMP: {fileID: 527860241}
+  imageItemDetail: {fileID: 860530795}
 --- !u!1 &1301120514
 GameObject:
   m_ObjectHideFlags: 0
