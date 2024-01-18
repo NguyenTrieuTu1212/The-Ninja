@@ -7,13 +7,15 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private PlayerExp playerExp;
     private PlayerMana playerMana;
-    private PlayerHealth playerHealth;  
+    private PlayerHealth playerHealth;
+    public PlayerAttack PlayerAttack { get; private set; }
     protected override void Awake()
     {
         base.Awake();
         playerExp = GetComponent<PlayerExp>();
         playerMana = GetComponent<PlayerMana>();
         playerHealth = GetComponent<PlayerHealth>();
+        PlayerAttack = GetComponent<PlayerAttack>();
     }
 
     public void AddExpPlayer(float expAmount)

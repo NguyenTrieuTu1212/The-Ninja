@@ -6,6 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Iventory Items/Weapon",fileName ="ItemWeapon")]
 public class ItemsWeapon : Items
 {
-    public Weapon weapon;  
-   
+    public Weapon weapon;
+
+
+    public override void EquipItem()
+    {
+        WeaponManager.Instance.EquiqItem(weapon);
+    }
+
 }

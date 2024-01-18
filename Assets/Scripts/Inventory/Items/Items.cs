@@ -44,7 +44,7 @@ public class Items : ScriptableObject
         return true;
     }
 
-    public virtual void EquiqItem()
+    public virtual void EquipItem()
     {
 
     }

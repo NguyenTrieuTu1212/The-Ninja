@@ -106,7 +106,7 @@ public class Inventory : Singleton<Inventory>
     {
         if(inventoryItems[indexCurrentItem] == null) return;
         if (inventoryItems[indexCurrentItem].type != ItemsType.Weapon) return;
-        inventoryItems[indexCurrentItem].EquiqItem();
+        inventoryItems[indexCurrentItem].EquipItem();
     }
 
 

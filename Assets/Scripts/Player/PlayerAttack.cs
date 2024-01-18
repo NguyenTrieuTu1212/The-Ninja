@@ -28,11 +28,14 @@ public class PlayerAttack : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerMana = GetComponent<PlayerMana>();
         player = GetComponent<Player>();
-        EquidWeapon(initWeapon);
+        WeaponManager.Instance.EquiqItem(initWeapon);
         FindPointsAttacking();
     }
 
-    
+
+   
+
+
     private void Update()
     {
         GetPosistionFire();
@@ -78,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = false; 
     }
 
-    private void EquidWeapon(Weapon weapon)
+    public void EquidWeapon(Weapon weapon)
     {
         CurrentWeapon = weapon;
         player.Stats.totalDamage += player.Stats.baseDamage + CurrentWeapon.damage;
