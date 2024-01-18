@@ -11,7 +11,7 @@ public class ItemsWeapon : Items
 
     public override void EquipItem()
     {
-        WeaponManager.Instance.EquiqItem(weapon);
+        WeaponManager.Instance.EquipItem(weapon);
     }
 
 }

@@ -41,11 +41,11 @@ public class UIManager : MonoBehaviour
     {
         statsPanel.SetActive(false);
         inventoryPanel.SetActive(false);
-        LoadImageWeapon();
+        /*LoadImageWeapon();*/
     }
     private void Update()
     {
-        LoadImageWeapon();
+        /*LoadImageWeapon();*/
         LoadStatsPlayerUI();
         LoadStatsPanelUI();
     }

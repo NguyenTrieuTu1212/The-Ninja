@@ -27,7 +27,7 @@ public class Inventory : Singleton<Inventory>
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            AddItem(itemTest, 5);
+            AddItem(itemTest, 1);
         }
         
     }

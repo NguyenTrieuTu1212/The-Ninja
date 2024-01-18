@@ -15,13 +15,13 @@ public class WeaponManager : Singleton<WeaponManager>
         base.Awake();
     }
 
-    public void EquiqItem(Weapon weapon)
+    public void EquipItem(Weapon weapon)
     {
         imageWeapon.sprite = weapon.iconWeapon;
         imageWeapon.gameObject.SetActive(true);
         weaponManaTMP.text = weapon.requireTime.ToString();
         weaponManaTMP.gameObject.SetActive(true);
-        PlayerManager.Instance.PlayerAttack.EquidWeapon(weapon);
+        PlayerManager.Instance.PlayerAttack.EquipWeapon(weapon);
     }
 
 
