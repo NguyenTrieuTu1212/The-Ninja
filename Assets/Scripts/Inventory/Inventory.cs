@@ -142,7 +142,11 @@ public class Inventory : Singleton<Inventory>
     private void SeletedSlotCallBack(int index)
     {
         indexCurrentItem = index;
-        if(inventoryItems[index] == null) return;
+        if(inventoryItems[index] == null)
+        {
+            InventoryUI.Instance.ShowDecriptionItem(inventoryItems[indexCurrentItem], false);
+            return;
+        }
         InventoryUI.Instance.ShowDecriptionItem(inventoryItems[indexCurrentItem], true);
         Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }

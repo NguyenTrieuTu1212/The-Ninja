@@ -11,12 +11,15 @@ public class InventoryUI : Singleton<InventoryUI>
     private List<InventorySlots> slotsList= new List<InventorySlots>();
 
 
+    [Header("Config panel inventory")]
+    [SerializeField] private GameObject inventoryPanel;
+
+
     [Header("Config decription item")]
     [SerializeField] private GameObject decriptionPanel;
+    [SerializeField] private Image imageItemDetail;
     [SerializeField] private TextMeshProUGUI nameItem_TMP;
     [SerializeField] private TextMeshProUGUI detailItem_TMP;
-    [SerializeField] private Image imageItemDetail;
-
 
     private void Start()
     {
@@ -63,6 +66,14 @@ public class InventoryUI : Singleton<InventoryUI>
             decriptionPanel.SetActive(isDisplay);
             return;
         }
-        
+    }
+
+    public void OpenAndCloseInventory()
+    {
+        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+        if (inventoryPanel.activeSelf == false)
+        {
+            decriptionPanel.SetActive(false);
+        }
     }
 }

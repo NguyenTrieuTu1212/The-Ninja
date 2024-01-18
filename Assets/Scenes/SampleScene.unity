@@ -52661,8 +52661,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1741232187}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1267664595}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
         m_MethodName: OpenAndCloseInventory
         m_Mode: 1
         m_Arguments:
@@ -52877,10 +52877,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 3702237609286875944, guid: 927b82650e059ac4db8e7369c82c165a, type: 3}
   containerSlot: {fileID: 602489787}
+  inventoryPanel: {fileID: 1616233921}
   decriptionPanel: {fileID: 885699930}
+  imageItemDetail: {fileID: 860530795}
   nameItem_TMP: {fileID: 1873391859}
   detailItem_TMP: {fileID: 527860241}
-  imageItemDetail: {fileID: 860530795}
 --- !u!1 &1301120514
 GameObject:
   m_ObjectHideFlags: 0
@@ -57168,7 +57169,6 @@ MonoBehaviour:
   intelligenceTMP: {fileID: 1194470282}
   attributesPointTMP: {fileID: 1631007569}
   imageWeapon: {fileID: 1673711023}
-  inventoryPanel: {fileID: 1616233921}
 --- !u!1 &1784224953
 GameObject:
   m_ObjectHideFlags: 0

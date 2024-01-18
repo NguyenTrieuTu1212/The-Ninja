@@ -35,12 +35,11 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image imageWeapon;
 
-    [SerializeField] private GameObject inventoryPanel;
-
+    
     private void Awake()
     {
         statsPanel.SetActive(false);
-        inventoryPanel.SetActive(false);
+        
         /*LoadImageWeapon();*/
     }
     private void Update()
@@ -97,18 +96,11 @@ public class UIManager : MonoBehaviour
             LoadStatsPanelUI();
         }
     }
-
-    public void OpenAndCloseInventory()
-    {
-        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-    }
     
-
     private void LoadUpgradeUICallback()
     {
         LoadStatsPanelUI();
     }
-
 
     private void LoadImageWeapon()
     {
