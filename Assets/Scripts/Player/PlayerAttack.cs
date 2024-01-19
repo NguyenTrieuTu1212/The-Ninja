@@ -28,13 +28,17 @@ public class PlayerAttack : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerMana = GetComponent<PlayerMana>();
         player = GetComponent<Player>();
-        EquipWeapon(initWeapon);
+        /*EquipWeapon(initWeapon);*/
         FindPointsAttacking();
     }
 
 
-   
 
+    private void Start()
+    {
+        if (initWeapon == null) return;
+        WeaponManager.Instance.EquipItem(initWeapon);
+    }
 
     private void Update()
     {
@@ -63,21 +67,21 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true; 
         if (currentAttackPositon != null)
         {
-            if (player.Stats.mana < initWeapon.RequireMana)
+            if (player.Stats.mana < CurrentWeapon.RequireMana)
             {
                 isAttacking = false;
                 yield break;
             }
 
-            BulletShoot bullet = BulletManager.Instance.TakeBullet(initWeapon.nameBullet, currentAttackPositon.position, currentAttackRotation);
+            BulletShoot bullet = BulletManager.Instance.TakeBullet(CurrentWeapon.nameBullet, currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
             bullet.damage = GetDamageCritical();
-            playerMana.UsedMana(initWeapon.RequireMana);
+            playerMana.UsedMana(CurrentWeapon.RequireMana);
         }
         playerAnimations.SetAttacking(true);
         yield return new WaitForSeconds(0.5f);
         playerAnimations.SetAttacking(false);
-        yield return new WaitForSeconds(initWeapon.requireTime - 0.5f);
+        yield return new WaitForSeconds(CurrentWeapon.requireTime - 0.5f);
         isAttacking = false; 
     }
 
@@ -91,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
     private float GetDamageCritical()
     {
         float damage = player.Stats.baseDamage;
-        damage += initWeapon.damage;
+        damage += CurrentWeapon.damage;
         float randomDamage = Random.Range(0f, 100f);
         if(randomDamage <= player.Stats.criticalChance)
         {
