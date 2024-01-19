@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 1.5
   nameBullet: Arrow
   RequireMana: 1.5
-  requireTime: 0
+  requireTime: 0.2

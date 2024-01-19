@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
 
-    private Weapon CurrentWeapon;
+    public Weapon CurrentWeapon;
 
     [SerializeField] public Weapon initWeapon;
 
@@ -58,7 +58,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null || isAttacking) return;
+        if (enermyTarget == null || isAttacking || CurrentWeapon == null) return;
         StartCoroutine(WaitingAttacking());
     }
 

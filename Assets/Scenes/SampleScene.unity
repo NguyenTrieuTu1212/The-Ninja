@@ -15800,7 +15800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d7150f6dc73544b0c375e7459e6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initWeapon: {fileID: 11400000, guid: aa7fcd3b8ef055348901bdab5eb578bd, type: 2}
+  CurrentWeapon: {fileID: 0}
+  initWeapon: {fileID: 0}
 --- !u!114 &150267869
 MonoBehaviour:
   m_ObjectHideFlags: 0

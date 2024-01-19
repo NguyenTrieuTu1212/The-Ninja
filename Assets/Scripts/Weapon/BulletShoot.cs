@@ -21,7 +21,7 @@ public class BulletShoot : MonoBehaviour
     // Animation event
     public virtual void ReturnBulletInQueue()
     {
-        BulletManager.Instance.ReturnBullet(playerAttack.initWeapon.nameBullet, gameObject.GetComponent<BulletShoot>());
+        BulletManager.Instance.ReturnBullet(playerAttack.CurrentWeapon.nameBullet, gameObject.GetComponent<BulletShoot>());
     }
 
 
