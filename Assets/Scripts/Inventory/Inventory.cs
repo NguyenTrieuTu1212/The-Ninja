@@ -120,9 +120,6 @@ public class Inventory : Singleton<Inventory>
 
 
 
-
-
-
     private void DegreeItem(int index)
     {
         if (inventoryItems[index] == null) return;
@@ -142,12 +139,12 @@ public class Inventory : Singleton<Inventory>
     private void SeletedSlotCallBack(int index)
     {
         indexCurrentItem = index;
-        if(inventoryItems[index] == null)
+        if(inventoryItems[indexCurrentItem] == null)
         {
-            InventoryUI.Instance.ShowDecriptionItem(inventoryItems[indexCurrentItem], false);
+            InventoryUI.Instance.ShowDecriptionItem(null, false);
             return;
         }
-        InventoryUI.Instance.ShowDecriptionItem(inventoryItems[indexCurrentItem], true);
+        InventoryUI.Instance.ShowDecriptionItem(inventoryItems[indexCurrentItem],true);
         Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }
 

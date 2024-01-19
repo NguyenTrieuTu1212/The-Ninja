@@ -61,17 +61,13 @@ public class InventoryUI : Singleton<InventoryUI>
             nameItem_TMP.text = item.nameItem;
             detailItem_TMP.text = item.description;
         }
-        else
-        {
-            decriptionPanel.SetActive(isDisplay);
-            return;
-        }
+        decriptionPanel.SetActive(isDisplay);
     }
 
     public void OpenAndCloseInventory()
     {
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-        if (inventoryPanel.activeSelf == false)
+        if (inventoryPanel.activeSelf == true)
         {
             decriptionPanel.SetActive(false);
         }
