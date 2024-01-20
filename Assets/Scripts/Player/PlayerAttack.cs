@@ -67,11 +67,14 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true; 
         if (currentAttackPositon != null)
         {
-            if (player.Stats.mana < CurrentWeapon.RequireMana)
+            if (player.Stats.mana < CurrentWeapon.RequireMana || CurrentWeapon.durability <= 0)
             {
                 isAttacking = false;
                 yield break;
             }
+            // durability wepon
+            CurrentWeapon.durability -= CurrentWeapon.offset;
+            Debug.Log("Weapon durability is " + CurrentWeapon.durability);
 
             BulletShoot bullet = BulletManager.Instance.TakeBullet(CurrentWeapon.nameBullet, currentAttackPositon.position, currentAttackRotation);
             bullet.direction = Vector3.up;
@@ -91,6 +94,8 @@ public class PlayerAttack : MonoBehaviour
         player.Stats.totalDamage += player.Stats.baseDamage + CurrentWeapon.damage;
     }
 
+
+    
 
     private float GetDamageCritical()
     {

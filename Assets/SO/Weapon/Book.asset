@@ -16,5 +16,8 @@ MonoBehaviour:
   weaponType: 1
   damage: 10
   nameBullet: PlantSpike
+  durability: 100
+  offset: 0
+  maxDurability: 0
   RequireMana: 5
   requireTime: 1.5
