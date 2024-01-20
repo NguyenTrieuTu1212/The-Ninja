@@ -32,7 +32,6 @@ public class Inventory : Singleton<Inventory>
         
     }
 
-
     private void AddItem(Items item, int amount)
     {
         if (item == null || amount <= 0) return;
@@ -86,7 +85,7 @@ public class Inventory : Singleton<Inventory>
     public void UseItem()
     {
 
-        if (inventoryItems[indexCurrentItem] == null)
+        if (inventoryItems[indexCurrentItem] == null || inventoryItems[indexCurrentItem].type == ItemsType.Weapon)
         {
             Debug.Log("Item is null !!! Not used !!!!");
             return;
@@ -170,6 +169,5 @@ public class Inventory : Singleton<Inventory>
         animator.SetBool("isWorking", false);
     }
 
-
-
+    
 }
