@@ -9,10 +9,11 @@ public class GameData
     public Vector3 posPlayer;
     public float healthPlayer;
 
-    public Items[] itemsList;
+
+    public InventoryData inventoryData;
     public GameData()
     {
-        itemsList = new Items[24];
+        inventoryData = new InventoryData();
         posPlayer = Vector3.zero;
         healthPlayer = 10f;
     }

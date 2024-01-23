@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Inventory : Singleton<Inventory>
+public class Inventory : Singleton<Inventory>,IDataPersistance
 {
     
     [SerializeField] private Items itemTest;
+    [SerializeField] private Database database;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
+    InventoryData dataItems = new InventoryData();
+
     /* public static event Action<string> OnUseItem;*/
-  
+
 
     public int InventorySize => inventorySize;
 
@@ -23,6 +26,8 @@ public class Inventory : Singleton<Inventory>
         inventoryItems = new Items[inventorySize];
     }
 
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
@@ -31,6 +36,56 @@ public class Inventory : Singleton<Inventory>
         }
         
     }
+
+
+
+
+    // Load inventory
+    public void LoadGame(GameData gameData)
+    {
+        /*dataItems = gameData.inventoryData;
+        for (int i = 0; i < inventorySize; i++)
+        {
+            if (dataItems.itemID != null)
+            {
+                Items itemSaved = FindSavedItems(dataItems.itemID[i]);
+                inventoryItems[i] = itemSaved.CopyItem();
+            }
+        }*/
+        
+    }
+
+    // Save inventory
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.inventoryData = dataItems;
+        dataItems.itemID = new String[InventorySize];
+        dataItems.itemAmount = new int[InventorySize];
+        for (int i = 0; i < inventorySize; i++)
+        {
+            if (inventoryItems[i] == null)
+            {
+                dataItems.itemID[i] = null;
+                dataItems.itemAmount[i] = 0;
+            }
+            else
+            {
+                dataItems.itemID[i] = inventoryItems[i].ID;
+                dataItems.itemAmount[i] = inventoryItems[i].amountItem;
+            }
+        }
+        gameData.inventoryData = dataItems;
+    }
+
+    private Items FindSavedItems(string itemId)
+    {
+        for(int i = 0; i <database.listItems.Length; i++)
+        {
+            if(database.listItems[i].ID == itemId) return database.listItems[i];
+        }
+        return null;
+    }
+
 
     private void AddItem(Items item, int amount)
     {
@@ -147,7 +202,7 @@ public class Inventory : Singleton<Inventory>
         Debug.Log("Get current index is: " + indexCurrentItem.ToString());    
     }
 
-
+    
 
     private void OnEnable()
     {
@@ -169,5 +224,5 @@ public class Inventory : Singleton<Inventory>
         animator.SetBool("isWorking", false);
     }
 
-    
+
 }

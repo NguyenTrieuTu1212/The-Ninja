@@ -52940,6 +52940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemTest: {fileID: 11400000, guid: 478f40af868771841baf243e3b9e7cca, type: 2}
+  database: {fileID: 11400000, guid: d7471a99ce0621a4fbb6d35b1179aef3, type: 2}
   inventorySize: 24
   inventoryItems: []
 --- !u!114 &1267664595
