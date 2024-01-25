@@ -21,13 +21,7 @@ public class InventoryUI : Singleton<InventoryUI>
     [SerializeField] private TextMeshProUGUI nameItem_TMP;
     [SerializeField] private TextMeshProUGUI detailItem_TMP;
 
-    private void Start()
-    {
-        InitInventory();
-    }
-
-
-    private void InitInventory()
+    public void InitInventory()
     {
         for(int i = 0; i < Inventory.Instance.InventorySize; i++)
         {
@@ -47,8 +41,8 @@ public class InventoryUI : Singleton<InventoryUI>
             slot.ShowInforItemInSlot(false);
             return;
         }
-        slot.UpdateSlot(item);
         slot.ShowInforItemInSlot(true);
+        slot.UpdateSlot(item);
 
     }
 

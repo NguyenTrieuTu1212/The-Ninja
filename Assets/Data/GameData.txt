@@ -7,7 +7,7 @@
     "healthPlayer": 10.0,
     "inventoryData": {
         "itemID": [
-            "WeaponKunai",
+            "",
             "",
             "",
             "",
