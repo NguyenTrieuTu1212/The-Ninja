@@ -4,30 +4,60 @@ using UnityEngine;
 using BayatGames.SaveGameFree;
 using System;
 
-public class Inventory : Singleton<Inventory>
+public class Inventory : Singleton<Inventory>,IDataPersistance
 {
     
     [SerializeField] private Items itemTest;
     [SerializeField] private Database database;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
-
-
-    private readonly string KEY_DATA = "Mykey";
-
-
+    /*private readonly string KEY_DATA = "Mykey";*/
+    private InventoryData data;
     public int InventorySize => inventorySize;
-
-
     public int indexCurrentItem { get;  set; }
 
-    private void Start()
+
+
+    /*private void Start()
     {
         inventoryItems = new Items[inventorySize];
         InventoryUI.Instance.InitInventory();
         VerifyToDrawItems();
         LoadDataItems();
+    }*/
+
+
+    public void LoadGame(GameData gameData)
+    {
+        inventoryItems = new Items[inventorySize];
+        InventoryUI.Instance.InitInventory();
+        VerifyToDrawItems();
+        LoadDataItems(gameData);
     }
+
+
+    public void SaveGame(ref GameData gameData)
+    {
+
+        data.itemID = new string[inventorySize];
+        data.itemAmount = new int[inventorySize];
+        for (int i = 0; i < inventorySize; i++)
+        {
+            if (inventoryItems[i] == null)
+            {
+                data.itemID[i] = "";
+                data.itemAmount[i] = 0;
+            }
+            else
+            {
+                data.itemID[i] = inventoryItems[i].ID;
+                data.itemAmount[i] = inventoryItems[i].amountItem;
+            }
+        }
+        gameData.inventoryData = data;
+    }
+
+
 
     private void Update()
     {
@@ -38,9 +68,33 @@ public class Inventory : Singleton<Inventory>
         
     }
 
-    // Test Save Item
+    private void LoadDataItems(GameData dataItems)
+    {
+        data = dataItems.inventoryData;
+        data.itemID = dataItems.inventoryData.itemID;
+        data.itemAmount = dataItems.inventoryData.itemAmount;
+        for (int i = 0; i < inventorySize; i++)
+        {
+            if (data.itemID[i] != null)
+            {
+                Items itemSaved = FindSavedItems(data.itemID[i]);
+                if (itemSaved != null)
+                {
+                    inventoryItems[i] = itemSaved.CopyItem();
+                    inventoryItems[i].amountItem = data.itemAmount[i];
+                    InventoryUI.Instance.DrawSlot(inventoryItems[i], i);
+                }
+            }
+            else
+            {
+                inventoryItems[i] = null;
+            }
+        }
+    }
 
-    private void OnApplicationQuit()
+
+    // ================================= Save and Load data in another way (Applicable) =======================================
+    /*private void OnApplicationQuit()
     {
         SaveDataItems();
     }
@@ -90,7 +144,7 @@ public class Inventory : Singleton<Inventory>
         }
         SaveGame.Save(KEY_DATA, datasave);
         Debug.Log("Item is saved");
-    }
+    }*/
 
 
     private Items FindSavedItems(string itemId)
