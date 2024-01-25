@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BayatGames.SaveGameFree;
 using System;
 
-public class Inventory : Singleton<Inventory>,IDataPersistance
+public class Inventory : Singleton<Inventory>
 {
     
     [SerializeField] private Items itemTest;
     [SerializeField] private Database database;
     [SerializeField] private int inventorySize;
     [SerializeField] private Items[] inventoryItems;
-    InventoryData dataItems = new InventoryData();
+    private readonly string KEY_DATA = "SAVE_GAME";
 
     /* public static event Action<string> OnUseItem;*/
 
@@ -26,7 +27,10 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
         inventoryItems = new Items[inventorySize];
     }
 
+    
 
+
+    
 
     private void Update()
     {
@@ -41,18 +45,27 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
 
 
     // Load inventory
-    public void LoadGame(GameData gameData)
+    /*public void LoadGame(GameData gameData)
     {
-        /*dataItems = gameData.inventoryData;
+        dataItems = gameData.inventoryData;
         for (int i = 0; i < inventorySize; i++)
         {
-            if (dataItems.itemID != null)
+            if (dataItems.itemID[i] != null)
             {
                 Items itemSaved = FindSavedItems(dataItems.itemID[i]);
-                inventoryItems[i] = itemSaved.CopyItem();
+                if (itemSaved != null)
+                {
+                    Debug.Log("Item saved ID: " + itemSaved.ID);
+                    inventoryItems[i] = itemSaved.CopyItem();
+                    inventoryItems[i].amountItem = itemSaved.amountItem;
+                    InventoryUI.Instance.DrawSlot(inventoryItems[i], i);
+                }
             }
-        }*/
-        
+        }
+
+
+
+
     }
 
     // Save inventory
@@ -75,17 +88,62 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
             }
         }
         gameData.inventoryData = dataItems;
-    }
+    }*/
 
     private Items FindSavedItems(string itemId)
     {
-        for(int i = 0; i <database.listItems.Length; i++)
+        for(int i = 0; i < inventorySize; i++)
         {
             if(database.listItems[i].ID == itemId) return database.listItems[i];
         }
         return null;
     }
 
+    /*private void LoadDataItem()
+    {
+        if (SaveGame.Exists(KEY_DATA))
+        {
+            InventoryData loadData = SaveGame.Load<InventoryData>(KEY_DATA);
+            for (int i = 0; i < inventorySize; i++)
+            {
+                if (loadData.itemID[i] != null)
+                {
+                    Items itemSaved = FindSavedItems(loadData.itemID[i]);
+                    if (itemSaved != null)
+                    {
+                        inventoryItems[i] = itemSaved.CopyItem();
+                        inventoryItems[i].amountItem = loadData.itemAmount[i];
+                        InventoryUI.Instance.DrawSlot(inventoryItems[i], i);
+                    }
+                }
+                else
+                {
+                    inventoryItems[i] = null;
+                }
+            }
+        }
+    }*/
+
+    private void SaveDataItem()
+    {
+        InventoryData dataItems = new InventoryData();
+        dataItems.itemID = new String[inventorySize];
+        dataItems.itemAmount = new int[inventorySize];
+        for (int i = 0; i < inventorySize; i++)
+        {
+            if (inventoryItems[i] == null)
+            {
+                dataItems.itemID[i] = null;
+                dataItems.itemAmount[i] = 0;
+            }
+            else
+            {
+                dataItems.itemID[i] = inventoryItems[i].ID;
+                dataItems.itemAmount[i] = inventoryItems[i].amountItem;
+            }
+        }
+        SaveGame.Save(KEY_DATA, dataItems);
+    }
 
     private void AddItem(Items item, int amount)
     {
@@ -103,11 +161,17 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
                     inventoryItems[index].amountItem += amountToAdd;
                     InventoryUI.Instance.DrawSlot(inventoryItems[index], index);
                     amount -= amountToAdd;
-                    if (amount <= 0) return;
+                    if (amount <= 0)
+                    {
+                        SaveDataItem();
+                        return;
+                    }
                 }
             }
         }
+        SaveDataItem();
         AddItemInFreeSlot(item, amount);
+        
     }
 
 
@@ -152,7 +216,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
             AnimationManager.Instance.PlayAnimation(inventoryItems[indexCurrentItem].ID);
             Debug.Log("Item used in inventory !!!!!");
         }
-        
+        SaveDataItem();
     }
 
 
@@ -161,6 +225,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
         if(inventoryItems[indexCurrentItem] == null) return;
         if (inventoryItems[indexCurrentItem].type != ItemsType.Weapon) return;
         inventoryItems[indexCurrentItem].EquipItem();
+
     }
 
 
@@ -170,6 +235,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
         inventoryItems[indexCurrentItem].RemoveItem();
         inventoryItems[indexCurrentItem] = null;
         InventoryUI.Instance.DrawSlot(null, indexCurrentItem);
+        SaveDataItem();
     }
 
 
@@ -214,15 +280,5 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
     {
         InventorySlots.OnSeletedSlot -= SeletedSlotCallBack;
     }
-
-
-
-    private IEnumerator WaitingPlayEffect(Animator animator)
-    {
-        animator.SetBool("isWorking", true);
-        yield return new WaitForSeconds(0.4f);
-        animator.SetBool("isWorking", false);
-    }
-
 
 }

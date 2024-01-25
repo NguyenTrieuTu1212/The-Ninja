@@ -8,8 +8,8 @@
     "inventoryData": {
         "itemID": [
             "WeaponKunai",
-            "WeaponKunai",
-            "WeaponKunai",
+            "",
+            "",
             "",
             "",
             "",
