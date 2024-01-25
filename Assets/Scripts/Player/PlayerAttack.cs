@@ -14,12 +14,11 @@ public class PlayerAttack : MonoBehaviour
     private Transform currentAttackPositon;
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
-
-    public Weapon CurrentWeapon;
-
     [SerializeField] public Weapon initWeapon;
-
+    public Weapon CurrentWeapon;
     private bool isAttacking = false;
+
+    public bool IsAttacking { get; private set; }
 
 
     private void Awake()
@@ -58,7 +57,11 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null || isAttacking || CurrentWeapon == null) return;
+        if (enermyTarget == null || isAttacking || CurrentWeapon == null)
+        {
+            isAttacking = false;
+            return;
+        }
         StartCoroutine(WaitingAttacking());
     }
 

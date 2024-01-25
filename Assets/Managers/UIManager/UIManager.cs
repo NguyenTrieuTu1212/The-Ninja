@@ -35,18 +35,19 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image imageWeapon;
 
-    
+
+    [SerializeField] private Image dialogPanel;
+
+
     private void Awake()
     {
         statsPanel.SetActive(false);
-        
-        /*LoadImageWeapon();*/
     }
     private void Update()
     {
-        /*LoadImageWeapon();*/
         LoadStatsPlayerUI();
         LoadStatsPanelUI();
+        DisplayPanelDialog();
     }
     private void LoadStatsPlayerUI()
     {
@@ -88,6 +89,11 @@ public class UIManager : MonoBehaviour
 
     }
 
+    private void DisplayPanelDialog()
+    {
+        dialogPanel.gameObject.SetActive(playerAttack.IsAttacking);
+    }
+
     public void OpenAndCloseStats()
     {
         statsPanel.SetActive(!statsPanel.activeSelf);
@@ -102,17 +108,10 @@ public class UIManager : MonoBehaviour
         LoadStatsPanelUI();
     }
 
-    private void LoadImageWeapon()
-    {
-        imageWeapon.sprite = playerAttack.initWeapon.iconWeapon;
-    }
-
     private void OnEnable()
     {
         PlayerUpgrade.OnUpgradeLoad += LoadUpgradeUICallback;
     }
-
-
 
     private void OnDisable()
     {
