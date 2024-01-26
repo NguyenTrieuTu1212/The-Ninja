@@ -72,6 +72,12 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator WatingDisplayTest()
     {
         isDisplay = true;
+
+        //
+        RectTransform panelDialogRectTransform = panelDialog.GetComponent<RectTransform>();
+        panelDialogRectTransform.position = transform.position + Vector3.up * 0.9f;
+
+        //
         panelDialog.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         panelDialog.gameObject.SetActive(false);
