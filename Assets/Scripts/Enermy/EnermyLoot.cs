@@ -15,6 +15,13 @@ public class EnermyLoot : MonoBehaviour
     public float ManaAmoutDrop => manaAmoutDrop;
 
 
+    private void Start()
+    {
+        LoadItemDrop();
+    }
+
+
+
     public void LoadItemDrop()
     {
         ItemsDrop = new List<ItemDrop>();

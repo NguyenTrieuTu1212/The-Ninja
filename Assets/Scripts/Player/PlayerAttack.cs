@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private Image panelDialog;
     [SerializeField] public Weapon initWeapon;
-    public Weapon CurrentWeapon;
+    public Weapon CurrentWeapon { get; private set; }
     private bool isAttacking = false;
     private bool isDisplay = false;
 
