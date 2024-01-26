@@ -35,10 +35,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image imageWeapon;
 
-
-    [SerializeField] private Image dialogPanel;
-
-
     private void Awake()
     {
         statsPanel.SetActive(false);
@@ -47,7 +43,6 @@ public class UIManager : MonoBehaviour
     {
         LoadStatsPlayerUI();
         LoadStatsPanelUI();
-        DisplayPanelDialog();
     }
     private void LoadStatsPlayerUI()
     {
@@ -89,10 +84,8 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private void DisplayPanelDialog()
-    {
-        dialogPanel.gameObject.SetActive(playerAttack.IsAttacking);
-    }
+    
+
 
     public void OpenAndCloseStats()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -14,24 +15,23 @@ public class PlayerAttack : MonoBehaviour
     private Transform currentAttackPositon;
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
+
+
+    [SerializeField] private Image panelDialog;
     [SerializeField] public Weapon initWeapon;
     public Weapon CurrentWeapon;
     private bool isAttacking = false;
+    private bool isDisplay = false;
 
-    public bool IsAttacking { get; private set; }
-
-
+    
     private void Awake()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
         playerMovement = GetComponent<PlayerMovement>();
         playerMana = GetComponent<PlayerMana>();
         player = GetComponent<Player>();
-        /*EquipWeapon(initWeapon);*/
         FindPointsAttacking();
     }
-
-
 
     private void Start()
     {
@@ -42,10 +42,8 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         GetPosistionFire();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Attack();
-        }
+        if (Input.GetKeyDown(KeyCode.Space)) Attack();
+        
     }
 
 
@@ -57,12 +55,27 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null || isAttacking || CurrentWeapon == null)
+        if (enermyTarget == null || isAttacking) return;
+        if(CurrentWeapon == null)
         {
-            isAttacking = false;
-            return;
+            if (!isDisplay) StartCoroutine(WatingDisplayTest());
+            else return;
         }
-        StartCoroutine(WaitingAttacking());
+        else
+        {
+            StartCoroutine(WaitingAttacking());
+        }
+    }
+
+
+
+    IEnumerator WatingDisplayTest()
+    {
+        isDisplay = true;
+        panelDialog.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        panelDialog.gameObject.SetActive(false);
+        isDisplay = false;
     }
 
     IEnumerator WaitingAttacking()
@@ -97,8 +110,6 @@ public class PlayerAttack : MonoBehaviour
         player.Stats.totalDamage += player.Stats.baseDamage + CurrentWeapon.damage;
     }
 
-
-    
 
     private float GetDamageCritical()
     {
