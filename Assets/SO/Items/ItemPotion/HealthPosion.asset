@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealthPosion
   m_EditorClassIdentifier: 
   ID: HealthPosion
-  nameItem: HealthPotion
+  nameItem: Health Potion
   description: Updating ...........
   icon: {fileID: 21300000, guid: 349eee2ea380eac4da841d3f930870bd, type: 3}
   type: 1

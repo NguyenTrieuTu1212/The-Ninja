@@ -157,7 +157,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
     }
 
 
-    private void AddItem(Items item, int amount)
+    public void AddItem(Items item, int amount)
     {
         if (item == null || amount <= 0) return;
         List<int> itemIdexes = FindItemsStock(item.ID);

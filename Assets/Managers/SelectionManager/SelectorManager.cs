@@ -54,6 +54,8 @@ public class SelectorManager : MonoBehaviour
             EnermyHealth enermyHealth = enermy.GetComponent<EnermyHealth>();
             if (enermyHealth.CurrentHealth <= 0)
             {
+                EnermyLoot enermyLoot = enermy.GetComponent<EnermyLoot>();
+                LootManager.Instance.ShowLootChest(enermyLoot);
                 NoOnSelectedEnermy?.Invoke();
                 return;
             }
