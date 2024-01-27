@@ -51117,9 +51117,9 @@ MonoBehaviour:
     item: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
     amountItem: 1
     chanceDropItem: 60
-  - name: Health Posion x3 - 35
+  - name: Health Posion x3 - 20
     item: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
-    amountItem: 3
+    amountItem: 20
     chanceDropItem: 35
   - name: Health Posion x5 - 10
     item: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}

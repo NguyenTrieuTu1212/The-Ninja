@@ -54,5 +54,6 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         enermySelect.NoEnermySelectedCallBack();
         PlayerManager.Instance.AddExpPlayer(enermyLoot.ExpAmountDrop);
         PlayerManager.Instance.AddManaPlayer(enermyLoot.ManaAmoutDrop);
+        LootManager.Instance.ShowLootChest(enermyLoot);
     }
 }

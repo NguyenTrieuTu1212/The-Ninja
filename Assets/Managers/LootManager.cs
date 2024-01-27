@@ -10,7 +10,7 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private ButtonLootItem buttonLootItem;
     public void ShowLootChest(EnermyLoot enermyLoot)
     {   
-        lootPanel.SetActive(true);
+        
         foreach(ItemDrop item in enermyLoot.ItemsDrop)
         {
              GameObject buttonLoot = Instantiate(buttonLootPrefabs, container);
@@ -18,7 +18,12 @@ public class LootManager : Singleton<LootManager>
         }
     }
 
-    public void ClosePanelLooting()
+
+    public void OpenPanelLoot()
+    {
+        lootPanel.SetActive(true);
+    }
+    public void CloseandPanelLooting()
     {
         lootPanel.SetActive(false);
     }
