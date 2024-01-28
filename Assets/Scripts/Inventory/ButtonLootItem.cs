@@ -23,9 +23,12 @@ public class ButtonLootItem : MonoBehaviour
     }
 
 
+
+    // Collect item 
     public void CollectItemsDrop()
     {
         if (itemLoaded == null) return;
         Inventory.Instance.AddItem(itemLoaded.item, itemLoaded.amountItem);
+        Destroy(this.gameObject);
     }
 }

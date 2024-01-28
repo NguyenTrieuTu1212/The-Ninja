@@ -60,6 +60,7 @@ public class SelectorManager : MonoBehaviour
                 return;
             }
             OnSelectedEnermy?.Invoke(enermy);
+
         }
 
     }

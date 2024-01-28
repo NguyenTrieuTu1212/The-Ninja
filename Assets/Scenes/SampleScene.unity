@@ -52398,9 +52398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootPanel: {fileID: 410445002}
-  buttonLootPrefabs: {fileID: 592473328018399617, guid: d41aee7da7a89344a8f0e71239135966, type: 3}
+  buttonLootPrefabs: {fileID: 8707231476966380784, guid: d41aee7da7a89344a8f0e71239135966, type: 3}
   container: {fileID: 1291410009}
-  buttonLootItem: {fileID: 8707231476966380784, guid: d41aee7da7a89344a8f0e71239135966, type: 3}
 --- !u!1 &1089823673
 GameObject:
   m_ObjectHideFlags: 0
