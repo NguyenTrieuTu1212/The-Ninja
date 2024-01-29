@@ -16,5 +16,8 @@ MonoBehaviour:
   weaponType: 1
   damage: 1.5
   nameBullet: Arrow
+  durability: 100
+  offset: 5
+  maxDurability: 100
   RequireMana: 1.5
   requireTime: 0.2

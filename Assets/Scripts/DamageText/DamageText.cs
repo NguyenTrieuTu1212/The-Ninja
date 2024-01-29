@@ -13,7 +13,7 @@ public class DamageText : MonoBehaviour
         damageTMP.text = damage.ToString();
     }
 
-
+    // Event Animaton
     private void DestroyTMP()
     {
         DamageManager.Instance.ReturnDamageText(gameObject.GetComponent<DamageText>());

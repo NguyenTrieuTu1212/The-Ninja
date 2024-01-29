@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponType: 1
   damage: 2
   nameBullet: Kunai
-  durability: 100
+  durability: 68
   offset: 2
   maxDurability: 100
   RequireMana: 1

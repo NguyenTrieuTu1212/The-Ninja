@@ -16,5 +16,8 @@ MonoBehaviour:
   weaponType: 1
   damage: 3.5
   nameBullet: IceSpike
+  durability: 100
+  offset: 1
+  maxDurability: 100
   RequireMana: 2
   requireTime: 1

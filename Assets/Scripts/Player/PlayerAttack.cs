@@ -58,7 +58,7 @@ public class PlayerAttack : MonoBehaviour
         if (enermyTarget == null || isAttacking) return;
         if(CurrentWeapon == null)
         {
-            if (!isDisplay) StartCoroutine(WatingDisplayTest());
+            if (!isDisplay) StartCoroutine(WatingDisplayDialogNotification());
             else return;
         }
         else
@@ -69,13 +69,13 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-    IEnumerator WatingDisplayTest()
+    IEnumerator WatingDisplayDialogNotification()
     {
         isDisplay = true;
 
-        //
+        /*//
         RectTransform panelDialogRectTransform = panelDialog.GetComponent<RectTransform>();
-        panelDialogRectTransform.position = transform.position + Vector3.up * 0.9f;
+        panelDialogRectTransform.position = transform.position + Vector3.up * 0.9f;*/
 
         //
         panelDialog.gameObject.SetActive(true);
@@ -84,9 +84,11 @@ public class PlayerAttack : MonoBehaviour
         isDisplay = false;
     }
 
+
+
     IEnumerator WaitingAttacking()
     {
-        isAttacking = true; 
+        isAttacking = true;
         if (currentAttackPositon != null)
         {
             if (player.Stats.mana < CurrentWeapon.RequireMana || CurrentWeapon.durability <= 0)
@@ -107,7 +109,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         playerAnimations.SetAttacking(false);
         yield return new WaitForSeconds(CurrentWeapon.requireTime - 0.5f);
-        isAttacking = false; 
+        isAttacking = false;
     }
 
     public void EquipWeapon(Weapon weapon)
