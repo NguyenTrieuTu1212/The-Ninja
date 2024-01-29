@@ -6,8 +6,9 @@ public class NPCPatrol : FSMAction
 {
 
     [SerializeField] private string IDWaypoint;
-    [SerializeField] private float moveSpeed;
+    [SerializeField][Range(1f,10f)] private float moveSpeed;
 
+    private Animator animator;
     private Transform wayPoint;
     private Vector3 targetPos;
     private List<Transform> listWaypoint = new List<Transform>();
@@ -16,8 +17,12 @@ public class NPCPatrol : FSMAction
     private int indexPoint;
     private int duration;
 
+    private readonly int moveX = Animator.StringToHash("moveX");
+    private readonly int moveY = Animator.StringToHash("moveY");
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
         SetupWayPoint();
     }
 
@@ -44,6 +49,8 @@ public class NPCPatrol : FSMAction
     private void Patrol()
     {
         Vector2 moveDirection = (targetPos - transform.position).normalized;
+        animator.SetFloat(moveX, moveDirection.x);
+        animator.SetFloat(moveY, moveDirection.y);
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
         if(Vector2.Distance(transform.position, targetPos) <= 0.05f) MoveNextPoint();
     }
