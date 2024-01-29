@@ -7,6 +7,7 @@ public class NPCPatrol : FSMAction
 
     [SerializeField] private string IDWaypoint;
     [SerializeField][Range(1f,10f)] private float moveSpeed;
+    [SerializeField] private float timeWatingMoveNextPoint;
 
     private Animator animator;
     private Transform wayPoint;
@@ -16,6 +17,7 @@ public class NPCPatrol : FSMAction
     private int endPoint;
     private int indexPoint;
     private int duration;
+    private int speedMultiplier;
 
     private readonly int moveX = Animator.StringToHash("moveX");
     private readonly int moveY = Animator.StringToHash("moveY");
@@ -51,7 +53,7 @@ public class NPCPatrol : FSMAction
         Vector2 moveDirection = (targetPos - transform.position).normalized;
         animator.SetFloat(moveX, moveDirection.x);
         animator.SetFloat(moveY, moveDirection.y);
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+        transform.Translate(moveDirection * moveSpeed * speedMultiplier * Time.deltaTime);
         if(Vector2.Distance(transform.position, targetPos) <= 0.05f) MoveNextPoint();
     }
 
@@ -62,5 +64,14 @@ public class NPCPatrol : FSMAction
         if (indexPoint == 0) duration = 1;
         indexPoint += duration;
         targetPos = listWaypoint[indexPoint].position;
+        StartCoroutine(WaitingNextPoint());
     }
+
+    IEnumerator WaitingNextPoint()
+    {
+        speedMultiplier = 0;
+        yield return new WaitForSeconds(timeWatingMoveNextPoint);
+        speedMultiplier = 1;
+    }
+
 }
