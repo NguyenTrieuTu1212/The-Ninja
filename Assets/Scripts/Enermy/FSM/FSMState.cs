@@ -11,10 +11,17 @@ public class FSMState
     public FSMTransistion[] allTransistions;
 
 
-    public void UpdateState(EnermyBrain enermyBrain)
+    public void UpdateStateEnermy(EnermyBrain enermyBrain)
     {
         ExcuteActions();
-        ExcuteTransistion(enermyBrain);
+        ExcuteTransistionEnermy(enermyBrain);
+    }
+
+
+    public void UpdateStateNPC(NPCBrain npcBrain)
+    {
+        ExcuteActions();
+        ExcuteTransitstionNPC(npcBrain);
     }
 
 
@@ -24,7 +31,7 @@ public class FSMState
     }
 
 
-    private void ExcuteTransistion(EnermyBrain enermyBrain)
+    private void ExcuteTransistionEnermy(EnermyBrain enermyBrain)
     {
         foreach(FSMTransistion transistion in allTransistions)
         {
@@ -33,6 +40,19 @@ public class FSMState
                 enermyBrain.ChangeState(transistion.trueState);
             else 
                 enermyBrain.ChangeState(transistion.falseState); 
+        }
+    }
+
+
+    private void ExcuteTransitstionNPC(NPCBrain npcBrain)
+    {
+        foreach(FSMTransistion transtion in allTransistions)
+        {
+            bool isTrueState = transtion.decide.Decide();
+            if(isTrueState)
+                npcBrain.ChangeState(transtion.trueState);
+            else
+                npcBrain.ChangeState(transtion.falseState);
         }
     }
 }

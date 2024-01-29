@@ -19,7 +19,7 @@ public class EnermyBrain : MonoBehaviour
 
     private void Update()
     {
-        curretState?.UpdateState(this);
+        curretState?.UpdateStateEnermy(this);
     }
 
     public void ChangeState(string newStateID)
