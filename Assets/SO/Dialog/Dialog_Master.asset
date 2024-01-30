@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9080106725347d04782e463d27ccf937, type: 3}
+  m_Name: Dialog_Master
+  m_EditorClassIdentifier: 
+  nameCharacter: Wu
+  imageCharacter: {fileID: 21300000, guid: 55eeb33824da1dc48b53d7366292c1f1, type: 3}
+  type: 0
+  listDialog:
+  - It's time for you to fight for your village !!!
+  - "\rAre you ready?"

@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9080106725347d04782e463d27ccf937, type: 3}
-  m_Name: Dialog_Master 1
+  m_Name: Dialog_Boy
   m_EditorClassIdentifier: 
-  nameCharacter: Master Wu
-  imageCharacter: {fileID: 21300000, guid: 55eeb33824da1dc48b53d7366292c1f1, type: 3}
+  nameCharacter: Kai
+  imageCharacter: {fileID: 21300000, guid: b4143597db8eb154e94934dc9f35d307, type: 3}
   type: 0
   listDialog:
-  - It's time for you to fight for your village !!!
-  - "\rAre you ready?"
+  - Hello !! I'm Kai
