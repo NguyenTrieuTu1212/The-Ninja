@@ -10,7 +10,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private TextMeshProUGUI nameCharacter_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
 
-    public DialogBox NPCDialogBox;
+    public NPCActionTalk TalkDialog { get; set; }
 
 
     private void Update()
@@ -19,21 +19,22 @@ public class DialogManager : Singleton<DialogManager>
     }
 
 
-    private void OpenPanelDialog()
+    public void OpenPanelDialog()
     {
         panelDialog.SetActive(true);
     }
 
+
     private void LoadDialog()
     {
-        if (NPCDialogBox == null) return;
-        avatarCharacter.sprite = NPCDialogBox.dialogShow.imageCharacter;
-        nameCharacter_TMP.text = NPCDialogBox.dialogShow.nameCharacter;
-        dialogue_TMP.text = NPCDialogBox.dialogShow.listDialog[0].ToString();
-        
+        if (TalkDialog == null) return;
+        avatarCharacter.sprite = TalkDialog.dialogToShow.imageCharacter;
+        nameCharacter_TMP.text = TalkDialog.dialogToShow.nameCharacter;
+        dialogue_TMP.text = TalkDialog.dialogToShow.listDialog[0].ToString();
     }
 
-    private void ClosePanelDialog()
+
+    public void ClosePanelDialog()
     {
         panelDialog?.SetActive(false);
     }
