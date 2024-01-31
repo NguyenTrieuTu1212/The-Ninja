@@ -29,11 +29,6 @@ public class ActionShooting : FSMAction
     }
 
 
-
-
-
-
-
     private IEnumerator WaitingShoot()
     {
         isShooting = true;
