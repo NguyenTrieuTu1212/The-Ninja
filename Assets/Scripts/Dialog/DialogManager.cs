@@ -10,7 +10,10 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private TextMeshProUGUI nameCharacter_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
 
+    private Queue<string> dialoguesQueue = new Queue<string>();
     public DialogBox NPCDialog { get; set; }
+
+   
 
 
     private void Update()
