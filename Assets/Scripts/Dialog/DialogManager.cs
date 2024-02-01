@@ -47,6 +47,7 @@ public class DialogManager : Singleton<DialogManager>
 
     public void ClosePanelDialog()
     {
+        currentDialogIndex = 0;
         panelDialog.SetActive(false);
     }
     
