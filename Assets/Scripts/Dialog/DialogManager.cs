@@ -9,13 +9,12 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Image avatarCharacter;
     [SerializeField] private TextMeshProUGUI nameCharacter_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
-
     private Queue<string> dialoguesQueue = new Queue<string>();
-    public DialogBox NPCDialog { get; set; }
+    private int currentDialogIndex=0;
+    public Interaction NPCDialog { get; set; }
+
 
    
-
-
     private void Update()
     {
         LoadDialog();
@@ -31,11 +30,20 @@ public class DialogManager : Singleton<DialogManager>
     private void LoadDialog()
     {
         if (NPCDialog == null) return;
+        if (currentDialogIndex >= NPCDialog.dialogShow.listDialog.Length)
+        {
+            currentDialogIndex = 0;
+            return;
+        }
         avatarCharacter.sprite = NPCDialog.dialogShow.imageCharacter;
         nameCharacter_TMP.text = NPCDialog.dialogShow.nameCharacter;
-        dialogue_TMP.text = NPCDialog.dialogShow.listDialog[0].ToString();
+        dialogue_TMP.text = NPCDialog.dialogShow.listDialog[currentDialogIndex].ToString();
     }
 
+    public void ShowNextDialog()
+    {
+        currentDialogIndex++;
+    }
 
     public void ClosePanelDialog()
     {
