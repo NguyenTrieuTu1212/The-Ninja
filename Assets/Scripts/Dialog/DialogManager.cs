@@ -9,48 +9,38 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Image avatarCharacter;
     [SerializeField] private TextMeshProUGUI nameCharacter_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
-    private Queue<string> dialoguesQueue = new Queue<string>();
-    private int currentDialogIndex=0;
+    [SerializeField] private Button ButtonNext;
+    private int currentSentenceIndex=0;
     public Interaction NPCDialog { get; set; }
 
-
-   
     private void Update()
     {
         LoadDialog();
     }
 
-
     public void OpenPanelDialog()
     {
         panelDialog.SetActive(true);
     }
-
-
     private void LoadDialog()
     {
-        if (NPCDialog == null) return;
-        if (currentDialogIndex >= NPCDialog.dialogShow.listDialog.Length)
-        {
-            currentDialogIndex = 0;
-            return;
-        }
+        if (NPCDialog == null || currentSentenceIndex >= NPCDialog.dialogShow.listDialog.Length) return;
+        if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1) ButtonNext.gameObject.SetActive(false);
         avatarCharacter.sprite = NPCDialog.dialogShow.imageCharacter;
         nameCharacter_TMP.text = NPCDialog.dialogShow.nameCharacter;
-        dialogue_TMP.text = NPCDialog.dialogShow.listDialog[currentDialogIndex].ToString();
+        dialogue_TMP.text = NPCDialog.dialogShow.listDialog[currentSentenceIndex].ToString();
     }
-
     public void ShowNextDialog()
     {
-        currentDialogIndex++;
+        currentSentenceIndex++;
     }
-
     public void ClosePanelDialog()
     {
-        currentDialogIndex = 0;
+        // Return to the original sentence
+        currentSentenceIndex = 0;
+        // Disable next button when ending conversation 
+        ButtonNext.gameObject.SetActive(true);
         panelDialog.SetActive(false);
     }
-    
-
-
+  
 }
