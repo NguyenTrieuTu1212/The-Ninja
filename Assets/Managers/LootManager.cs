@@ -9,6 +9,7 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private Transform container;
     public void ShowLootChest(EnermyLoot enermyLoot)
     {
+        lootPanel.SetActive(true);
         if (IsHaveItem())
         {
             for(int i = 0; i < container.childCount; i++)
