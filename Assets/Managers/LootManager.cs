@@ -9,12 +9,27 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private Transform container;
     public void ShowLootChest(EnermyLoot enermyLoot)
     {
+        if (IsHaveItem())
+        {
+            for(int i = 0; i < container.childCount; i++)
+            {
+                Destroy(container.GetChild(i).gameObject);
+            }
+        }
         foreach (ItemDrop item in enermyLoot.ItemsDrop)
         {
             ButtonLootItem buttonLootItem = Instantiate(buttonLootPrefabs, container);
             buttonLootItem.LoadItemDrop(item);
         }
     }
+
+
+
+    private bool IsHaveItem()
+    {
+        return container.childCount > 0;
+    }
+
 
     public void OpenPanelLoot()
     {
