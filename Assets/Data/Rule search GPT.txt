@@ -1,0 +1,6 @@
+[Role] Vị trí đang làm hiện tại
+[Need] Công việc mà chat gpt cần làm
+[Requirement/Rejection] yêu cầu hoặc những việc mà chat gpt không được làm
+[Context] Nhưng gì muốn làm 
+- 10 câu mở một tab mới => Hỏi thêm là tèo
+- Tên riêng để trong ""tên""

@@ -110654,7 +110654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 150267868}
   animator: {fileID: 8508376061925460658}
-  speedBullet: 6
+  speedBullet: 0
 --- !u!61 &7773490293404979349
 BoxCollider2D:
   m_ObjectHideFlags: 0

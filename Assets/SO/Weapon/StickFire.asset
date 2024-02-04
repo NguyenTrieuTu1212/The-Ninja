@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponType: 1
   damage: 6
   nameBullet: FIreBall
-  durability: 80
+  durability: 72
   offset: 4
   maxDurability: 100
   RequireMana: 2.5

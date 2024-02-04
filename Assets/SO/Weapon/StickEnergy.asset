@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponType: 1
   damage: 7
   nameBullet: EnergyBall
-  durability: 88
+  durability: 100
   offset: 6
   maxDurability: 100
   RequireMana: 7
