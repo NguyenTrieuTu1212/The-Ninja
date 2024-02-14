@@ -19,7 +19,6 @@ public class SelectorManager : MonoBehaviour
     private bool isDoubleTap;
 
 
-
     private void Awake()
     {
         cameraMain = Camera.main;
@@ -33,7 +32,7 @@ public class SelectorManager : MonoBehaviour
     }
 
 
-
+   
     private void SelectEnermy()
     {
 

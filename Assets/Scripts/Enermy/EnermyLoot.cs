@@ -47,5 +47,5 @@ public class ItemDrop
     
     [Header("Chance drop item")] 
     public float chanceDropItem;
-    public bool canPickItem { get; set; }    
+    public bool PickedItem { get; set; }    
 }

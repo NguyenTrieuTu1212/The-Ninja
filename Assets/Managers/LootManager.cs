@@ -19,6 +19,7 @@ public class LootManager : Singleton<LootManager>
         }
         foreach (ItemDrop item in enermyLoot.ItemsDrop)
         {
+            if (item.PickedItem) continue;
             ButtonLootItem buttonLootItem = Instantiate(buttonLootPrefabs, container);
             buttonLootItem.LoadItemDrop(item);
         }

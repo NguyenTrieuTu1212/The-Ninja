@@ -29,6 +29,7 @@ public class ButtonLootItem : MonoBehaviour
     {
         if (itemLoaded == null) return;
         Inventory.Instance.AddItem(itemLoaded.item, itemLoaded.amountItem);
+        itemLoaded.PickedItem = true;
         Destroy(this.gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class PlayerManager : Singleton<PlayerManager>
     private PlayerMana playerMana;
     private PlayerHealth playerHealth;
     public PlayerAttack PlayerAttack { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
