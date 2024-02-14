@@ -17550,6 +17550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab5ff3194f9cfc4092fdb458a5ce97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatIsEnermySelectLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &150267870
 MonoBehaviour:
   m_ObjectHideFlags: 0

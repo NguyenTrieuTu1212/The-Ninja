@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-
+    [SerializeField] LayerMask whatIsEnermySelectLayerMask;
     private PlayerExp playerExp;
     private PlayerMana playerMana;
     private PlayerHealth playerHealth;
     public PlayerAttack PlayerAttack { get; private set; }
+
 
     protected override void Awake()
     {
@@ -49,5 +50,19 @@ public class PlayerManager : Singleton<PlayerManager>
     public bool CanRestoreHealthForPlayer()
     {
         return playerHealth.CanRestoreHealth();
+    }
+
+
+
+    public Collider2D DetectEnermyToSelect()
+    {
+        Collider2D col = Physics2D.OverlapCircle(transform.position, 5f, whatIsEnermySelectLayerMask);
+        return col;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 5f);
     }
 }

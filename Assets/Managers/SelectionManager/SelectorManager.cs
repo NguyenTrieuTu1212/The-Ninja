@@ -27,10 +27,34 @@ public class SelectorManager : MonoBehaviour
 
     private void Update()
     {
-        if (CheckDoubleClick()) NoOnSelectedEnermy?.Invoke();
-        SelectEnermy();
+        AutoSelectEnermy();
     }
 
+
+
+
+    private void AutoSelectEnermy()
+    {
+        if(PlayerManager.Instance.DetectEnermyToSelect() != null)
+        {
+            EnermyBrain enermy = PlayerManager.Instance.DetectEnermyToSelect().GetComponent<EnermyBrain>();
+            if (enermy == null) return;
+            EnermyHealth enermyHealth = enermy.GetComponent<EnermyHealth>();
+            if (Input.GetMouseButtonDown(0))
+            {
+                hit = Physics2D.Raycast(cameraMain.ScreenToWorldPoint(Input.mousePosition),
+                 Vector2.zero, Mathf.Infinity, enermyMask);
+            }
+            if (enermyHealth.CurrentHealth <= 0 && hit.collider != null)
+            {
+                EnermyLoot enermyLoot = hit.collider.GetComponent<EnermyLoot>();
+                LootManager.Instance.ShowLootChest(enermyLoot);
+                NoOnSelectedEnermy?.Invoke();
+                return;
+            }
+            OnSelectedEnermy?.Invoke(enermy);
+        }
+    }
 
    
     private void SelectEnermy()
