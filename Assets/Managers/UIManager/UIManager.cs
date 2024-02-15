@@ -35,6 +35,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image imageWeapon;
 
+    [SerializeField] private GameObject panelQuest;
+
     private void Awake()
     {
         statsPanel.SetActive(false);
@@ -99,6 +101,17 @@ public class UIManager : MonoBehaviour
     private void LoadUpgradeUICallback()
     {
         LoadStatsPanelUI();
+    }
+
+
+    public void OpenPanelQuest()
+    {
+        panelQuest.SetActive(true);
+    }
+
+    public void ClosePanelQuest()
+    {
+        panelQuest.SetActive(false);
     }
 
     private void OnEnable()

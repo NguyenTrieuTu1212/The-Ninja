@@ -7,11 +7,11 @@
     "healthPlayer": 10.0,
     "inventoryData": {
         "itemID": [
-            "",
+            "WeaponKunai",
             "WeaponBook",
             "WeaponBow",
             "HealthPosion",
-            "",
+            "WeaponBow",
             "",
             "",
             "",
@@ -33,11 +33,11 @@
             ""
         ],
         "itemAmount": [
-            0,
             1,
             1,
-            14,
-            0,
+            1,
+            8,
+            1,
             0,
             0,
             0,

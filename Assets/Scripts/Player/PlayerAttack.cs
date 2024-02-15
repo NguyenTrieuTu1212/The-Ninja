@@ -91,7 +91,7 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
         if (currentAttackPositon != null)
         {
-            if (player.Stats.mana < CurrentWeapon.RequireMana /*|| CurrentWeapon.durability <= 0*/)
+            if (player.Stats.mana < CurrentWeapon.RequireMana || CurrentWeapon.durability <= 0)
             {
                 isAttacking = false;
                 yield break;
