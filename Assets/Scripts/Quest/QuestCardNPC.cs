@@ -13,6 +13,6 @@ public class QuestCardNPC : QuestCard
         base.ConfigQuestUI(quest);
         Reward_TMP.text = $"- {quest.expReward} Exp\n" +
                           $"- {quest.goldReward} Gold\n" +
-                          $"- {quest.itemReward.itemAmount}{quest.itemReward.itemReward.name}\n";
+                          $"- {quest.itemReward.itemAmount} {quest.itemReward.nameItemReward}\n";
     }
 }

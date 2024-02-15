@@ -31,5 +31,5 @@ public class ItemReward
 {
     public Items itemReward;
     public int itemAmount;
-
+    public string nameItemReward;
 }

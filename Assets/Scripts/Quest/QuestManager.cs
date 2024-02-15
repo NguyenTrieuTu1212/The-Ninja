@@ -8,8 +8,11 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private QuestCard questcardPrefab;
     [SerializeField] private List<Quest> questList = new List<Quest>();
 
-    
 
+    private void Start()
+    {
+        LoadQuestInPanelContainerQuest();
+    }
 
     private void LoadQuestInPanelContainerQuest()
     {
