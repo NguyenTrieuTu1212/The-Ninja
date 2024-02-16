@@ -16,12 +16,12 @@ MonoBehaviour:
   IDQuest: WarriorQuest
   questGoal: 0
   Description: Kill 2 enermy
-  goldReward: 10
-  expReward: 20
+  goldReward: 1
+  expReward: 1
   item:
     itemReward: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
     itemAmount: 1
     nameItemReward: Health
   currentQuestStatus: 0
   questCompleted: 0
-  questAccepted: 0
+  questAccepted: 1
