@@ -35,7 +35,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image imageWeapon;
 
-    [SerializeField] private GameObject panelQuest;
+    [SerializeField] private GameObject panelQuestNPC;
+    [SerializeField] private GameObject panelQuestPlayer;
 
     private void Awake()
     {
@@ -106,12 +107,17 @@ public class UIManager : MonoBehaviour
 
     public void OpenPanelQuest()
     {
-        panelQuest.SetActive(true);
+        panelQuestNPC.SetActive(true);
     }
 
     public void ClosePanelQuest()
     {
-        panelQuest.SetActive(false);
+        panelQuestNPC.SetActive(false);
+    }
+
+    public void OpenAndClosePanelQuestPlayer(bool value)
+    {
+        panelQuestPlayer.SetActive(value);
     }
 
     private void OnEnable()

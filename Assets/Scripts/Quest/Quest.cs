@@ -10,14 +10,14 @@ public class Quest : ScriptableObject
     [Header("Config")]
     public string questName;
     public string IDQuest;
+    public int questGoal;
     [TextArea] public string Description;
 
 
     [Header("Reward")]
     public int goldReward;
     public int expReward;
-    public ItemReward itemReward;
-
+    public ItemReward item;
 
     [HideInInspector] public int currentQuestStatus;
     [HideInInspector] public bool questCompleted;
