@@ -38,6 +38,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelQuestNPC;
     [SerializeField] private GameObject panelQuestPlayer;
 
+
+    
+
     private void Awake()
     {
         statsPanel.SetActive(false);
@@ -88,8 +91,6 @@ public class UIManager : MonoBehaviour
     }
 
     
-
-
     public void OpenAndCloseStats()
     {
         statsPanel.SetActive(!statsPanel.activeSelf);
@@ -105,16 +106,12 @@ public class UIManager : MonoBehaviour
     }
 
 
-    /*public void OpenPanelQuest()
+    public void OpenPanelQuest()
     {
         panelQuestNPC.SetActive(true);
-    }*/
-
-
-    private void OpenPanelQuestCallback()
-    {
-        panelQuestNPC.SetActive(true);
+        DialogManager.Instance.ClosePanelDialog();
     }
+
 
     public void ClosePanelQuest()
     {
@@ -129,13 +126,12 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerUpgrade.OnUpgradeLoad += LoadUpgradeUICallback;
-        IconQuest.OnClickIconQuest += OpenPanelQuestCallback;
+
     }
 
     private void OnDisable()
     {
         PlayerUpgrade.OnUpgradeLoad -= LoadUpgradeUICallback;
-        IconQuest.OnClickIconQuest -= OpenPanelQuestCallback;
     }
 
 
