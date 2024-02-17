@@ -110,9 +110,6 @@ public class UIManager : MonoBehaviour
         panelQuestNPC.SetActive(true);
     }*/
 
-    
-
-    
 
     private void OpenPanelQuestCallback()
     {

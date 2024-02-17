@@ -10,9 +10,10 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private TextMeshProUGUI nameCharacter_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
     [SerializeField] private Button ButtonNext;
+    [SerializeField] private GameObject iconQuest;
     private int currentSentenceIndex=0;
     public Interaction NPCDialog { get; set; }
-    public int CurrentSentenceIndex { get { return currentSentenceIndex; } }
+
 
     private void Update()
     {
@@ -26,8 +27,16 @@ public class DialogManager : Singleton<DialogManager>
     private void LoadDialog()
     {
         if (NPCDialog == null || currentSentenceIndex >= NPCDialog.dialogShow.listDialog.Length) return;
-        Debug.Log("Current Sentence is : "+ CurrentSentenceIndex);
-        if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1) ButtonNext.gameObject.SetActive(false);
+        if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1)
+        {
+            ButtonNext.gameObject.SetActive(false);
+            iconQuest.SetActive(true);
+            iconQuest.transform.SetParent(NPCDialog.gameObject.transform);
+            iconQuest.transform.localScale = Vector3.one;
+            iconQuest.transform.localRotation = Quaternion.identity;
+            iconQuest.transform.localPosition = new Vector3(0, 1, 0);
+
+        }
         avatarCharacter.sprite = NPCDialog.dialogShow.imageCharacter;
         nameCharacter_TMP.text = NPCDialog.dialogShow.nameCharacter;
         dialogue_TMP.text = NPCDialog.dialogShow.listDialog[currentSentenceIndex].ToString();
