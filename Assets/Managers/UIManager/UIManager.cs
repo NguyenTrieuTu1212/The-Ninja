@@ -105,7 +105,16 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void OpenPanelQuest()
+    /*public void OpenPanelQuest()
+    {
+        panelQuestNPC.SetActive(true);
+    }*/
+
+    
+
+    
+
+    private void OpenPanelQuestCallback()
     {
         panelQuestNPC.SetActive(true);
     }
@@ -123,11 +132,13 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerUpgrade.OnUpgradeLoad += LoadUpgradeUICallback;
+        IconQuest.OnClickIconQuest += OpenPanelQuestCallback;
     }
 
     private void OnDisable()
     {
         PlayerUpgrade.OnUpgradeLoad -= LoadUpgradeUICallback;
+        IconQuest.OnClickIconQuest -= OpenPanelQuestCallback;
     }
 
 

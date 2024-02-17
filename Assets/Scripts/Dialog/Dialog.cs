@@ -6,6 +6,7 @@ using Unity.UI;
 
 public enum InterationType
 {
+    Talk,
     Quest,
     Shop
 }

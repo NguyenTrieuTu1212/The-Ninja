@@ -15,7 +15,7 @@ MonoBehaviour:
   questName: Loot 2 Positon Health
   IDQuest: LootQuest
   questGoal: 0
-  Description: Loot 2 Positon Health
+  Description: 
   goldReward: 2
   expReward: 2
   item:

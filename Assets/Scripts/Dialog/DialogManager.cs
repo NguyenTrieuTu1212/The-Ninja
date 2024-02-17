@@ -12,6 +12,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Button ButtonNext;
     private int currentSentenceIndex=0;
     public Interaction NPCDialog { get; set; }
+    public int CurrentSentenceIndex { get { return currentSentenceIndex; } }
 
     private void Update()
     {
@@ -25,6 +26,7 @@ public class DialogManager : Singleton<DialogManager>
     private void LoadDialog()
     {
         if (NPCDialog == null || currentSentenceIndex >= NPCDialog.dialogShow.listDialog.Length) return;
+        Debug.Log("Current Sentence is : "+ CurrentSentenceIndex);
         if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1) ButtonNext.gameObject.SetActive(false);
         avatarCharacter.sprite = NPCDialog.dialogShow.imageCharacter;
         nameCharacter_TMP.text = NPCDialog.dialogShow.nameCharacter;
@@ -42,5 +44,22 @@ public class DialogManager : Singleton<DialogManager>
         ButtonNext.gameObject.SetActive(true);
         panelDialog.SetActive(false);
     }
+
+
+
+    public void LoadQuestButton(Canvas canvasQuestIcon)
+    {
+        if(canvasQuestIcon.gameObject.transform == null)
+        {
+            canvasQuestIcon.gameObject.SetActive(false);
+            return;
+        }
+        else
+        {
+            canvasQuestIcon.gameObject.SetActive(true);
+        }
+        
+    }
+    
   
 }
