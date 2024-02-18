@@ -17,6 +17,17 @@ public class QuestCardPlayer : QuestCard
     [SerializeField] private TextMeshProUGUI amountItems;
 
 
+    /*[Header("Item Claim")]
+    [SerializeField] private Button claimButton;*/
+
+
+    private void Update()
+    {
+        if (QuestToComplete.questCompleted) return;
+        status_TMP.text = $"Status:\n {QuestToComplete.currentQuestStatus} / {QuestToComplete.questGoal}";
+        
+    }
+
     public override void ConfigQuestUI(Quest quest)
     {
         base.ConfigQuestUI(quest);

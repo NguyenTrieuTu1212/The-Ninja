@@ -19,9 +19,22 @@ public class Quest : ScriptableObject
     public int expReward;
     public ItemReward item;
 
-    [HideInInspector] public int currentQuestStatus;
-    [HideInInspector] public bool questCompleted;
-    [HideInInspector] public bool questAccepted;
+    public int currentQuestStatus;
+    public bool questCompleted;
+    public bool questAccepted;
+
+    public void AddProgress(int amount)
+    {
+        currentQuestStatus += amount;
+        if(currentQuestStatus >= questGoal)
+        {
+            currentQuestStatus = questGoal;
+            if (questCompleted) return;
+            questCompleted = true;
+        }
+    }
+
+    
 }
 
 

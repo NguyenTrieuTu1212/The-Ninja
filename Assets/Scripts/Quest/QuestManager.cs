@@ -37,4 +37,24 @@ public class QuestManager : Singleton<QuestManager>
         }
     }
 
+    public void UpdateProgress(string IDQuest, int amount)
+    {
+        Quest questToUpdate = QuestExists(IDQuest);
+        if (questToUpdate.questAccepted)
+        {
+            questToUpdate.AddProgress(amount);
+        }
+    }
+   
+
+
+    private Quest QuestExists(string IDQuest)
+    {
+        foreach(Quest quest in questList)
+        {
+            if (quest.IDQuest == IDQuest) return quest;
+        }
+        return null;
+    }
+
 }

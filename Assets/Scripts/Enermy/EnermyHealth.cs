@@ -35,6 +35,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         if (CurrentHealth <= 0)
         {
             DisableEnermy();
+            QuestManager.Instance.UpdateProgress("Kill1Enenrmy",1);
         }
         else
         {

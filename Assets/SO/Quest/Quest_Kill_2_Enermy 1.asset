@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff359b55dabb94ca8aef6cadeace2b, type: 3}
   m_Name: Quest_Kill_2_Enermy 1
   m_EditorClassIdentifier: 
-  questName: Kill 2 Enermy
-  IDQuest: WarriorQuest
-  questGoal: 10
-  Description: Kill 2 enermy
+  questName: Kill 1 Enermy
+  IDQuest: Kill1Enenrmy
+  questGoal: 1
+  Description: Kill 1 enermy
   goldReward: 1
   expReward: 1
   item:
     itemReward: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
     itemAmount: 1
     nameItemReward: Health
-  currentQuestStatus: 0
-  questCompleted: 0
+  currentQuestStatus: 1
+  questCompleted: 1
   questAccepted: 1
