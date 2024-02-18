@@ -17,15 +17,22 @@ public class QuestCardPlayer : QuestCard
     [SerializeField] private TextMeshProUGUI amountItems;
 
 
-    /*[Header("Item Claim")]
-    [SerializeField] private Button claimButton;*/
+    [Header("Item Claim")]
+    [SerializeField] private Button claimButton;
 
-
+    private void Awake()
+    {
+        claimButton.gameObject.SetActive(false);
+    }
     private void Update()
     {
-        if (QuestToComplete.questCompleted) return;
+
+        if (QuestToComplete.questCompleted)
+        {
+            claimButton.gameObject.SetActive(true);
+            return;
+        }
         status_TMP.text = $"Status:\n {QuestToComplete.currentQuestStatus} / {QuestToComplete.questGoal}";
-        
     }
 
     public override void ConfigQuestUI(Quest quest)
@@ -37,5 +44,12 @@ public class QuestCardPlayer : QuestCard
         itemRewardIcon.sprite = quest.item.itemReward.icon;
     }
 
+
+    public void ClaimReward()
+    {
+        PlayerManager.Instance.AddExpPlayer(QuestToComplete.expReward);
+        Inventory.Instance.AddItem(QuestToComplete.item.itemReward, QuestToComplete.item.itemAmount);
+        Destroy(gameObject);
+    }
 
 }

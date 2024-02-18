@@ -23,4 +23,7 @@ public class QuestCard : MonoBehaviour
         QuestManager.Instance.AcceptQuest(QuestToComplete);
         gameObject.SetActive(false);
     }
+
+
+    
 }
