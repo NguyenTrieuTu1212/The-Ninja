@@ -116,6 +116,7 @@ public class UIManager : MonoBehaviour
     public void ClosePanelQuest()
     {
         panelQuestNPC.SetActive(false);
+        DialogManager.Instance.ClosePanelDialog();
     }
 
     public void OpenAndClosePanelQuestPlayer(bool value)

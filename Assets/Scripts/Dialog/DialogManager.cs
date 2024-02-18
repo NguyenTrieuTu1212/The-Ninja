@@ -29,12 +29,12 @@ public class DialogManager : Singleton<DialogManager>
         if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1)
         {
             ButtonNext.gameObject.SetActive(false);
-            SetActiveButtonAcceptAndReject(true);
+            if (NPCDialog.dialogShow.type == InterationType.Quest)
+                SetActiveButtonAcceptAndReject(true);
+            else
+                SetActiveButtonAcceptAndReject(false);
         }
-        else
-        {
-            SetActiveButtonAcceptAndReject(false);
-        }
+        else SetActiveButtonAcceptAndReject(false);
         avatarCharacter.sprite = NPCDialog.dialogShow.imageCharacter;
         nameCharacter_TMP.text = NPCDialog.dialogShow.nameCharacter;
         dialogue_TMP.text = NPCDialog.dialogShow.listDialog[currentSentenceIndex].ToString();

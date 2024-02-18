@@ -20,7 +20,6 @@ public class DetectPlayer : MonoBehaviour
         {
             DialogManager.Instance.NPCDialog = null;
             DialogManager.Instance.ClosePanelDialog();
-            DialogManager.Instance.ClosePanelDialog();
         }
     }
 }
