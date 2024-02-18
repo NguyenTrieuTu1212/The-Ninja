@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelQuestNPC;
     [SerializeField] private GameObject panelQuestPlayer;
 
-
+    [SerializeField] private GameObject panelExit;
     
 
     private void Awake()
@@ -123,6 +124,19 @@ public class UIManager : MonoBehaviour
     {
         panelQuestPlayer.SetActive(value);
     }
+
+    public void ExitAndSaveData()
+    {
+        DataPersistaceManager.instance.SaveGame();
+        SceneManager.LoadSceneAsync("MenuScenes");
+        panelExit.SetActive(false);
+    }
+    public void NoExit()
+    {
+        panelExit.SetActive(false);
+    }
+
+
 
     private void OnEnable()
     {

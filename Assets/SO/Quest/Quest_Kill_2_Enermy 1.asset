@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Kill 2 Enermy
   IDQuest: WarriorQuest
-  questGoal: 0
+  questGoal: 10
   Description: Kill 2 enermy
   goldReward: 1
   expReward: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCharacter: Wu
   imageCharacter: {fileID: 21300000, guid: 55eeb33824da1dc48b53d7366292c1f1, type: 3}
-  type: 1
+  type: 0
   listDialog:
   - It's time for you to fight for your village !!!
-  - "\rAre you ready?"
+  - Good luck !!!!!!

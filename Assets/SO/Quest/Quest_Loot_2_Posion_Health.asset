@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Loot 2 Positon Health
   IDQuest: LootQuest
-  questGoal: 0
+  questGoal: 10
   Description: 
   goldReward: 2
   expReward: 2

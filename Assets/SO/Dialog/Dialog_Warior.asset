@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dialog_Warior
   m_EditorClassIdentifier: 
   nameCharacter: Warrier
-  imageCharacter: {fileID: 0}
-  type: 0
+  imageCharacter: {fileID: 21300000, guid: 7fe62aa7e7217d9478e794ee6531614a, type: 3}
+  type: 1
   listDialog:
-  - 
-  - 
+  - I have some tasks for you......
+  - Do you want to accept the quest or not?

@@ -49,7 +49,7 @@ public class DataPersistaceManager : MonoBehaviour
         Debug.Log("Location of Player is loaded " + gameData.posPlayer);
     }
 
-    private void SaveGame()
+    public void SaveGame()
     {
         foreach(IDataPersistance persistance in listDataPersistances)
         {

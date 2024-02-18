@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+
+    [SerializeField] private SettingMenu settingMenu;
+
+
+    public void DisplaySettingPanel()
+    {
+        settingMenu.OpenPanelSetting();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("MainScenes");

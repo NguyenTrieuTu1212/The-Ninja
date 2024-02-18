@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCharacter: 'Cat '
   imageCharacter: {fileID: -976522383, guid: 401ec38caf5975c46bab41aefefba590, type: 3}
-  type: 1
+  type: 0
   listDialog:
   - "Meow ..... Meow ......... Meow ........\nTr\u1EA3 l\u1EA1i t\xE2m tr\xED t\xF4i
     \u0111\xE2y."
