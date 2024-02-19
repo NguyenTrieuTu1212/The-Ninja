@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelQuestPlayer;
 
     [SerializeField] private GameObject panelExit;
+    [SerializeField] private Button buttonExit;
     
 
     private void Awake()
@@ -125,6 +126,14 @@ public class UIManager : MonoBehaviour
         panelQuestPlayer.SetActive(value);
     }
 
+
+
+    public void OpenPanelExit()
+    {
+        panelExit.SetActive(true);
+        buttonExit.gameObject.SetActive(false); 
+    }
+
     public void ExitAndSaveData()
     {
         DataPersistaceManager.instance.SaveGame();
@@ -134,6 +143,7 @@ public class UIManager : MonoBehaviour
     public void NoExit()
     {
         panelExit.SetActive(false);
+        buttonExit.gameObject.SetActive(true);
     }
 
 
