@@ -59,4 +59,10 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         PlayerManager.Instance.AddManaPlayer(enermyLoot.ManaAmoutDrop);
         /*LootManager.Instance.ShowLootChest(enermyLoot);*/
     }
+
+
+    public void PlaySFXEnermyDied()
+    {
+        AudioManager.Instance.PlaySFX("Kill");
+    }
 }

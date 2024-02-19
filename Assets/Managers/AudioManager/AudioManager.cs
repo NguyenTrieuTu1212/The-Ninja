@@ -45,7 +45,18 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSound, x => x.nameClip == name);
-        if(s== null) return;
+        if(s == null) return;
         sfxSource.PlayOneShot(s.clip);
+    }
+
+
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
     }
 }

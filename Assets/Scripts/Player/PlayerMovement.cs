@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
             animations.SetBoolMoveAnimation(false);
             return;
         }
-
         animations.SetBoolMoveAnimation(true);
         animations.SetMovingAnimation(moveDirection);
         

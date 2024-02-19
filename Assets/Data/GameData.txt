@@ -8,9 +8,9 @@
     "inventoryData": {
         "itemID": [
             "WeaponKunai",
-            "",
+            "ManaPosion",
             "HealthPosion",
-            "",
+            "WeaponKunai",
             "",
             "",
             "",
@@ -34,9 +34,9 @@
         ],
         "itemAmount": [
             1,
-            0,
             4,
-            0,
+            5,
+            1,
             0,
             0,
             0,
