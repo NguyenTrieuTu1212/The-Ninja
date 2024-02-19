@@ -58,5 +58,7 @@
             0,
             0
         ]
-    }
+    },
+    "volumeMusic": 1.0,
+    "volumeSFX": 1.0
 }
