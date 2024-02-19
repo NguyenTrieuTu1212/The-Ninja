@@ -34,6 +34,12 @@ public class Quest : ScriptableObject
         }
     }
 
+
+    public void RessetQuest()
+    {
+        questCompleted = false;
+        currentQuestStatus = 0;
+    }
     
 }
 

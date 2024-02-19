@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(musicSound, x => x.nameClip == name);
         if (s == null) return;
         musicSource.clip = s.clip;
+        musicSource.loop = true;
         musicSource.Play();
     }
 

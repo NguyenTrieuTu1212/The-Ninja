@@ -19,4 +19,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("MainScenes");
     }
+
+
+    public void OnApplicationQuit()
+    {
+        Debug.Log("Application Quit");
+    }
 }

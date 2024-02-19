@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     private Player player;
     private PlayerAnimations animations;
     [SerializeField][Range(0f, 10f)] float timeToRevival;
-
+    private bool isRevival = false;
 
     private void Awake()
     {
@@ -22,7 +22,12 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         if (Input.GetKeyDown(KeyCode.H)) TakeDamage(1f);
         if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
             player.ResetPlayer();
-        if (player.Stats.Health <= 0f) PlayerDead();
+        if (player.Stats.Health <= 0f && !isRevival)
+        {
+            StartCoroutine(WaitingPlayerRivial());
+
+        }
+
         
 
     }
@@ -30,6 +35,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     public void TakeDamage(float amount)
     {
         if (player.Stats.Health <= 0) return;
+        AudioManager.Instance.PlaySFX("HitPlayer");
         DamageText damageText = DamageManager.Instance.TakeDamageText(amount);
         damageText.transform.SetParent(transform);
         damageText.transform.position = transform.position + Vector3.right * 0.5f;
@@ -37,14 +43,7 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     }
 
 
-    private void PlayerDead()
-    {
-        //Fix player respawn in main village
-        transform.position = Vector3.zero;
-        animations.SetDeadAnimation();
-    }
-
-
+   
 
     public void RestoreHealth(float amount)
     {
@@ -56,13 +55,21 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     {
         return player.Stats.Health >= 0f && player.Stats.Health < player.Stats.maxHealth;
     }
-    
 
-    /*IEnumerator WaitingPlayerRivial()
+    public void PlayerDead()
     {
         isRevival = false;
+        transform.position = Vector3.zero;
+        animations.SetDeadAnimation();
+    }
+
+
+    IEnumerator WaitingPlayerRivial()
+    {
+        isRevival = true;
+        PlayerDead();
         yield return new WaitForSeconds(timeToRevival);
         player.ResetPlayer();
-        isRevival = true;
-    }*/
+
+    }
 }

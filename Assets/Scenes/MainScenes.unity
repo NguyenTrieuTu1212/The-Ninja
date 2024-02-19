@@ -17470,7 +17470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfd0ce7caeacb9458e5ed4a8796619e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRevival: 2
+  timeToRevival: 1
 --- !u!114 &150267864
 MonoBehaviour:
   m_ObjectHideFlags: 0

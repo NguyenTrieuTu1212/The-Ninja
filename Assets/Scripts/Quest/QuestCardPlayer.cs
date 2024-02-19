@@ -49,6 +49,7 @@ public class QuestCardPlayer : QuestCard
     {
         PlayerManager.Instance.AddExpPlayer(QuestToComplete.expReward);
         Inventory.Instance.AddItem(QuestToComplete.item.itemReward, QuestToComplete.item.itemAmount);
+        QuestToComplete.RessetQuest();
         Destroy(gameObject);
     }
 

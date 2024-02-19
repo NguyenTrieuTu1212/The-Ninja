@@ -22,6 +22,6 @@ MonoBehaviour:
     itemReward: {fileID: 11400000, guid: c82b21efed4f8a648b494a4306e05803, type: 2}
     itemAmount: 8
     nameItemReward: Health
-  currentQuestStatus: 1
+  currentQuestStatus: 0
   questCompleted: 0
-  questAccepted: 1
+  questAccepted: 0
