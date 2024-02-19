@@ -42,8 +42,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.x = joystick.Horizontal;
         moveDirection.y = joystick.Vertical;
         moveDirection = moveDirection.normalized;
-
-        if(moveDirection == Vector2.zero)
+        if (moveDirection == Vector2.zero)
         {
             animations.SetBoolMoveAnimation(false);
             return;

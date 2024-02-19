@@ -30,6 +30,7 @@ public class EnermyHealth : MonoBehaviour,IDamageable
 
     public void TakeDamage(float amount)
     {
+        AudioManager.Instance.PlaySFX("Hit");
         CurrentHealth -= amount;
         healthSlider.value = CurrentHealth / health;
         if (CurrentHealth <= 0)
@@ -56,6 +57,6 @@ public class EnermyHealth : MonoBehaviour,IDamageable
         enermySelect.NoEnermySelectedCallBack();
         PlayerManager.Instance.AddExpPlayer(enermyLoot.ExpAmountDrop);
         PlayerManager.Instance.AddManaPlayer(enermyLoot.ManaAmoutDrop);
-        LootManager.Instance.ShowLootChest(enermyLoot);
+        /*LootManager.Instance.ShowLootChest(enermyLoot);*/
     }
 }
