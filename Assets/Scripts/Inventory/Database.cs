@@ -7,5 +7,6 @@ using UnityEngine;
 public class Database : ScriptableObject
 {
     public Items[] listItems;
+    public Quest[] listQuests;
 
 }

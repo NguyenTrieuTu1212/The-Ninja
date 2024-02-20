@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnermyHealth : MonoBehaviour,IDamageable
+public class EnermyHealth : MonoBehaviour, IDamageable
 {
 
     [SerializeField] private float health;

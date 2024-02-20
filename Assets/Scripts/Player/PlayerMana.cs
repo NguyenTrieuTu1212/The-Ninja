@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMana : MonoBehaviour
+public class PlayerMana : MonoBehaviour,IDataPersistance
 {
     private Player player;
     public float currentMana { get; private set; }
@@ -17,6 +17,18 @@ public class PlayerMana : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M)) UsedMana(2f);
+    }
+
+    public void LoadGame(GameData gameData)
+    {
+        player.Stats.mana = gameData.manaPlayer;
+        player.Stats.maxMana = gameData.maxManaPlayer;
+    }
+
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.manaPlayer = currentMana;
+        gameData.maxManaPlayer = player.Stats.maxMana;
     }
 
     public void UsedMana(float amount)
@@ -48,4 +60,6 @@ public class PlayerMana : MonoBehaviour
     {
         return player.Stats.mana >=0f && player.Stats.mana < player.Stats.maxMana;
     }
+
+    
 }

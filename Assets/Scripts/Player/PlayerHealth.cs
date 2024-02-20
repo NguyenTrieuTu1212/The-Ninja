@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerHealth : MonoBehaviour,IDamageable
+public class PlayerHealth : MonoBehaviour, IDamageable,IDataPersistance
 {
     private Player player;
     private PlayerAnimations animations;
@@ -24,6 +24,20 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         /*if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
             player.ResetPlayer();*/
         /*if (player.Stats.Health <= 0f) StartCoroutine(WaitingPlayerRivial());*/
+    }
+
+
+
+    public void LoadGame(GameData gameData)
+    {
+        player.Stats.Health = gameData.healthPlayer;
+        player.Stats.maxHealth = gameData.maxHealthPlayer;
+    }
+
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.healthPlayer = player.Stats.Health;
+        gameData.maxHealthPlayer = player.Stats.maxHealth;
     }
 
     public void TakeDamage(float amount)
@@ -65,4 +79,6 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         yield return new WaitForSeconds(timeToRevival);
         player.ResetPlayer();
     }
+
+    
 }

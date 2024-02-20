@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerExp : MonoBehaviour
+public class PlayerExp : MonoBehaviour,IDataPersistance
 {
     private Player player;
     
@@ -16,8 +16,22 @@ public class PlayerExp : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) AddExp(300f);
-       
     }
+
+
+    public void LoadGame(GameData gameData)
+    {
+        player.Stats.currentExp = gameData.currentExpPlayer;
+        player.Stats.expNextLevel = gameData.expNextLevel;
+    }
+
+    public void SaveGame(ref GameData gameData)
+    {
+        gameData.currentExpPlayer = player.Stats.currentExp;
+        gameData.expNextLevel = player.Stats.expNextLevel;
+    }
+
+
     public void AddExp(float amount)
     {
         player.Stats.totalExp += amount;
@@ -38,4 +52,6 @@ public class PlayerExp : MonoBehaviour
         float expRequiredForNextLevel = Mathf.Round(player.Stats.expNextLevel + (expNextLevel * (player.Stats.expMultiplier / 100f)));
         player.Stats.expNextLevel = expRequiredForNextLevel;
     }
+
+    
 }
