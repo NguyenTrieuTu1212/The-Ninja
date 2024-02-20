@@ -20,16 +20,10 @@ public class PlayerHealth : MonoBehaviour,IDamageable
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H)) TakeDamage(1f);
-        if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
-            player.ResetPlayer();
-        if (player.Stats.Health <= 0f && !isRevival)
-        {
-            StartCoroutine(WaitingPlayerRivial());
-
-        }
-
-        
-
+        if(player.Stats.Health <= 0f && !isRevival) StartCoroutine(WaitingPlayerRivial());
+        /*if (player.Stats.Health <= 0f && Input.GetKeyDown(KeyCode.R))
+            player.ResetPlayer();*/
+        /*if (player.Stats.Health <= 0f) StartCoroutine(WaitingPlayerRivial());*/
     }
 
     public void TakeDamage(float amount)
@@ -58,9 +52,9 @@ public class PlayerHealth : MonoBehaviour,IDamageable
 
     public void PlayerDead()
     {
-        isRevival = false;
-        transform.position = Vector3.zero;
+        transform.position = new Vector3(0,-0.5f,0);
         animations.SetDeadAnimation();
+        isRevival = false;
     }
 
 
@@ -70,6 +64,5 @@ public class PlayerHealth : MonoBehaviour,IDamageable
         PlayerDead();
         yield return new WaitForSeconds(timeToRevival);
         player.ResetPlayer();
-
     }
 }
