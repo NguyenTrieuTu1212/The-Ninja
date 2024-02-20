@@ -38,6 +38,7 @@ public class Quest : ScriptableObject
     public void RessetQuest()
     {
         questCompleted = false;
+        questAccepted = false;
         currentQuestStatus = 0;
     }
     

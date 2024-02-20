@@ -24,11 +24,16 @@ public class GameData
 
     // Inventory 
     public InventoryData inventoryData;
+
+    // Quest
+    public QuestDataNPC questDataNPC;
+
     public float volumeMusic;
     public float volumeSFX;
     public GameData()
     {
         inventoryData = new InventoryData();
+        questDataNPC = new QuestDataNPC();
         posPlayer = Vector3.zero;
         healthPlayer = 10f;
         maxHealthPlayer = 10f;

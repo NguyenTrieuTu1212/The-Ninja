@@ -30,6 +30,7 @@ public class QuestCardPlayer : QuestCard
         if (QuestToComplete.questCompleted)
         {
             claimButton.gameObject.SetActive(true);
+            status_TMP.text = $"Status:\n {QuestToComplete.currentQuestStatus} / {QuestToComplete.questGoal}";
             return;
         }
         status_TMP.text = $"Status:\n {QuestToComplete.currentQuestStatus} / {QuestToComplete.questGoal}";
