@@ -86,6 +86,11 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
                         QuestCardNPC questCard = Instantiate(questcardNPCPrefab, questPanelNPC);
                         questCard.ConfigQuestUI(questCardSaved);
                     }
+                    if (questDataNPC.isAccepted[i])
+                    {
+                        Quest questCardSaved = FindQuestByID(questDataNPC.IDQuest[i]);
+                        AcceptQuest(questCardSaved);
+                    }
                 }
             }
         }
