@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class QuestManager : Singleton<QuestManager>/*,IDataPersistance*/
+public class QuestManager : Singleton<QuestManager>, IDataPersistance
 {
 
     [Header("Quest Card NPC")]
@@ -18,16 +18,7 @@ public class QuestManager : Singleton<QuestManager>/*,IDataPersistance*/
     [SerializeField] private Database database;
     private QuestDataNPC questDataNPC;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        
-    }
 
-    private void Start()
-    {
-        LoadQuestInPanelContainerQuest();
-    }
 
     public void AcceptQuest(Quest quest)
     {
@@ -37,6 +28,7 @@ public class QuestManager : Singleton<QuestManager>/*,IDataPersistance*/
 
     private void LoadQuestInPanelContainerQuest()
     {
+        
         for(int i = 0; i < questList.Count; i++)
         {
             QuestCardNPC questCard = Instantiate(questcardNPCPrefab, questPanelNPC);
@@ -65,17 +57,25 @@ public class QuestManager : Singleton<QuestManager>/*,IDataPersistance*/
         return null;
     }
 
-    /*public void LoadGame(GameData gameData)
+    public void LoadGame(GameData gameData)
     {
-        questDataNPC = gameData.questDataNPC;
-        questDataNPC.IDQuest = gameData.questDataNPC.IDQuest;
-        questDataNPC.isAccepted = gameData.questDataNPC.isAccepted;
-        for(int i = 0; i < questList.Count; i++)
+        if (gameData.questDataNPC != null)
         {
-            Quest questCardSaved = FindQuestByID(questDataNPC.IDQuest[i]);
-            if (questCardSaved == null || questDataNPC.isAccepted[i]) continue;
-            QuestCardNPC questCard = Instantiate(questcardNPCPrefab, questPanelNPC);
-            questCard.ConfigQuestUI(questCardSaved);
+            questDataNPC = gameData.questDataNPC;
+
+            if (questDataNPC.IDQuest != null && questDataNPC.isAccepted != null)
+            {
+                for (int i = 0; i < questList.Count; i++)
+                {
+                    if (questDataNPC.IDQuest.Length > i && !questDataNPC.isAccepted[i])
+                    {
+                        Quest questCardSaved = FindQuestByID(questDataNPC.IDQuest[i]);
+                        if (questCardSaved == null) continue;
+                        QuestCardNPC questCard = Instantiate(questcardNPCPrefab, questPanelNPC);
+                        questCard.ConfigQuestUI(questCardSaved);
+                    }
+                }
+            }
         }
     }
 
@@ -88,9 +88,9 @@ public class QuestManager : Singleton<QuestManager>/*,IDataPersistance*/
             gameData.questDataNPC.IDQuest[i] = questList[i].IDQuest;
             gameData.questDataNPC.isAccepted[i] = questList[i].questAccepted;
         }
-        gameData.questDataNPC = questDataNPC;
 
-    }*/
+        gameData.questDataNPC = questDataNPC;
+    }
 
     public Quest FindQuestByID(string IDQuest)
     {

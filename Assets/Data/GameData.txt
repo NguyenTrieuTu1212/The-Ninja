@@ -4,12 +4,12 @@
         "y": -0.3066975772380829,
         "z": 0.0
     },
-    "healthPlayer": 3.0,
+    "healthPlayer": 6.0,
     "maxHealthPlayer": 10.0,
-    "manaPlayer": 15.5,
+    "manaPlayer": 20.0,
     "maxManaPlayer": 20.0,
-    "currentExpPlayer": 1.0,
-    "expNextLevel": 150.0,
+    "currentExpPlayer": 0.0,
+    "expNextLevel": 100.0,
     "inventoryData": {
         "itemID": [
             "WeaponKunai",
@@ -70,7 +70,7 @@
             "Kill2Enenrmy"
         ],
         "isAccepted": [
-            false,
+            true,
             false
         ]
     },

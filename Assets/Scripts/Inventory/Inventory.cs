@@ -70,7 +70,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
 
     private void LoadDataItems(GameData dataItems)
     {
-        data = dataItems.inventoryData;
+        /*data = dataItems.inventoryData;
         data.itemID = dataItems.inventoryData.itemID;
         data.itemAmount = dataItems.inventoryData.itemAmount;
         for (int i = 0; i < inventorySize; i++)
@@ -89,7 +89,32 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
             {
                 inventoryItems[i] = null;
             }
+        }*/
+        if(dataItems.inventoryData != null)
+        {
+            data = dataItems.inventoryData;
+            if(data.itemID != null && data.itemAmount != null)
+            {
+                for (int i = 0; i < inventorySize; i++)
+                {
+                    if (data.itemID[i] != null)
+                    {
+                        Items itemSaved = FindSavedItems(data.itemID[i]);
+                        if (itemSaved != null)
+                        {
+                            inventoryItems[i] = itemSaved.CopyItem();
+                            inventoryItems[i].amountItem = data.itemAmount[i];
+                            InventoryUI.Instance.DrawSlot(inventoryItems[i], i);
+                        }
+                    }
+                    else
+                    {
+                        inventoryItems[i] = null;
+                    }
+                }
+            }
         }
+        
     }
 
 
