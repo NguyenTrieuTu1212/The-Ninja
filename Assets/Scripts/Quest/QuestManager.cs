@@ -17,9 +17,20 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
     [SerializeField] private List<Quest> questList = new List<Quest>();
     [SerializeField] private Database database;
     private QuestDataNPC questDataNPC;
+    private bool isLoaded;
 
 
 
+    private void Start()
+    {
+        if (!isLoaded)
+        {
+            LoadQuestInPanelContainerQuest();
+            isLoaded = true;
+        }
+        else return;
+        
+    }
     public void AcceptQuest(Quest quest)
     {
         QuestCardPlayer questCardPlayer = Instantiate(questCardPlayerPrefab, questPanelPlayer);
@@ -47,7 +58,6 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
     }
    
 
-
     private Quest QuestExists(string IDQuest)
     {
         foreach(Quest quest in questList)
@@ -59,6 +69,8 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
 
     public void LoadGame(GameData gameData)
     {
+        isLoaded = gameData.isLoadedQuest;
+        // if data quest loaded not null -> Get data and load it in panel Quests NPC
         if (gameData.questDataNPC != null)
         {
             questDataNPC = gameData.questDataNPC;
@@ -89,6 +101,7 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
             gameData.questDataNPC.isAccepted[i] = questList[i].questAccepted;
         }
 
+        gameData.isLoadedQuest = isLoaded;
         gameData.questDataNPC = questDataNPC;
     }
 

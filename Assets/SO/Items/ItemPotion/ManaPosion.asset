@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: ManaPosion
   nameItem: Mana Posion
-  description: 
+  description: Updating ...........
   icon: {fileID: 21300000, guid: 4cb6c9009789879488086616eeac2040, type: 3}
   type: 1
   isComsumable: 1

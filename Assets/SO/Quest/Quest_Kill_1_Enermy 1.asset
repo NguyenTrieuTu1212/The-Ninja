@@ -24,4 +24,4 @@ MonoBehaviour:
     nameItemReward: Health
   currentQuestStatus: 0
   questCompleted: 0
-  questAccepted: 0
+  questAccepted: 1

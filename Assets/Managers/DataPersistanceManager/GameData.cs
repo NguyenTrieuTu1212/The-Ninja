@@ -28,20 +28,26 @@ public class GameData
     // Quest
     public QuestDataNPC questDataNPC;
 
+    // Music
     public float volumeMusic;
     public float volumeSFX;
+
+    public bool isLoadedQuest;
+
     public GameData()
     {
         inventoryData = new InventoryData();
         questDataNPC = new QuestDataNPC();
+        isLoadedQuest = false;
         posPlayer = Vector3.zero;
         healthPlayer = 10f;
         maxHealthPlayer = 10f;
-        manaPlayer = 10f;
+        manaPlayer = 20f;
         maxManaPlayer = 20f;
         currentExpPlayer = 0f;
         expNextLevel = 100f;
         volumeMusic = 1f;
         volumeSFX = 1f;
+        
     }
 }
