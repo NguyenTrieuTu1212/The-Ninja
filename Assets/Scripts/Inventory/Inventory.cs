@@ -16,8 +16,6 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
     public int InventorySize => inventorySize;
     public int indexCurrentItem { get;  set; }
 
-
-
     /*private void Start()
     {
         inventoryItems = new Items[inventorySize];
@@ -25,6 +23,8 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
         VerifyToDrawItems();
         LoadDataItems();
     }*/
+
+
 
 
     public void LoadGame(GameData gameData)
@@ -113,8 +113,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
                     }
                 }
             }
-        }
-        
+        }  
     }
 
 

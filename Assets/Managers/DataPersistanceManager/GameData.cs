@@ -25,6 +25,9 @@ public class GameData
     // Inventory 
     public InventoryData inventoryData;
 
+    // Init weapon
+    public bool isInitWeapon;
+
     // Quest
     public QuestDataNPC questDataNPC;
 
@@ -37,6 +40,7 @@ public class GameData
     public GameData()
     {
         inventoryData = new InventoryData();
+        isInitWeapon = false;
         questDataNPC = new QuestDataNPC();
         isLoadedQuest = false;
         posPlayer = Vector3.zero;

@@ -1,20 +1,20 @@
 {
     "posPlayer": {
         "x": 0.0,
-        "y": -0.3066975772380829,
+        "y": 0.0,
         "z": 0.0
     },
-    "healthPlayer": 6.0,
+    "healthPlayer": 5.0,
     "maxHealthPlayer": 10.0,
     "manaPlayer": 20.0,
     "maxManaPlayer": 20.0,
-    "currentExpPlayer": 51.0,
+    "currentExpPlayer": 0.0,
     "expNextLevel": 100.0,
     "inventoryData": {
         "itemID": [
-            "WeaponKunai",
             "ManaPosion",
             "HealthPosion",
+            "WeaponFireBallStick",
             "",
             "",
             "",
@@ -38,9 +38,9 @@
             ""
         ],
         "itemAmount": [
+            2,
+            4,
             1,
-            10,
-            13,
             0,
             0,
             0,
@@ -64,13 +64,14 @@
             0
         ]
     },
+    "isInitWeapon": false,
     "questDataNPC": {
         "IDQuest": [
             "Kill1Enenrmy",
             "Kill2Enenrmy"
         ],
         "isAccepted": [
-            false,
+            true,
             false
         ]
     },
