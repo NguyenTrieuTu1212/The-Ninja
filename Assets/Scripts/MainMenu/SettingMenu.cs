@@ -20,6 +20,7 @@ public class SettingMenu : MonoBehaviour
 
     public void ClosePanelSetting()
     {
+        AudioManager.Instance.PlaySFX("Click");
         animator.SetBool("isHide", true);
     }
     public void SetQuality(int qualityIndex)

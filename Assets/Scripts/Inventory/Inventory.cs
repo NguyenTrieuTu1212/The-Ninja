@@ -234,7 +234,7 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
 
     public void UseItem()
     {
-
+        AudioManager.Instance.PlaySFX("Click");
         if (inventoryItems[indexCurrentItem] == null || inventoryItems[indexCurrentItem].type == ItemsType.Weapon)
         {
             Debug.Log("Item is null !!! Not used !!!!");
@@ -253,7 +253,8 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
 
     public void EquipItem()
     {
-        if(inventoryItems[indexCurrentItem] == null) return;
+        AudioManager.Instance.PlaySFX("Click");
+        if (inventoryItems[indexCurrentItem] == null) return;
         if (inventoryItems[indexCurrentItem].type != ItemsType.Weapon) return;
         inventoryItems[indexCurrentItem].EquipItem();
 
@@ -262,7 +263,8 @@ public class Inventory : Singleton<Inventory>,IDataPersistance
 
     public void RemoveItem()
     {
-        if(inventoryItems[indexCurrentItem] == null) return;
+        AudioManager.Instance.PlaySFX("Click");
+        if (inventoryItems[indexCurrentItem] == null) return;
         inventoryItems[indexCurrentItem].RemoveItem();
         inventoryItems[indexCurrentItem] = null;
         InventoryUI.Instance.DrawSlot(null, indexCurrentItem);

@@ -141,7 +141,7 @@ public class UIManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("Exit");
         DataPersistaceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("MenuScenes");
+        ScenesTrasitionManager.Instance.BackLevel("MenuScenes");
         panelExit.SetActive(false);
     }
     public void NoExit()

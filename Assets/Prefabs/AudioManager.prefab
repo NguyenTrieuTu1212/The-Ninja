@@ -326,5 +326,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c9b9c89858bf73f4bb648899c23a82c7, type: 3}
   - nameClip: Exit
     clip: {fileID: 8300000, guid: c65efb744ff045a498addf664cd2d3b5, type: 3}
+  - nameClip: Click
+    clip: {fileID: 8300000, guid: 025358428212a4646b4b2dbec8648b8a, type: 3}
   musicSource: {fileID: 8980824166478716350}
   sfxSource: {fileID: 8980824165720998860}

@@ -12,17 +12,21 @@ public class MainMenu : MonoBehaviour
 
     public void DisplaySettingPanel()
     {
+        AudioManager.Instance.PlaySFX("Click");
         settingMenu.OpenPanelSetting();
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("MainScenes");
+        AudioManager.Instance.PlaySFX("Click");
+        /*SceneManager.LoadSceneAsync("MainScenes");*/
+        ScenesTrasitionManager.Instance.NextLevel("MainScenes");
     }
 
 
-    public void OnApplicationQuit()
+    public void ExitGame()
     {
-        Debug.Log("Application Quit");
+        AudioManager.Instance.PlaySFX("Click");
+        Application.Quit();
     }
 }
