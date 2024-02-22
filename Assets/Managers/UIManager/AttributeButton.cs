@@ -10,5 +10,6 @@ public class AttributeButton : MonoBehaviour
     public void SelectButtonAddPoint()
     {
         OnAttributesSelectEvent?.Invoke(attributesType);
+        AudioManager.Instance.PlaySFX("ClickButton");
     }
 }

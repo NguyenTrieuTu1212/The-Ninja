@@ -4,18 +4,18 @@
         "y": 0.0,
         "z": 0.0
     },
-    "healthPlayer": 10.0,
-    "maxHealthPlayer": 10.0,
-    "manaPlayer": 2.5,
-    "maxManaPlayer": 20.0,
-    "currentExpPlayer": 51.0,
+    "healthPlayer": 18.600000381469728,
+    "maxHealthPlayer": 18.600000381469728,
+    "manaPlayer": 20.0,
+    "maxManaPlayer": 29.5,
+    "currentExpPlayer": 20.0,
     "expNextLevel": 100.0,
     "inventoryData": {
         "itemID": [
-            "HealthPosion",
-            "ManaPosion",
-            "WeaponBook",
             "WeaponKunai",
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -38,10 +38,10 @@
             ""
         ],
         "itemAmount": [
-            2,
             1,
-            1,
-            1,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -69,7 +69,7 @@
         "IDQuest": [
             "Kill1Enenrmy",
             "Kill2Enenrmy",
-            "TalkSifu"
+            "TalkWu"
         ],
         "currentQuestStatus": [
             0,

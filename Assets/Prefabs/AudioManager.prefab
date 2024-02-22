@@ -314,5 +314,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0e07632e00931ea4294074f018fecae7, type: 3}
   - nameClip: HitPlayer
     clip: {fileID: 8300000, guid: e1d9c73d54f79b149864a4b5f792cd42, type: 3}
+  - nameClip: ClickButton
+    clip: {fileID: 8300000, guid: 36f3ceaec4976d244b048546a3662e5b, type: 3}
   musicSource: {fileID: 8980824166478716350}
   sfxSource: {fileID: 8980824165720998860}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quest_Talk_Sifu
   m_EditorClassIdentifier: 
   questName: Talk master Wu
-  IDQuest: TalkSifu
+  IDQuest: TalkWu
   questGoal: 1
   Description: '* Let''s go talk to Master Wu'
   goldReward: 2

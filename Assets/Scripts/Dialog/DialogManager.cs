@@ -29,6 +29,7 @@ public class DialogManager : Singleton<DialogManager>
         if (currentSentenceIndex == NPCDialog.dialogShow.listDialog.Length - 1)
         {
             ButtonNext.gameObject.SetActive(false);
+            if (NPCDialog.transform.name == "NPC_Master") QuestManager.Instance.UpdateProgress("TalkWu", 1);
             if (NPCDialog.dialogShow.type == InterationType.Quest)
                 SetActiveButtonAcceptAndReject(true);
             else

@@ -17,7 +17,7 @@ MonoBehaviour:
   questGoal: 1
   Description: '* Kill 1 enermy. Kill enermy to receive gifts'
   goldReward: 1
-  expReward: 1
+  expReward: 10
   item:
     itemReward: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
     itemAmount: 1
