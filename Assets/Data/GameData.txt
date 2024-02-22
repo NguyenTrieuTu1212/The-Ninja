@@ -4,11 +4,11 @@
         "y": 0.0,
         "z": 0.0
     },
-    "healthPlayer": 4.0,
+    "healthPlayer": 5.0,
     "maxHealthPlayer": 10.0,
-    "manaPlayer": 4.5,
+    "manaPlayer": 20.0,
     "maxManaPlayer": 20.0,
-    "currentExpPlayer": 0.0,
+    "currentExpPlayer": 152.0,
     "expNextLevel": 225.0,
     "inventoryData": {
         "itemID": [
@@ -16,7 +16,7 @@
             "HealthPosion",
             "WeaponFireBallStick",
             "WeaponFireBallStick",
-            "",
+            "WeaponBook",
             "",
             "",
             "",
@@ -39,10 +39,10 @@
         ],
         "itemAmount": [
             6,
-            8,
+            5,
             1,
             1,
-            0,
+            1,
             0,
             0,
             0,
@@ -69,6 +69,10 @@
         "IDQuest": [
             "Kill1Enenrmy",
             "Kill2Enenrmy"
+        ],
+        "currentQuestStatus": [
+            0,
+            0
         ],
         "isAccepted": [
             false,

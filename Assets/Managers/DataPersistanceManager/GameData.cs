@@ -30,7 +30,6 @@ public class GameData
 
     // Quest
     public QuestDataNPC questDataNPC;
-
     // Music
     public float volumeMusic;
     public float volumeSFX;

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff359b55dabb94ca8aef6cadeace2b, type: 3}
   m_Name: Quest_Kill_1_Enermy 1
   m_EditorClassIdentifier: 
-  questName: Kill 1 Enermy
+  questName: Kill 1 enermy
   IDQuest: Kill1Enenrmy
   questGoal: 1
-  Description: Kill 1 enermy
+  Description: '* Kill 1 enermy. Kill enermy to receive gifts'
   goldReward: 1
   expReward: 1
   item:
     itemReward: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
     itemAmount: 1
     nameItemReward: Health
-  currentQuestStatus: 1
+  currentQuestStatus: 0
   questCompleted: 0
   questAccepted: 0

@@ -8,5 +8,6 @@ using System;
 public class QuestDataNPC 
 {
     public string[] IDQuest;
+    public int[] currentQuestStatus;
     public bool[] isAccepted;
 }

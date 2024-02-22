@@ -89,6 +89,7 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
                     if (questDataNPC.isAccepted[i])
                     {
                         Quest questCardSaved = FindQuestByID(questDataNPC.IDQuest[i]);
+                        questCardSaved.currentQuestStatus = questDataNPC.currentQuestStatus[i];
                         AcceptQuest(questCardSaved);
                     }
                 }
@@ -100,10 +101,12 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
     {
         gameData.questDataNPC.IDQuest = new string[questList.Count];
         gameData.questDataNPC.isAccepted = new bool[questList.Count];
+        gameData.questDataNPC.currentQuestStatus = new int[questList.Count];
         for (int i = 0; i < questList.Count; i++)
         {
             gameData.questDataNPC.IDQuest[i] = questList[i].IDQuest;
             gameData.questDataNPC.isAccepted[i] = questList[i].questAccepted;
+            gameData.questDataNPC.currentQuestStatus[i] = questList[i].currentQuestStatus;
         }
 
         gameData.isLoadedQuest = isLoaded;

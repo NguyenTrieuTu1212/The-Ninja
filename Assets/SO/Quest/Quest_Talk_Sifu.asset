@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62ff359b55dabb94ca8aef6cadeace2b, type: 3}
-  m_Name: Quest_Loot_2_Posion_Health
+  m_Name: Quest_Talk_Sifu
   m_EditorClassIdentifier: 
-  questName: Loot 2 Positon Health
-  IDQuest: LootQuest
-  questGoal: 10
-  Description: 
+  questName: Talk master Wu
+  IDQuest: TalkSifu
+  questGoal: 1
+  Description: '* Let''s go talk to Master Wu'
   goldReward: 2
-  expReward: 2
+  expReward: 20
   item:
-    itemReward: {fileID: 11400000, guid: 714f0475cffcf2f4f902f9e0bdfb91a0, type: 2}
+    itemReward: {fileID: 11400000, guid: b7491901b3fc9c94991a84b452a24faf, type: 2}
     itemAmount: 1
-    nameItemReward: Health
+    nameItemReward: Bow
   currentQuestStatus: 0
   questCompleted: 0
   questAccepted: 0
