@@ -8,12 +8,12 @@
     "maxHealthPlayer": 10.0,
     "manaPlayer": 20.0,
     "maxManaPlayer": 20.0,
-    "currentExpPlayer": 20.0,
+    "currentExpPlayer": 40.0,
     "expNextLevel": 100.0,
     "inventoryData": {
         "itemID": [
             "WeaponKunai",
-            "",
+            "WeaponKunai",
             "",
             "",
             "",
@@ -39,7 +39,7 @@
         ],
         "itemAmount": [
             1,
-            0,
+            1,
             0,
             0,
             0,
