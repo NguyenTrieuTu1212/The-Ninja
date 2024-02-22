@@ -43,6 +43,7 @@ public class QuestCardPlayer : QuestCard
         goldReward_TMP.text = quest.goldReward.ToString();
         expReward_TMP.text = quest.expReward.ToString();
         itemRewardIcon.sprite = quest.item.itemReward.icon;
+        amountItems.text = quest.item.itemAmount.ToString();
     }
 
 

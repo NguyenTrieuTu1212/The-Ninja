@@ -24,3 +24,4 @@ MonoBehaviour:
   listQuests:
   - {fileID: 11400000, guid: 36e90c74ff95d1f4a9a7ec9892480d7d, type: 2}
   - {fileID: 11400000, guid: 44b686ddc185f394f8c92786ca53620a, type: 2}
+  - {fileID: 11400000, guid: b5059070f4211714da9141a724f1d05f, type: 2}

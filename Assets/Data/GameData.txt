@@ -4,19 +4,19 @@
         "y": 0.0,
         "z": 0.0
     },
-    "healthPlayer": 5.0,
+    "healthPlayer": 10.0,
     "maxHealthPlayer": 10.0,
-    "manaPlayer": 20.0,
+    "manaPlayer": 2.5,
     "maxManaPlayer": 20.0,
-    "currentExpPlayer": 152.0,
-    "expNextLevel": 225.0,
+    "currentExpPlayer": 51.0,
+    "expNextLevel": 100.0,
     "inventoryData": {
         "itemID": [
-            "ManaPosion",
             "HealthPosion",
-            "WeaponFireBallStick",
-            "WeaponFireBallStick",
+            "ManaPosion",
             "WeaponBook",
+            "WeaponKunai",
+            "",
             "",
             "",
             "",
@@ -38,11 +38,11 @@
             ""
         ],
         "itemAmount": [
-            6,
-            5,
+            2,
             1,
             1,
             1,
+            0,
             0,
             0,
             0,
@@ -68,13 +68,16 @@
     "questDataNPC": {
         "IDQuest": [
             "Kill1Enenrmy",
-            "Kill2Enenrmy"
+            "Kill2Enenrmy",
+            "TalkSifu"
         ],
         "currentQuestStatus": [
+            0,
             0,
             0
         ],
         "isAccepted": [
+            false,
             false,
             false
         ]

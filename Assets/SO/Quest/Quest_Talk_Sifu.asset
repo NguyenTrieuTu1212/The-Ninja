@@ -19,9 +19,9 @@ MonoBehaviour:
   goldReward: 2
   expReward: 20
   item:
-    itemReward: {fileID: 11400000, guid: b7491901b3fc9c94991a84b452a24faf, type: 2}
+    itemReward: {fileID: 11400000, guid: 478f40af868771841baf243e3b9e7cca, type: 2}
     itemAmount: 1
-    nameItemReward: Bow
+    nameItemReward: Kunai
   currentQuestStatus: 0
   questCompleted: 0
   questAccepted: 0

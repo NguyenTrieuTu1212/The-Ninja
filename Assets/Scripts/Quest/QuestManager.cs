@@ -14,8 +14,10 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
     [SerializeField] private Transform questPanelPlayer;
     [SerializeField] private QuestCardPlayer questCardPlayerPrefab;
 
-    [SerializeField] private List<Quest> questList = new List<Quest>();
+    [Header("Database stored data quest")]
     [SerializeField] private Database database;
+
+    [SerializeField] private List<Quest> questList = new List<Quest>();
     private QuestDataNPC questDataNPC;
     private bool isLoaded;
 
@@ -86,7 +88,7 @@ public class QuestManager : Singleton<QuestManager>, IDataPersistance
                         QuestCardNPC questCard = Instantiate(questcardNPCPrefab, questPanelNPC);
                         questCard.ConfigQuestUI(questCardSaved);
                     }
-                    if (questDataNPC.isAccepted[i])
+                    if (questDataNPC.IDQuest.Length > i && questDataNPC.isAccepted[i])
                     {
                         Quest questCardSaved = FindQuestByID(questDataNPC.IDQuest[i]);
                         questCardSaved.currentQuestStatus = questDataNPC.currentQuestStatus[i];

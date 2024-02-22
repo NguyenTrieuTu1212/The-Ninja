@@ -13,6 +13,7 @@ public class EnermyHealth : MonoBehaviour, IDamageable
     private EnermySelect enermySelect;
     private EnermyLoot enermyLoot;
     private Animator animator;
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -35,7 +36,11 @@ public class EnermyHealth : MonoBehaviour, IDamageable
         healthSlider.value = CurrentHealth / health;
         if (CurrentHealth <= 0)
         {
-            DisableEnermy();
+            if (!isDead)
+            {
+                DisableEnermy();
+                isDead = true;
+            }
             QuestManager.Instance.UpdateProgress("Kill1Enenrmy",1);
         }
         else
