@@ -18,6 +18,7 @@ public class QuestCard : MonoBehaviour
     }
     public void AccpetQuest()
     {
+        AudioManager.Instance.PlaySFX("AcceptQuest");
         if (QuestToComplete == null) return;
         QuestToComplete.questAccepted = true;
         QuestManager.Instance.AcceptQuest(QuestToComplete);

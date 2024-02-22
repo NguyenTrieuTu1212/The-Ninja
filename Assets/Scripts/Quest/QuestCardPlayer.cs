@@ -49,6 +49,7 @@ public class QuestCardPlayer : QuestCard
 
     public void ClaimReward()
     {
+        AudioManager.Instance.PlaySFX("Claim");
         PlayerManager.Instance.AddExpPlayer(QuestToComplete.expReward);
         Inventory.Instance.AddItem(QuestToComplete.item.itemReward, QuestToComplete.item.itemAmount);
         QuestToComplete.RessetQuest();

@@ -4,20 +4,20 @@
         "y": 0.0,
         "z": 0.0
     },
-    "healthPlayer": 18.600000381469728,
-    "maxHealthPlayer": 18.600000381469728,
+    "healthPlayer": 20.5,
+    "maxHealthPlayer": 20.5,
     "manaPlayer": 20.0,
-    "maxManaPlayer": 29.5,
-    "currentExpPlayer": 20.0,
-    "expNextLevel": 100.0,
+    "maxManaPlayer": 31.0,
+    "currentExpPlayer": 30.0,
+    "expNextLevel": 150.0,
     "inventoryData": {
         "itemID": [
             "WeaponKunai",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "ManaPosion",
+            "WeaponKunai",
+            "WeaponStickEnergy",
+            "WeaponFireBallStick",
+            "HealthPosion",
             "",
             "",
             "",
@@ -39,11 +39,11 @@
         ],
         "itemAmount": [
             1,
-            0,
-            0,
-            0,
-            0,
-            0,
+            2,
+            1,
+            1,
+            1,
+            4,
             0,
             0,
             0,
@@ -77,9 +77,9 @@
             0
         ],
         "isAccepted": [
-            false,
-            false,
-            false
+            true,
+            true,
+            true
         ]
     },
     "volumeMusic": 1.0,

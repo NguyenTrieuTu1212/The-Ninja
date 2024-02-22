@@ -27,6 +27,7 @@ public class ButtonLootItem : MonoBehaviour
     // Collect item 
     public void CollectItemsDrop()
     {
+        AudioManager.Instance.PlaySFX("Loot");
         if (itemLoaded == null) return;
         Inventory.Instance.AddItem(itemLoaded.item, itemLoaded.amountItem);
         itemLoaded.PickedItem = true;

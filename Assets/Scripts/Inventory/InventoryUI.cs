@@ -61,6 +61,7 @@ public class InventoryUI : Singleton<InventoryUI>
     public void OpenAndCloseInventory()
     {
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+        AudioManager.Instance.PlaySFX("ClickButton_OpenPanel");
         if (inventoryPanel.activeSelf == true)
         {
             decriptionPanel.SetActive(false);

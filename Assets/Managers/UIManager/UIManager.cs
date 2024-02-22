@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour
     
     public void OpenAndCloseStats()
     {
+        AudioManager.Instance.PlaySFX("ClickButton_OpenPanel");
         statsPanel.SetActive(!statsPanel.activeSelf);
         if (statsPanel.activeSelf)
         {
@@ -123,6 +124,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenAndClosePanelQuestPlayer(bool value)
     {
+        AudioManager.Instance.PlaySFX("ClickButton_OpenPanel");
         panelQuestPlayer.SetActive(value);
     }
 
@@ -130,18 +132,21 @@ public class UIManager : MonoBehaviour
 
     public void OpenPanelExit()
     {
+        AudioManager.Instance.PlaySFX("Exit");
         panelExit.SetActive(true);
         buttonExit.gameObject.SetActive(false); 
     }
 
     public void ExitAndSaveData()
     {
+        AudioManager.Instance.PlaySFX("Exit");
         DataPersistaceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("MenuScenes");
         panelExit.SetActive(false);
     }
     public void NoExit()
     {
+        AudioManager.Instance.PlaySFX("Exit");
         panelExit.SetActive(false);
         buttonExit.gameObject.SetActive(true);
     }
