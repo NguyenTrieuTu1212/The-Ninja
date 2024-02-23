@@ -56,12 +56,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null || isAttacking)
-        {
-            textAlert_TMP.text = "Cannot find \n the enemy !!!";
-            StartCoroutine(WatingDisplayDialogNotification());
-            return;
-        }
+        if (enermyTarget == null || isAttacking) return;
         if (player.Stats.mana < CurrentWeapon.RequireMana)
         {
             textAlert_TMP.text = "Not enough mana \n to use weapons !!!!!";
