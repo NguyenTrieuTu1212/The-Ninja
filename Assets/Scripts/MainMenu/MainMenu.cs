@@ -22,10 +22,6 @@ public class MainMenu : MonoBehaviour
         ScenesTrasitionManager.Instance.NextLevel("MainScenes");
     }
 
-    public void ContinueGame()
-    {
-        ScenesTrasitionManager.Instance.NextLevel("MainScenes");
-    }
 
     public void ExitGame()
     {

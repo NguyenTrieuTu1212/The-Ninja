@@ -13,7 +13,6 @@ public class GameData
     public float healthPlayer;
     public float maxHealthPlayer;
 
-
     // Stat Mana player
     public float manaPlayer;
     public float maxManaPlayer;
@@ -21,6 +20,20 @@ public class GameData
     // Stat exp current player
     public float currentExpPlayer;
     public float expNextLevel;
+    public float totalExpPlayer;
+    public float totalDamagePlayer;
+
+    // Upgrade
+    public int pointAttributePlayer;
+    public int levelPlayer;
+    public int strengthPlayer;
+    public int dexterityPlayer;
+    public int intelligencePlayer;
+
+    // Damge
+    public float baseDamagePlayer;
+    public float criticalChancePlayer;
+    public float criticalDamagePlayer;
 
     // Inventory 
     public InventoryData inventoryData;
@@ -30,6 +43,7 @@ public class GameData
 
     // Quest
     public QuestDataNPC questDataNPC;
+
     // Music
     public float volumeMusic;
     public float volumeSFX;
@@ -51,6 +65,14 @@ public class GameData
         expNextLevel = 100f;
         volumeMusic = 1f;
         volumeSFX = 1f;
+        levelPlayer = 1;
+        pointAttributePlayer = 1;
+        baseDamagePlayer = 2f;
+        criticalChancePlayer = 10;
+        criticalDamagePlayer = 50;
+        strengthPlayer = 0;
+        dexterityPlayer = 0;
+        intelligencePlayer = 0;
         
     }
 }

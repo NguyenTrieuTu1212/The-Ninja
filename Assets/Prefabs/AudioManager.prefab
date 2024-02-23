@@ -317,7 +317,7 @@ MonoBehaviour:
   - nameClip: ClickButton
     clip: {fileID: 8300000, guid: 36f3ceaec4976d244b048546a3662e5b, type: 3}
   - nameClip: ClickButton_OpenPanel
-    clip: {fileID: 8300000, guid: 9fb765f0d80ac2542b4e3508542e329b, type: 3}
+    clip: {fileID: 8300000, guid: f6e73dbf2eca5ba43b8be51daf2d3419, type: 3}
   - nameClip: Loot
     clip: {fileID: 8300000, guid: 084ddc294ddc58e438c3ee7760b6ec8f, type: 3}
   - nameClip: AcceptQuest
@@ -328,5 +328,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c65efb744ff045a498addf664cd2d3b5, type: 3}
   - nameClip: Click
     clip: {fileID: 8300000, guid: 025358428212a4646b4b2dbec8648b8a, type: 3}
+  - nameClip: Alert
+    clip: {fileID: 8300000, guid: 63e15817ab1db8446ac08192204fde37, type: 3}
   musicSource: {fileID: 8980824166478716350}
   sfxSource: {fileID: 8980824165720998860}

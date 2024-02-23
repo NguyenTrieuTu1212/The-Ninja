@@ -34,7 +34,7 @@ public class DataPersistaceManager : MonoBehaviour
         gameData = new GameData();
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         gameData = fileHandlerData.ReadData();
         if (this.gameData == null)

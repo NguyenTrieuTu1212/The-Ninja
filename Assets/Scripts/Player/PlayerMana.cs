@@ -27,7 +27,7 @@ public class PlayerMana : MonoBehaviour,IDataPersistance
 
     public void SaveGame(ref GameData gameData)
     {
-        gameData.manaPlayer = currentMana;
+        gameData.manaPlayer = player.Stats.mana;
         gameData.maxManaPlayer = player.Stats.maxMana;
     }
 

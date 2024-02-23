@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class PlayerAttack : MonoBehaviour
     private float currentAttackRotation;
     private List<Transform> listPointAttack = new List<Transform>();
 
-
-    [SerializeField] private Image panelDialog;
+    [SerializeField] private TextMeshProUGUI textAlert_TMP;
+    [SerializeField] private Canvas panelDialog;
     [SerializeField] public Weapon initWeapon;
     public Weapon CurrentWeapon { get; private set; }
     private bool isAttacking = false;
@@ -55,16 +56,20 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (enermyTarget == null || isAttacking) return;
-        if(CurrentWeapon == null)
+        if (enermyTarget == null || isAttacking)
         {
-            if (!isDisplay) StartCoroutine(WatingDisplayDialogNotification());
-            else return;
+            textAlert_TMP.text = "Cannot find \n the enemy !!!";
+            StartCoroutine(WatingDisplayDialogNotification());
+            return;
         }
-        else
+        if (player.Stats.mana < CurrentWeapon.RequireMana)
         {
-            StartCoroutine(WaitingAttacking());
+            textAlert_TMP.text = "Not enough mana \n to use weapons !!!!!";
+            StartCoroutine(WatingDisplayDialogNotification());
+            return;
         }
+        else StartCoroutine(WaitingAttacking());
+        
     }
 
 
@@ -72,12 +77,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator WatingDisplayDialogNotification()
     {
         isDisplay = true;
-
-        /*//
-        RectTransform panelDialogRectTransform = panelDialog.GetComponent<RectTransform>();
-        panelDialogRectTransform.position = transform.position + Vector3.up * 0.9f;*/
-
-        //
+        AudioManager.Instance.PlaySFX("Alert");
         panelDialog.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         panelDialog.gameObject.SetActive(false);
@@ -91,8 +91,9 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
         if (currentAttackPositon != null)
         {
-            if (player.Stats.mana < CurrentWeapon.RequireMana || CurrentWeapon.durability <= 0)
+            if (player.Stats.mana < CurrentWeapon.RequireMana)
             {
+                if(!isDisplay) StartCoroutine(WatingDisplayDialogNotification());
                 isAttacking = false;
                 yield break;
             }

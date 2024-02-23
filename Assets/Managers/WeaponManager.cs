@@ -19,7 +19,7 @@ public class WeaponManager : Singleton<WeaponManager>
     {
         imageWeapon.sprite = weapon.iconWeapon;
         imageWeapon.gameObject.SetActive(true);
-        weaponManaTMP.text = weapon.requireTime.ToString();
+        weaponManaTMP.text = weapon.RequireMana.ToString();
         weaponManaTMP.gameObject.SetActive(true);
         PlayerManager.Instance.PlayerAttack.EquipWeapon(weapon);
     }
