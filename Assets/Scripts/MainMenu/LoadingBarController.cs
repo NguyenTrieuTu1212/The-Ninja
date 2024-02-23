@@ -29,10 +29,12 @@ public class LoadingBarController : MonoBehaviour
             currentProgress = Mathf.Clamp(currentProgress, 0f, 100f);
 
             loadingSlider.value = currentProgress / 100f;
-            percentText.text = Mathf.RoundToInt(currentProgress).ToString() + "%";
+            percentText.text = $"Loading..... {Mathf.RoundToInt(currentProgress)} %";
 
             yield return null;
         }
+        percentText.text = "Finish";
+        ScenesTrasitionManager.Instance.NextLevel("MenuScenes");
     }
 
     void UpdateSpeed()

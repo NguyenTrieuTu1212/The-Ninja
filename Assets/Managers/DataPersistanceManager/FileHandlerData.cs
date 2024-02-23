@@ -10,13 +10,24 @@ public class FileHandlerData
     public string dataFileName = "";
 
 
-    public FileHandlerData(string dataDirPath,string dataFileName)
+    public FileHandlerData(string dataDirPath, string dataFileName)
     {
         this.dataDirPath = dataDirPath;
-        this.dataFileName = dataFileName;   
+        this.dataFileName = dataFileName;
+        CreateFileIfNotExists();
     }
 
 
+
+    private void CreateFileIfNotExists()
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+        if (!File.Exists(fullPath))
+        {
+            File.Create(fullPath).Close();
+            Debug.Log("File created at: " + fullPath);
+        }
+    }
 
     public GameData ReadData()
     {
@@ -31,7 +42,7 @@ public class FileHandlerData
         catch (Exception e)
         {
             Debug.LogException(e);
-            return null; 
+            return null;
         }
     }
 
@@ -42,11 +53,11 @@ public class FileHandlerData
         string fullPath = Path.Combine(dataDirPath, dataFileName);
         try
         {
-            string jsonData = JsonUtility.ToJson(data,true);
+            string jsonData = JsonUtility.ToJson(data, true);
             File.WriteAllText(fullPath, jsonData);
             Debug.Log("Data written to: " + fullPath);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Debug.LogException(e);
         }

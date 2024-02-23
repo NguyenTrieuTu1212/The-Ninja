@@ -19,10 +19,13 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         AudioManager.Instance.PlaySFX("Click");
-        /*SceneManager.LoadSceneAsync("MainScenes");*/
         ScenesTrasitionManager.Instance.NextLevel("MainScenes");
     }
 
+    public void ContinueGame()
+    {
+        ScenesTrasitionManager.Instance.NextLevel("MainScenes");
+    }
 
     public void ExitGame()
     {

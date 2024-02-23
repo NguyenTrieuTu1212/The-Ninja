@@ -19,7 +19,7 @@ public class DataPersistaceManager : MonoBehaviour
             return;
         }
         instance = this;
-        fileHandlerData = new FileHandlerData("Assets\\Data", "GameData.txt");
+        fileHandlerData = new FileHandlerData(Application.persistentDataPath, "GameData.txt");
     }
 
 
@@ -29,7 +29,7 @@ public class DataPersistaceManager : MonoBehaviour
         listDataPersistances = FindAllDataInObject();
         LoadGame();
     }
-    private void NewGame()
+    public void NewGame()
     {
         gameData = new GameData();
     }
@@ -51,7 +51,7 @@ public class DataPersistaceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        foreach(IDataPersistance persistance in listDataPersistances)
+        foreach (IDataPersistance persistance in listDataPersistances)
         {
             persistance.SaveGame(ref gameData);
         }
