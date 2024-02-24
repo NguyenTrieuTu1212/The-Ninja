@@ -8,7 +8,7 @@ public class InventoryUI : Singleton<InventoryUI>
     [Header ("Config Slot in Inventory")]
     [SerializeField] private InventorySlots slotPrefab;
     [SerializeField] private Transform containerSlot;
-    private List<InventorySlots> slotsList= new List<InventorySlots>();
+    private List<InventorySlots> slotsList = new List<InventorySlots>();
 
 
     [Header("Config panel inventory")]
