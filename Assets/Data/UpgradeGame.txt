@@ -1,0 +1,4 @@
+- Thêm nhiệm vụ cho game
+- Điều chỉnh control để cải thiện UX người dùng
+- Tiếp tục phát triển hệ thông nhiệm vụ, đánh quái
+- Có thể làm online
