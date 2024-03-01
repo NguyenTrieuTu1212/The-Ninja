@@ -3,7 +3,7 @@
 ## Tải Game
 - [Trailer game.](https://www.youtube.com/@_NTT12)
 - [Download game.](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) 
-- [QR CODE.]()
+- [QR CODE.](https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/85948dcf-ba29-43ec-ab6c-24c2ea19211d)
 
 ## Giới Thiệu Game
 - [Ninja Aventure](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) là một tựa game mobile RPG với đồ họa pixel 2D (top-down). Người chơi sẽ nhập vai vào một ninja chiến đấu lại những kẻ thù nguy hiểm để bảo vệ ngôi làng của mình.
