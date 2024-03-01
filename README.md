@@ -26,8 +26,9 @@ trở nên mạnh mẽ hơn. Tùy thuộc vào chiến thuật của bạn mà c
 bảo họ không bao giờ bỏ lỡ những thành tựu, vật phẩm đã đạt được.
 
 ## Một Số Hình Ảnh của Game
-
-Thêm một số hình ảnh hoặc screenshot của game vào phần này. Bạn có thể sử dụng các hình ảnh minh họa về giao diện, nhân vật, hoặc các cảnh quan trong game.
+- Loading Game: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/a4029ec4-0389-4b8d-93bd-f089c17c40fb" alt="nguyentrieutu1212" /></p>
+- Main Menu: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/a6db5024-3d08-41a1-b652-ad6a25cbc3ab" alt="nguyentrieutu1212" /></p>
+- Setting Game: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/6d5ae28d-908f-4d78-8b4c-1b87507f9a85" alt="nguyentrieutu1212" /></p>
 
 
 
