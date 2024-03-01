@@ -1,16 +1,19 @@
-# Tên Dự Án : Ninja Aventure
+# Tên Dự Án : [Ninja Aventure](https://www.youtube.com/@_NTT12)
 
 ## Tải Game
-
-Trong phần này, chúng ta sẽ hướng dẫn cách tải và cài đặt game. Bạn có thể liệt kê các bước cụ thể hoặc đưa ra các hướng dẫn ngắn gọn.
+- [Trailer game](https://www.youtube.com/@_NTT12)
+- [Download game](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) 
+- [QR CODE]()
 
 ## Giới Thiệu Game
+- [Ninja Aventure](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) là một tựa game mobile RPG với đồ họa pixel 2D (top-down). Người chơi sẽ nhập vai vào một ninja chiến đấu lại những kẻ thù nguy hiểm để bảo vệ ngôi làng của mình.
 
-Ở đây, bạn có thể viết mô tả về game của bạn. Hãy giới thiệu về cốt truyện, đồ họa, âm thanh, hoặc bất kỳ điểm nổi bật nào khác.
+- Với lối chơi đơn giản cũng như đồ họa quen thuộc và đẹp mắt. Game sẽ cho người chơi một trải nghiệm vô cũng thú vị và những giây phút giả trí tuyệt vời.
+
+- Ngoài ra game còn có các thành phần khác trong game như [vật phẩm](), [kẻ thù](), [NPC](), [Hệ thống nhiệm vụ](), [....]() tạo nên sự đa dạng cho game tránh gây nhàm chán cho người chơichơi
 
 ## Cách Chơi của Game
 
-Trình bày chi tiết về cách chơi game. Điều này bao gồm các quy tắc, phím tắt, cách di chuyển, và bất kỳ thông tin nào khác mà người chơi cần biết.
 
 ## Một Số Hình Ảnh của Game
 
