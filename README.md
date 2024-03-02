@@ -29,6 +29,18 @@ bảo họ không bao giờ bỏ lỡ những thành tựu, vật phẩm đã đ
 - Loading Game: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/a4029ec4-0389-4b8d-93bd-f089c17c40fb" alt="nguyentrieutu1212" /></p>
 - Main Menu: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/a6db5024-3d08-41a1-b652-ad6a25cbc3ab" alt="nguyentrieutu1212" /></p>
 - Setting Game: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/6d5ae28d-908f-4d78-8b4c-1b87507f9a85" alt="nguyentrieutu1212" /></p>
+- Main Village: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/19c7365a-e98d-4d7b-9f5f-d5010a987cc5" alt="nguyentrieutu1212" /></p>
+- Stats and upgrade panel: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/08941d7f-cbde-4f78-a0d2-bdb47760de66" alt="nguyentrieutu1212" /></p>
+- Area Enermy: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/32eadbd6-20c5-40b9-aec1-34f8b5ba3327" alt="nguyentrieutu1212" /></p>
+- Area NPC: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/0cdb3853-5c14-4961-80ea-6d0a82194183" alt="nguyentrieutu1212" /></p>
+- Inventory: <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/f94e4dac-a058-46f5-9830-92ebe175fd11" alt="nguyentrieutu1212" /></p>
+- Dialogue NPC:
+  <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/20af11d8-e850-4b39-9f35-425c6a603c2c" alt="nguyentrieutu1212" /></p>
+   <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/f9c18cdc-034a-41be-a2bd-6367cd718aaf" alt="nguyentrieutu1212" /></p>
+- Quest System:
+  <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/aaa581b1-960c-404c-a866-b23404b25784" alt="nguyentrieutu1212" /></p>
+  <p><img src="https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/fd8c537f-86e4-424a-848e-e2059ba5a08b" alt="nguyentrieutu1212" /></p>
+
 
 
 
