@@ -1,7 +1,7 @@
 # Tên Dự Án : [Ninja Adventure](https://youtu.be/eQgFtNeclW4)
 
 ## Tải Game
-- [Demo game.](https://youtu.be/eQgFtNeclW4)
+- [Video Demo.](https://youtu.be/eQgFtNeclW4)
 - [Download game.](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) 
 - [QR CODE.](https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/85948dcf-ba29-43ec-ab6c-24c2ea19211d)
 
