@@ -1,9 +1,9 @@
-# Tên Dự Án : [Ninja Adventure](https://youtu.be/eQgFtNeclW4)
+# Tên Dự Án : [Ninja Adventure](https://youtu.be/z3K9JbacKw4)
 
 ## Tải Game
-- [Video Demo.](https://youtu.be/eQgFtNeclW4)
-- [Download game.](https://drive.google.com/file/d/1JHO0_i8xvHVhV0uTZOeE6n6yOU-gh3zk/view?usp=sharing) 
-- [QR CODE.](https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/85948dcf-ba29-43ec-ab6c-24c2ea19211d)
+- [Video Demo.](https://youtu.be/z3K9JbacKw4)
+- [Download game.](https://drive.google.com/file/d/15N_mwDH5nDSWlXvKIBHgtVXBbLwE5B71/view?usp=sharing) 
+- [QR CODE.](https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/10978c86-739e-4116-9ea7-c3f15d67d0e3)
 
 ## Giới Thiệu Game
 - [Ninja Adventure](https://youtu.be/eQgFtNeclW4) là một tựa game mobile RPG với đồ họa pixel 2D (top-down). Người chơi sẽ nhập vai vào một ninja chiến đấu lại những kẻ thù nguy hiểm để bảo vệ ngôi làng của mình.
