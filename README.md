@@ -6,7 +6,7 @@
 - [QR CODE.](https://github.com/NguyenTrieuTu1212/The-Ninja/assets/143092693/10978c86-739e-4116-9ea7-c3f15d67d0e3)
 
 ## Giới Thiệu Game
-- [Ninja Adventure](https://youtu.be/eQgFtNeclW4) là một tựa game mobile RPG với đồ họa pixel 2D (top-down). Người chơi sẽ nhập vai vào một ninja chiến đấu lại những kẻ thù nguy hiểm để bảo vệ ngôi làng của mình.
+- [Ninja Adventure](https://youtu.be/z3K9JbacKw4) là một tựa game mobile RPG với đồ họa pixel 2D (top-down). Người chơi sẽ nhập vai vào một ninja chiến đấu lại những kẻ thù nguy hiểm để bảo vệ ngôi làng của mình.
 
 - Với lối chơi đơn giản cũng như đồ họa quen thuộc và đẹp mắt. Game sẽ cho người chơi một trải nghiệm vô cũng thú vị và những giây phút giải trí tuyệt vời.
 
