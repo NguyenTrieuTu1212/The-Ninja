@@ -9,7 +9,7 @@ public class ChildBulletShoot : MonoBehaviour
     {
         transform.parent.GetComponent<BulletShoot>().ReturnBulletInQueue();
     }
-
+     
     public void ReturnBulletEnermy()
     {
         BulletManager.Instance.ReturnBullet(nameBulletEnermy, transform.parent.gameObject.GetComponent<BulletShoot>());

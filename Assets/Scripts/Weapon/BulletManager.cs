@@ -90,10 +90,9 @@ public class BulletManager : Singleton<BulletManager>
 
     public void ReturnBullet(string bulletName, BulletShoot bullet)
     {
-
-        bulletQueues[bulletName].Enqueue(bullet);
         bullet.gameObject.SetActive(false);
         bullet.transform.SetParent(pool);
+        bulletQueues[bulletName].Enqueue(bullet);
     }
     
 

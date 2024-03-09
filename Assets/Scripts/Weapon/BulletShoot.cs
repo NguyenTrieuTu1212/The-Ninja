@@ -37,4 +37,6 @@ public class BulletShoot : MonoBehaviour
         animator.SetBool("isDestroy", false);
     }
 
+
+    
 }
